@@ -1,6 +1,7 @@
 .App {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 0 auto 80px;
+  padding: 0 2em;
 }
 
 .App-header {
@@ -14,22 +15,41 @@
   color: black;
 }
 
+h1 {
+  font-size: 36px;
+  margin: 12px 0;
+}
+
+h2 {
+  font-size: 24px;
+  margin: 10px 0;
+}
+
+h3 {
+  font-size: 18px;
+  margin: 8px 0;
+}
+
+h4 {
+  font-size: 16px;
+}
+
+li {
+  font-size: 16px;
+}
+
 .App-link {
   color: #61dafb;
 }
 
 .logo {
-  float: left;
   color: dodgerblue;
   font-family: "Helvetica";
-  font-size: 32px;
   font-style: bold;
   font-variant: normal;
   font-weight: 700;
   text-decoration: none;
   -webkit-text-stroke: 0.5px dodgerblue;
-  z-index: -1;
-  overflow: hidden;
   margin: 18px 0 12px;
 
   -webkit-transition: color 0.5s, letter-spacing 1.5s;
