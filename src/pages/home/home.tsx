@@ -5,6 +5,7 @@ import { OrbitSketch } from "src/components/p5/orbits/orbits";
 import { P5Sketch } from "src/components/p5/starField/sketch";
 import ProjectsSection from "src/components/projects/ProjectsSection";
 import styled from "styled-components";
+import { ReactComponent as Splash } from "./splash.svg";
 
 const CarouselWrapper = styled(Carousel)`
   > .slick-dots li button {
@@ -22,6 +23,7 @@ function P({ value }: { value?: string }) {
 const HomePage = () => {
   return (
     <div>
+      <Splash />
       <div className="top-level-container">
         <ProjectsSection />
       </div>
