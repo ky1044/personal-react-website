@@ -4,7 +4,7 @@ import { Row } from "antd";
 
 const ResumePage = () => {
   return (
-    <div>
+    <div className="top-level-container">
       <h2>Work Experience</h2>
       {resume.work_experience.map((job, index) => (
         <div key={index}>

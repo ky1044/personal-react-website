@@ -6,11 +6,11 @@ export function NavBar() {
   return (
     <Row
       justify="space-between"
-      align="middle"
+      align="bottom"
       style={{
         borderBottom: ".5px lightgrey solid",
-        marginTop: 6,
-        marginBottom: 8,
+        marginTop: 18,
+        marginBottom: 12,
       }}
     >
       <header>
@@ -28,7 +28,7 @@ export function NavBar() {
           <Divider
             type="vertical"
             orientation="center"
-            style={{ marginTop: "18px", height: "16px" }}
+            style={{ marginTop: "8px", height: "16px" }}
           />
           <Link to="./about">
             <h2>About</h2>

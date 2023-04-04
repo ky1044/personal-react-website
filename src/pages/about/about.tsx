@@ -48,7 +48,7 @@ const AboutPage = () => {
 
       <Row>
         <a href="https://www.linkedin.com/in/ken-yokokawa/">
-          <h2 className="logo">Linked in</h2>
+          <h2 className="logo">LinkedIn</h2>
         </a>
       </Row>
 
