@@ -68,20 +68,19 @@ li {
 }
 
 /* nav bar */
-.nav-bar-container{
+.nav-bar-container {
   position: relative; /* initial position */
-  background:white;
+  background: white;
   max-width: 1200px;
   z-index: 10;
-  height:50px;
+  height: 50px;
 }
 
 .nav-bar-container.sticky {
   position: fixed;
-  
-  top: 0;
-  width:100%
 
+  top: 0;
+  width: 100%;
 }
 
 /* projects section */
@@ -139,4 +138,36 @@ li {
 
 .project-button:hover {
   background-color: #0056b3;
+}
+
+.emoji {
+  display: inline-block;
+  font-size: 44px;
+  margin: 0 3px;
+  transition: all 0.3s ease;
+  height: 84px;
+  display: flex;
+  justify-content: center;
+  align-content: middle;
+  cursor: "pointer" !important;
+}
+
+.emoji.hovered {
+  font-size: 64px;
+}
+
+.emoji-label {
+  font-weight: 600;
+  color: dodgerblue;
+  cursor: "pointer";
+  transition: color 0.3s;
+}
+
+.emoji-label.hovered {
+  color: blue;
+}
+
+
+.about-link {
+  margin-top:20px;
 }
