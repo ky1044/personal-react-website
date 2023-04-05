@@ -67,6 +67,23 @@ li {
   letter-spacing: 0.2px;
 }
 
+/* nav bar */
+.nav-bar-container{
+  position: relative; /* initial position */
+  background:white;
+  max-width: 1200px;
+  z-index: 10;
+  height:50px;
+}
+
+.nav-bar-container.sticky {
+  position: fixed;
+  
+  top: 0;
+  width:100%
+
+}
+
 /* projects section */
 .projects-section {
   overflow-x: scroll;

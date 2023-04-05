@@ -1,6 +1,20 @@
 import { Row } from "antd";
 import React, { useMemo } from "react";
 import { Link } from "react-router-dom";
+import { NavBar } from "src/components/nav/NavBar";
+
+const Emoji = ({ label, symbol, className }: any) => {
+  return (
+    <span
+      className="emoji"
+      role="img"
+      aria-label={label ? label : ""}
+      aria-hidden={label ? "false" : "true"}
+    >
+      {symbol}
+    </span>
+  );
+};
 
 const AboutPage = () => {
   const age = useMemo(() => {
@@ -16,23 +30,25 @@ const AboutPage = () => {
 
   return (
     <div>
-      <div style={{marginTop:100, marginBottom:100}}>
+      <NavBar />
+      <div style={{ marginTop: 100, marginBottom: 100 }}></div>
 
-      <h3>
+      <p>
         Hi there, my name is Ken Yokokawa. {"I'm"} {age} years old and live in
         New York City.
-      </h3>
-      <h3>
+      </p>
+      <p>
         Born in New York and having moved to Tokyo at the age of five, I spent
         most of my life in Japan. I moved back to New York for college. After
         graduating, I became a software engineer, working at Morgan Stanley and
         a startup called CertiK. I specialize in full-stack web development
         work, and am most familiar with React and Node.js.
-      </h3>
-      <h3>
+      </p>
+      <p>
         For fun, I like to run and cycle, listen to music, and take photography.
-      </h3>
-      </div>
+      </p>
+      <div style={{ marginTop: 100, marginBottom: 100 }}></div>
+
 
       <h2>Some links</h2>
       <Row>

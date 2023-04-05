@@ -1,6 +1,8 @@
+import { autocompleteClasses } from "@mui/material";
 import { Carousel, Row } from "antd";
 import React from "react";
 import { Link } from "react-router-dom";
+import { NavBar } from "src/components/nav/NavBar";
 import { OrbitSketch } from "src/components/p5/orbits/orbits";
 import { P5Sketch } from "src/components/p5/starField/sketch";
 import ProjectsSection from "src/components/projects/ProjectsSection";
@@ -23,7 +25,11 @@ function P({ value }: { value?: string }) {
 const HomePage = () => {
   return (
     <div>
-      <Splash />
+      <div style={{ height: "100vh" }}>
+        <Splash />
+      </div>
+      <NavBar />
+
       <div className="top-level-container">
         <ProjectsSection />
       </div>
