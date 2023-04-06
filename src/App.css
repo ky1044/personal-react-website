@@ -74,13 +74,17 @@ li {
   max-width: 1200px;
   z-index: 10;
   height: 50px;
+  width:100%;
 }
 
 .nav-bar-container.sticky {
   position: fixed;
-
   top: 0;
-  width: 100%;
+  /* left:0; */
+  /* right:0; */
+  width:100%;
+
+
 }
 
 /* projects section */
@@ -167,7 +171,6 @@ li {
   color: blue;
 }
 
-
 .about-link {
-  margin-top:20px;
+  margin-top: 20px;
 }

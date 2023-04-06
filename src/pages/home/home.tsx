@@ -18,11 +18,13 @@ const CarouselWrapper = styled(Carousel)`
 
 const HomePage = () => {
   return (
-    <div>
+    <>
       <div style={{ height: "100vh" }}>
         <Splash />
       </div>
-      <NavBar />
+      {/* <div style={{ position: "relative", width: "100%" }}> */}
+        <NavBar />
+      {/* </div> */}
 
       <div className="top-level-container">
         <ProjectsSection />
@@ -41,7 +43,7 @@ const HomePage = () => {
           </CarouselWrapper>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
