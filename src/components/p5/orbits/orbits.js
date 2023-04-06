@@ -1,13 +1,13 @@
 import Sketch from "react-p5";
 import { useState } from "react";
 
-let planets = [];
-let sun;
-let numPlanets = 8;
-let G = 120;
-let destabilise = 0.08;
-
 export const OrbitSketch = () => {
+  let planets = [];
+  let sun;
+  let numPlanets = 8;
+  let G = 120;
+  let destabilise = 0.08;
+  
   function setup(p5, canvasParentRef) {
     p5.createCanvas(500, 500).parent(canvasParentRef);
     sun = new Body(p5, 50, p5.createVector(0, 0), p5.createVector(0, 0));
@@ -15,7 +15,7 @@ export const OrbitSketch = () => {
     // Initialise the planets
     for (let i = 0; i < numPlanets; i++) {
       let mass = p5.random(5, 15);
-      let radius = p5.random(40, 200);
+      let radius = p5.map(i, 0, numPlanets-1, 60, 200);
       let angle = p5.random(0, p5.TWO_PI);
       let planetPos = p5.createVector(
         radius * p5.cos(angle),

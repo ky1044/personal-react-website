@@ -1,8 +1,6 @@
-import { autocompleteClasses } from "@mui/material";
-import { Carousel, Row } from "antd";
-import React from "react";
-import { Link } from "react-router-dom";
+import { Carousel } from "antd";
 import { NavBar } from "src/components/nav/NavBar";
+import ColorfulDonut from "src/components/p5/donut/donut";
 import { OrbitSketch } from "src/components/p5/orbits/orbits";
 import { P5Sketch } from "src/components/p5/starField/sketch";
 import ProjectsSection from "src/components/projects/ProjectsSection";
@@ -17,10 +15,6 @@ const CarouselWrapper = styled(Carousel)`
     background: dodgerblue;
   }
 `;
-
-function P({ value }: { value?: string }) {
-  return <p className="flagRender">{value}</p>;
-}
 
 const HomePage = () => {
   return (
@@ -41,6 +35,7 @@ const HomePage = () => {
               paddingBottom: 50,
             }}
           >
+            <ColorfulDonut />
             <OrbitSketch />
             <P5Sketch />
           </CarouselWrapper>

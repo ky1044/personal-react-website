@@ -1,7 +1,4 @@
-import p5 from "p5";
-
 export class Star {
-  // var defaultSpeed = 1;
 
   constructor(width, height, p5) {
     this.width = width;

@@ -1,5 +1,6 @@
 {
-  "name": "react-website",
+  "name": "ken-y",
+  "homepage": "https://ken-y.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
