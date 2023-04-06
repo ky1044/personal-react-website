@@ -1,11 +1,8 @@
 import React from "react";
-import "./App.css";
-import { P5Sketch } from "src/components/p5/starField/sketch";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import ResumePage from "src/pages/resume/resume";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HomePage from "src/pages/home/home";
-import { Row } from "antd";
-import { NavBar } from "./components/nav/NavBar";
+import ResumePage from "src/pages/resume/resume";
+import "./App.css";
 import AboutPage from "./pages/about/about";
 
 function App() {

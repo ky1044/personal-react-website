@@ -1,5 +1,6 @@
 import React from "react";
 import Sketch from "react-p5";
+type P5 = import("p5");
 
 const ColorfulDonut: React.FC = () => {
   let angle = 0;
@@ -7,7 +8,7 @@ const ColorfulDonut: React.FC = () => {
   const donutWidth = 120;
   const frostingWidth = 5;
 
-  const setup = (p5: any, canvasParentRef: Element) => {
+  const setup = (p5: P5, canvasParentRef: Element) => {
     p5.createCanvas(500, 500, p5.WEBGL).parent(canvasParentRef);
     randoms = Array(360)
       .fill(0)
@@ -19,7 +20,7 @@ const ColorfulDonut: React.FC = () => {
       });
   };
 
-  const draw = (p5: any) => {
+  const draw = (p5: P5) => {
     p5.background(240);
 
     p5.rotateX(0.4 + angle / 3);

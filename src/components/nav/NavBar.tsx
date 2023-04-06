@@ -14,7 +14,7 @@ export function NavBar() {
       }
     }
 
-    const element = document.querySelector(".nav-bar-container");
+    const element = document.querySelector(".nav-bar-container") as HTMLElement;
     const offsetTop = element?.offsetTop - 20;
     window.addEventListener("scroll", handleScroll);
 

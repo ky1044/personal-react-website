@@ -36,8 +36,8 @@ const ResumePage = () => {
               <h3>{education.institution}</h3>
               <h3>{education.duration}</h3>
             </Row>
-            <Row justify="space-between">
-              <h3>{education.company}</h3>
+            <Row justify="end">
+
               <h3>{education.location}</h3>
             </Row>
             <ul>
