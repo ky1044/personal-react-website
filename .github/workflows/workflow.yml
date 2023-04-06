@@ -42,7 +42,8 @@ jobs:
     - name: Sync files
       uses: SamKirkland/FTP-Deploy-Action@4.1.0
       with:
-        server: ftp.appimate.com
+        server: ${{ secrets.CICD_FTP_SERVER }}
         username: ${{ secrets.CICD_USERNAME }}
         password: ${{ secrets.CICD_PASSWORD }}
+        local-dir: build/
         server-dir: /
