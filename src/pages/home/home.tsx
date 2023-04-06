@@ -22,10 +22,7 @@ const HomePage = () => {
       <div style={{ height: "100vh" }}>
         <Splash />
       </div>
-      {/* <div style={{ position: "relative", width: "100%" }}> */}
-        <NavBar />
-      {/* </div> */}
-
+      <NavBar />
       <div className="top-level-container">
         <ProjectsSection />
       </div>
