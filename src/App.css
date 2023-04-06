@@ -1,7 +1,7 @@
 .App {
   max-width: 1200px;
   margin: 0 auto 80px;
-  padding: 0 2em 80px;
+  padding: 0 1em;
 }
 
 .App-header {
@@ -82,7 +82,7 @@ li {
   left: 0;
   right: 0;
   margin: 0 auto;
-  padding: 0 2em;
+  padding: 0 1em;
 }
 
 /* projects section */
@@ -95,6 +95,7 @@ li {
   position: relative;
   display: inline-block;
   width: 600px;
+  max-width: 60vw;
   padding: 2em;
   margin: 20px 20px 20px 0;
   border: 0.5px solid dodgerblue;
@@ -142,6 +143,34 @@ li {
   background-color: #0056b3;
 }
 
+.about-body {
+  margin: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+@media screen and (min-width: 700px) {
+  .about-body {
+    width: 75%;
+  }
+}
+
+.about-section-sidebar {
+  min-width: 84px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.about-section-center {
+  display: flex;
+  flex-direction: column;
+  vertical-align: middle;
+  flex-grow: 1;
+}
+
 .emoji {
   display: inline-block;
   font-size: 44px;
@@ -149,6 +178,7 @@ li {
   transition: all 0.3s ease;
   height: 84px;
   display: flex;
+  flex: 1;
   justify-content: center;
   align-content: middle;
   cursor: "pointer" !important;
