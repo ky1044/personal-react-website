@@ -45,5 +45,5 @@ jobs:
         server: ftp.appimate.com
         username: ${{ secrets.CICD_USERNAME }}
         password: ${{ secrets.CICD_PASSWORD }}
-        local-dir: /build
+        local-dir: /build/
         server-dir: /
