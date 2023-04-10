@@ -34,7 +34,7 @@ export function NavBar() {
             borderBottom: ".5px lightgrey solid",
             marginTop: 18,
             marginBottom: 12,
-            background: "white",
+            backgroundColor: "dodgerblue",
           }}
         >
           <header>
@@ -46,7 +46,7 @@ export function NavBar() {
           <Col>
             <Row>
               <Link to="/resume">
-                <h2>Resume</h2>
+                <h2 className="white">Resume</h2>
               </Link>
 
               <Divider
@@ -55,7 +55,7 @@ export function NavBar() {
                 style={{ marginTop: "8px", height: "16px" }}
               />
               <Link to="/about">
-                <h2>About</h2>
+                <h2 className="white">About</h2>
               </Link>
             </Row>
           </Col>

@@ -6,7 +6,7 @@ import { projects } from "./projects";
 const ProjectsSection = () => {
   return (
     <>
-      <h2>My Projects</h2>
+      <h1 className="white">Recent Projects</h1>
       <div className="projects-section">
         <div className="projects-container">
           {projects.map((project, index) => (

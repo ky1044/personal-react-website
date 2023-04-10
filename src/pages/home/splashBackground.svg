@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Created with Vectornator (http://vectornator.io/) -->
+<svg height="100%" stroke-miterlimit="10" style="fill-rule:nonzero;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;" version="1.1" viewBox="0 0 1683.99 1190.7" width="100%" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+<defs>
+<filter color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse" height="77.2703" id="Filter" width="87.1044" x="658.419" y="684.314">
+<feDropShadow dx="0" dy="0" flood-color="#000000" flood-opacity="1" in="SourceGraphic" result="Shadow" stdDeviation="0"/>
+</filter>
+</defs>
+<g id="Layer-1" >
+<path d="M114.778 101.133C-7.10968 230.959 1.00625 964.555 133.064 1100.31C254.427 1225.07 543.922 1171.81 667.163 1161.56C790.404 1151.32 959.106 1147.87 1082.33 1164.68C1219.26 1183.35 1534.19 1212.23 1622.7 1117.85C1711.22 1023.48 1692.52 197.124 1587.03 81.9853C1471.34-44.2853 977.638 47.6939 728.285 45.877C541.111 44.5131 243.39-35.8535 114.778 101.133Z" fill="#1E90FF" fill-rule="nonzero" opacity="1" stroke="none"/>
+</g>
+</svg>
