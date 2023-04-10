@@ -1,9 +1,11 @@
 import { Col, Divider, Row } from "antd";
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export function NavBar() {
   const [isSticky, setIsSticky] = useState(false);
+  const location = useLocation();
+
 
   useEffect(() => {
     function handleScroll() {
@@ -23,6 +25,11 @@ export function NavBar() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
 
   return (
     <>

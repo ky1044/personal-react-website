@@ -1,6 +1,7 @@
 import { Row } from "antd";
 import React from "react";
 import { ProjectDetail } from "src/utils/types";
+import { Button } from "../shared/shared";
 
 const ProjectCard = ({ project }: { project: ProjectDetail }) => {
   return (
@@ -17,17 +18,8 @@ const ProjectCard = ({ project }: { project: ProjectDetail }) => {
       </div>
       <div className="project-card-bottom">
         <p className="project-description">{project.description}</p>
-        <Row justify="end" >
-          <div className="project-button">
-            <a
-              className="project-button-text"
-              href={project.url}
-              target="_blank"
-              rel="noreferrer"
-            >
-              Visit Project
-            </a>
-          </div>
+        <Row justify="end">
+          <Button text="Visit Project" link={project.url} type="Primary" />
         </Row>
       </div>
     </div>

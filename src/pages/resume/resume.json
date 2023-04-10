@@ -6,8 +6,8 @@
       "location": "New York, NY (Remote)",
       "duration": "May 2022 - March 2023",
       "responsibilities": [
-        "Full-stack web development on portal for company’s main service, a security audit of client blockchain code. Users include external clients and internal support and admin staff (React, Next.js, Node.js, AWS - Fargate and Dynamo DB).",
-        "Led development efforts of new database designs, caching strategies, and scheduling automated workers. Developed API endpoints to use with partner teams and worked with team’s designer to implement frontend based on Figma UI spec.",
+        "Full-stack web development of portal for company’s main service, a security audit of client blockchain code. Users include external clients, internal support, and admin staff (React, Next.js, Node.js, AWS - Lambda, Fargate and Dynamo DB).",
+        "Led development efforts of new database schemas, caching strategies, and scheduling automated workers. Developed API endpoints to use with partner teams and worked with team’s designer to implement frontend based on Figma UI spec.",
         "Took ownership of team’s notification pipeline, which sends messages to users through e-mail, Slack, and Telegram.",
         "Incorporated unit tests (Jest) into the CI/CD pipeline and automated end-to-end tests (Cypress) to monitor the staging site.",
         "Conducted code reviews, documented application modules and best practices, and onboarded and mentored a new intern."
@@ -65,9 +65,9 @@
       "gpa": "3.89/4.0"
     }
   ],
-  "additional_information": {
-    "languages": "proficient in Python, JavaScript, Typescript, SQL; experience with Java/Spring, and R.",
-    "tools": "Git, Jira, AWS (Dynamo DB, Fargate)",
-    "other_skills": "Microsoft Office, Figma, Photoshop, Illustrator, fluent in Japanese."
-  }
+  "additional_information": [
+    "Languages: proficient in Python, JavaScript, Typescript, SQL; experience with Java/Spring, and R.",
+    "Tools: Git, Jira, AWS (Dynamo DB, Fargate)",
+    "Other Skills: Microsoft Office, Figma, Photoshop, Illustrator, fluent in Japanese."
+  ]
 }

@@ -113,7 +113,7 @@ const AboutPage = () => {
               {links.map((link, idx) => (
                 <Row key={idx}>
                   <a href={link.href} target="_blank" rel="noreferrer">
-                    <h2 className="logo about-link">{link.label}</h2>
+                    <h2 className="App-link about-link">{link.label}</h2>
                   </a>
                 </Row>
               ))}
