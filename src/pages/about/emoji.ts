@@ -39,12 +39,12 @@ export const EMOJI_MAPPING: { [key in Emojis]: EmojiData } = {
   [Emojis.RUNNING]: {
     id: "run",
     label: "running",
-    symbol: "🏃",
+    symbol: "🏃🏻‍♂️",
   },
   [Emojis.CYCLING]: {
     id: "cycling",
     label: "cycling",
-    symbol: "🚴",
+    symbol: "🚴🏻‍♂️",
   },
   [Emojis.MUSIC]: {
     id: "music",

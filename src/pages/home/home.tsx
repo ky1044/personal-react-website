@@ -6,8 +6,6 @@ import { OrbitSketch } from "src/components/p5/orbits/orbits";
 import { P5Sketch } from "src/components/p5/starField/sketch";
 import ProjectsSection from "src/components/projects/ProjectsSection";
 import styled from "styled-components";
-import { ReactComponent as Splash } from "./splash.svg";
-import { ReactComponent as SplashBackground } from "./splashBackground.svg";
 
 const CarouselWrapper = styled(Carousel)`
   > .slick-dots li button {
@@ -47,20 +45,13 @@ const SplashSection = () => {
           backgroundColor: "white",
           zIndex: -1,
         }}
-      >
-        <div className="splash">
-          <Splash />
-        </div>
-      </div>
+      />
       <div>
-        <div className={`splash-background ${isScrolled ? "large " : ""}`}>
-          <SplashBackground />
-        </div>
+        <img className={`splash-background ${isScrolled ? "large " : ""}`} src="splash/splashBackground.svg" alt="splash image background"/>
+
       </div>
       <div style={{ height: "100vh" }}>
-        <div className="splash">
-          <Splash />
-        </div>
+        <img className="splash" src="splash/splash.svg" alt="splash image"/>
       </div>
     </div>
   );
