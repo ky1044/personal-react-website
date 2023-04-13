@@ -1,4 +1,4 @@
-name: Deploy wesite on push
+name: Deploy website on push
 
 # Controls when the workflow will run
 on: 
