@@ -6,7 +6,6 @@ export function NavBar() {
   const [isSticky, setIsSticky] = useState(false);
   const location = useLocation();
 
-
   useEffect(() => {
     function handleScroll() {
       if (window.pageYOffset >= offsetTop) {
@@ -26,7 +25,6 @@ export function NavBar() {
     };
   }, []);
 
-
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
@@ -36,6 +34,7 @@ export function NavBar() {
       <div className={`nav-bar-container ${isSticky ? "sticky" : ""}`}>
         <Row
           justify="space-between"
+          align-items="baseline"
           align="bottom"
           style={{
             borderBottom: ".5px lightgrey solid",

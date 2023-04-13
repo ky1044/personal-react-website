@@ -5,16 +5,14 @@ import { projects } from "./projects";
 
 const ProjectsSection = () => {
   return (
-    <>
-      <h1 className="white">Recent Projects</h1>
+    <div className="vertical-container">
+      <h2 className="white">Recent Projects</h2>
       <div className="projects-section">
-        <div className="projects-container">
-          {projects.map((project, index) => (
-            <ProjectCard key={index} project={project} />
-          ))}
-        </div>
+        {projects.map((project, index) => (
+          <ProjectCard key={index} project={project} />
+        ))}
       </div>
-    </>
+    </div>
   );
 };
 

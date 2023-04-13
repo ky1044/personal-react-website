@@ -1,20 +1,8 @@
-import { Carousel } from "antd";
 import { useEffect, useState } from "react";
 import { NavBar } from "src/components/nav/NavBar";
-import ColorfulDonut from "src/components/p5/donut/donut";
-import { OrbitSketch } from "src/components/p5/orbits/orbits";
-import { P5Sketch } from "src/components/p5/starField/sketch";
-import ProjectsSection from "src/components/projects/ProjectsSection";
-import styled from "styled-components";
 
-const CarouselWrapper = styled(Carousel)`
-  > .slick-dots li button {
-    background: black;
-  }
-  > .slick-dots li.slick-active button {
-    background: white;
-  }
-`;
+import ProjectsSection from "src/components/projects/ProjectsSection";
+import SketchesSection from "src/components/p5/SketchesSection";
 
 const SplashSection = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,11 +18,11 @@ const SplashSection = () => {
 
     window.addEventListener("scroll", handleScroll);
 
-    // Cleanup function
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   return (
     <div>
       <div
@@ -47,11 +35,14 @@ const SplashSection = () => {
         }}
       />
       <div>
-        <img className={`splash-background ${isScrolled ? "large " : ""}`} src="splash/splashBackground.svg" alt="splash image background"/>
-
+        <img
+          className={`splash-background ${isScrolled ? "large " : ""}`}
+          src="splash/splashBackground.svg"
+          alt="splash image background"
+        />
       </div>
       <div style={{ height: "100vh" }}>
-        <img className="splash" src="splash/splash.svg" alt="splash image"/>
+        <img className="splash" src="splash/splash.svg" alt="splash image" />
       </div>
     </div>
   );
@@ -59,7 +50,7 @@ const SplashSection = () => {
 
 const HomePage = () => {
   return (
-    <>
+    <div>
       <SplashSection />
 
       <div className="body">
@@ -68,21 +59,10 @@ const HomePage = () => {
           <ProjectsSection />
         </div>
         <div className="top-level-container">
-          <h1 className="white">Recent Sketches</h1>
-          <div>
-            <CarouselWrapper
-              style={{
-                paddingBottom: 50,
-              }}
-            >
-              <ColorfulDonut />
-              <OrbitSketch />
-              <P5Sketch />
-            </CarouselWrapper>
-          </div>
+          <SketchesSection />
         </div>
       </div>
-    </>
+    </div>
   );
 };
 

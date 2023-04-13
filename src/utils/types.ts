@@ -4,5 +4,6 @@ export type ProjectDetail = {
   image: string;
   imageWidth?: number;
   description: string;
+  tech: string;
   url: string;
 };
