@@ -1,6 +1,7 @@
 import { Col, Divider, Row } from "antd";
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
+import styles from "./NavBar.module.css";
 
 export function NavBar() {
   const [isSticky, setIsSticky] = useState(false);
@@ -15,7 +16,7 @@ export function NavBar() {
       }
     }
 
-    const element = document.querySelector(".nav-bar-container") as HTMLElement;
+    const element = document.getElementById("nav-bar") as HTMLElement;
     const offsetTop = element?.offsetTop - 20;
     window.addEventListener("scroll", handleScroll);
 
@@ -31,7 +32,10 @@ export function NavBar() {
 
   return (
     <>
-      <div className={`nav-bar-container ${isSticky ? "sticky" : ""}`}>
+      <div
+        id="nav-bar"
+        className={`${styles.navBarContainer} ${isSticky ? styles.sticky : ""}`}
+      >
         <Row
           justify="space-between"
           align-items="baseline"

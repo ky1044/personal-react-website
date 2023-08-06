@@ -1,0 +1,46 @@
+.projectsSection {
+  display: flex;
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  gap: 1em;
+  margin: 10px 0;
+  justify-content: space-evenly;
+}
+.projectsSection::-webkit-scrollbar {
+  display: none;
+}
+
+.projectCard {
+  padding: 1.5em 2em;
+  background-color: white;
+  border-radius: 20px;
+  white-space: normal;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+    width: 500px;  
+}
+
+@media (max-width: 680px) {
+  .projectsSection {
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+  }
+  .projectCard {
+    min-width: none;
+    max-width: calc(100% - 60px);
+    padding: 1em 1.5em;
+  }
+}
+
+.projectImage {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}

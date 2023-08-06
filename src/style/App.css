@@ -1,0 +1,99 @@
+.page {
+  background-color: dodgerblue;
+  padding: 0 0 80px;
+  line-height: 1.4;
+}
+
+.page-white {
+  background-color: white;
+}
+
+.body {
+  background-color: dodgerblue;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1em;
+}
+
+.top-level-container {
+  margin: 3em 0 0 0;
+}
+
+.vertical-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.App-link {
+  color: #61dafb;
+  transition: 0.5s;
+}
+.App-link:hover {
+  color: #8fe7ff;
+}
+
+/* splash image */
+.splash-background {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: calc(100vw / 2);
+  height: calc(100vh / 2);
+  height: calc(100vh * 2);
+  transform: translate(-50%, -50%);
+  transition: 1s;
+  z-index: -1;
+}
+
+.splash-background.large {
+  width: calc(100vw * 3);
+  height: calc(100vh * 3);
+  transition: 1s;
+}
+
+.splash {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: calc(100vw / 2);
+  height: calc(100vh / 2);
+  height: calc(100vh * 2);
+  transform: translate(-50%, -50%);
+  transition: 1s;
+}
+
+.button {
+  display: inline-block;
+  height: 40px;
+  width: 150px;
+  border-radius: 20px;
+  background-color: #007bff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s;
+  cursor: pointer;
+}
+
+.button.secondary {
+  background-color: white;
+}
+
+.button-text {
+  color: #fff;
+  text-decoration: none;
+}
+
+.button:hover {
+  background-color: #0056b3;
+}
+
+.button-text.secondary {
+  color: #007bff;
+}
+
+.button.secondary:hover {
+  background-color: #e9f4ff;
+}

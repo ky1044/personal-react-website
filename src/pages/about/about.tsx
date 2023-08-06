@@ -5,6 +5,7 @@ import { Emojis, EMOJI_MAPPING } from "./emoji";
 import { EmojiProvider, useEmojiContext } from "./emojiContext";
 import useEmoji from "./useEmoji";
 import { links } from "./links";
+import styles from "./About.module.css";
 
 const Emoji = ({ emojiKey }: { emojiKey: Emojis }) => {
   const { onHover, hoveredKey } = useEmojiContext();
@@ -19,7 +20,7 @@ const Emoji = ({ emojiKey }: { emojiKey: Emojis }) => {
 
   return (
     <span
-      className={`emoji ${isHovered ? "hovered" : ""}`}
+      className={`${styles.emoji} ${isHovered ? styles.hovered : ""}`}
       role="img"
       aria-label={label ? label : ""}
       aria-hidden={label ? "false" : "true"}
@@ -38,10 +39,58 @@ const EmojiLabel = ({ emojiKey }: { emojiKey: Emojis }) => {
     <span
       onMouseOver={() => onHover(emojiKey)}
       onMouseLeave={() => onHover(null)}
-      className={`emoji-label ${isHovered ? "hovered" : ""}`}
+      className={`${styles.emojiLabel} ${isHovered ? styles.hovered : ""}`}
     >
       {EMOJI_MAPPING[emojiKey].label}
     </span>
+  );
+};
+
+const BusinessCard = () => {
+  const { yoeText, moeText } = useMemo(() => {
+    const today = new Date();
+    const startDate = new Date("02/01/2021");
+    let yoe = today.getFullYear() - startDate.getFullYear();
+    const moe = today.getMonth() - startDate.getMonth();
+    const yoeText = `${yoe} years`;
+    let moeText = null;
+    if (moe > 1) {
+      moeText = ` (*and ${moe} months) `;
+    } else if (moe === 1) {
+      moeText = " (*and 1 month) ";
+    }
+    return { yoeText, moeText };
+  }, []);
+
+  return (
+    <div className={styles.businessCardWrapper}>
+      <p className={`handwritten white`}>let me introduce myself</p>
+      <div className={styles.businessCard}>
+        <h3> Ken Yokokawa</h3>
+        <div className={styles.businessCardPosition}>
+          <span>
+            <p>Software Engineer</p>
+          </span>
+          <span>
+            <p>@ Book of the Month</p>
+          </span>
+        </div>
+        <div>
+          <p className="p2">
+            <i>
+              {yoeText} {moeText && <span className="p3">{moeText}</span>}of
+              industry experience
+            </i>
+          </p>
+        </div>
+        <div>
+          <p className="p2">kenyokokawa@gmail.com</p>
+        </div>
+        <div>
+          <p className="p2">New York, NY</p>
+        </div>
+      </div>
+    </div>
   );
 };
 
@@ -62,21 +111,22 @@ const AboutPage = () => {
     <div className="page">
       <div className="body">
         <NavBar />
-        <div className="about-body">
+        <div className={styles.body}>
           <EmojiProvider value={emojiHook}>
-            <div style={{  marginBottom: 100 }}></div>
-
+            <div style={{ marginBottom: 100 }}></div>
+            <BusinessCard />
+            <div style={{ marginBottom: 100 }}></div>
             <div style={{ display: "flex", flexDirection: "row" }}>
-              <div className="about-section-sidebar" style={{ minHeight: 336 }}>
+              <div className={styles.sidebarBlock} style={{ minHeight: 336 }}>
                 <Emoji emojiKey={Emojis.NYC} />
                 <Emoji emojiKey={Emojis.COLLEGE} />
                 <Emoji emojiKey={Emojis.RUNNING} />
                 <Emoji emojiKey={Emojis.MUSIC} />
               </div>
-              <div className="about-section-center">
+              <div className={styles.centerBlock}>
                 <p style={{ marginBottom: 40 }}>
-                  Hi there, my name is Ken Yokokawa. {"I'm"} {age} years old and
-                  live in <EmojiLabel emojiKey={Emojis.NYC} />.
+                  Hi there, my name is Ken. {"I'm"} {age} years old and live in{" "}
+                  <EmojiLabel emojiKey={Emojis.NYC} />.
                 </p>
                 <p style={{ marginBottom: 40 }}>
                   Born in New York and having moved to{" "}
@@ -84,9 +134,10 @@ const AboutPage = () => {
                   spent most of my life in Japan. I moved back to New York for{" "}
                   <EmojiLabel emojiKey={Emojis.COLLEGE} />. After graduating, I
                   became a <EmojiLabel emojiKey={Emojis.SOFTWARE_ENGINEER} />,
-                  working at Morgan Stanley and a startup called CertiK. I
-                  specialize in full-stack web development work, and am most
-                  familiar with React and Node.js.
+                  working at Morgan Stanley, a startup called CertiK, and
+                  currently working for Book of the Month. I specialize in
+                  full-stack web development work, and am most familiar with
+                  React.js, React Native, and Node.js.
                 </p>
                 <p>
                   For fun, I like <EmojiLabel emojiKey={Emojis.RUNNING} /> and{" "}
@@ -95,7 +146,7 @@ const AboutPage = () => {
                   <EmojiLabel emojiKey={Emojis.PHOTOGRAPHY} />.
                 </p>
               </div>
-              <div className="about-section-sidebar" style={{ minHeight: 336 }}>
+              <div className={styles.sidebarBlock} style={{ minHeight: 336 }}>
                 <Emoji emojiKey={Emojis.TOKYO} />
                 <Emoji emojiKey={Emojis.SOFTWARE_ENGINEER} />
                 <Emoji emojiKey={Emojis.CYCLING} />
@@ -107,18 +158,20 @@ const AboutPage = () => {
           <div style={{ marginBottom: 100 }}></div>
 
           <div style={{ display: "flex", flexDirection: "row" }}>
-            <div className="about-section-sidebar" />
-            <div className="about-section-center" style={{ flex: 12 }}>
+            <div className={styles.sidebarBlock} />
+            <div className={styles.centerBlock} style={{ flex: 12 }}>
               <h2>Some links</h2>
               {links.map((link, idx) => (
                 <Row key={idx}>
                   <a href={link.href} target="_blank" rel="noreferrer">
-                    <h2 className="App-link about-link">{link.label}</h2>
+                    <h2 className={`App-link ${styles.aboutLink}`}>
+                      {link.label}
+                    </h2>
                   </a>
                 </Row>
               ))}
             </div>
-            <div className="about-section-sidebar" />
+            <div className={styles.sidebarBlock} />
           </div>
         </div>
       </div>

@@ -1,18 +1,18 @@
-import { Col, Row } from "antd";
-import React from "react";
+import { Row } from "antd";
 import { ProjectDetail } from "src/utils/types";
 import { Button } from "../shared/shared";
+import styles from "./Projects.module.css"
 
 const ProjectCard = ({ project }: { project: ProjectDetail }) => {
   return (
-    <div className="project-card">
+    <div className={styles.projectCard}>
       <div className="vertical-container">
         <h2>{project.title}</h2>
         <p>{project.description}</p>
       </div>
       <div>
         <img
-          className="project-image"
+          className={styles.projectImage}
           src={project.image}
           alt={project.title}
           style={{ width: project?.imageWidth ?? undefined }}

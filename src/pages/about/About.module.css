@@ -1,0 +1,95 @@
+.body {
+  margin: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+@media screen and (min-width: 680px) {
+  .about-body {
+    width: 75%;
+  }
+}
+
+.sidebarBlock {
+  min-width: 84px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.centerBlock {
+  display: flex;
+  flex-direction: column;
+  vertical-align: middle;
+  flex-grow: 1;
+  color: white;
+}
+
+.aboutLink {
+  margin-top: 20px;
+}
+
+.emoji {
+  display: inline-block;
+  font-size: 44px;
+  margin: 0 3px;
+  transition: all 0.3s ease;
+  height: 84px;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-content: middle;
+  cursor: "pointer" !important;
+}
+
+.emoji.hovered {
+  font-size: 64px;
+}
+
+.emojiLabel {
+  font-weight: 600;
+  color: rgb(143, 216, 255);
+  cursor: "pointer";
+  transition: color 0.3s;
+}
+
+.emojiLabel.hovered {
+  color: rgb(235, 244, 255);
+}
+
+.businessCardWrapper {
+  width: fit-content;
+  align-self: center;
+}
+
+.businessCard {
+  padding: 40px 50px 20px;
+  align-self: center;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.5s ease-in-out, box-shadow 0.5s ease-in-out;
+}
+
+.businessCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.businessCardPosition {
+  display: flex;
+  justify-content: baseline;
+  text-align: center;
+  white-space: nowrap;
+}
+
+@media (max-width: 680px) {
+  .businessCard {
+    padding: 20px 20px 10px;
+  }
+}

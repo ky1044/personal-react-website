@@ -1,9 +1,11 @@
-import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HomePage from "src/pages/home/home";
 import ResumePage from "src/pages/resume/resume";
-import "./App.css";
-import AboutPage from "./pages/about/about";
+import AboutPage from "src/pages/about/About";
+import "./style/App.css";
+import "./style/typography.css";
+import "./style/colors.css";
+
 
 function App() {
   return (
