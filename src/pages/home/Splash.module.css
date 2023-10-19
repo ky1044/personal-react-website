@@ -1,0 +1,76 @@
+.heroWrapper {
+  background: linear-gradient(
+    45deg,
+    #36b2ff 25%,
+    #0079eb 40%,
+    #0079eb 60%,
+    #36b2ff 75%
+  );
+  background-size: 200% 100%;
+  background-position-x: 100%;
+  background-clip: text;
+  transition: background-position-x 0.7s;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 3em 0;
+}
+
+.activeGradient {
+  background-position-x: 0;
+}
+
+.hero {
+  line-height: 1;
+  font-family: Roboto Flex;
+  font-size: 96px;
+  font-style: normal;
+  font-stretch: 150%;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 4.8px;
+}
+
+.headerWrapper {
+  width: fit-content;
+  margin: 6em auto;
+}
+
+.headerText {
+  font-family: Roboto Flex;
+  font-size: 4em;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1.2px;
+}
+
+.highlight {
+  background-color: #d0eeff;
+  position: absolute;
+  top: 20px;
+  bottom: 10px;
+  left: 0px;
+  right: 100%;
+  z-index: -1;
+  transition: right 0.5s ease-in-out;
+}
+
+.highlightActive {
+  right: 0px;
+}
+
+@media screen and (max-width: 960px) {
+  .hero {
+    font-size: calc(8vw);
+    letter-spacing: 0.4vw;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .headerText {
+    font-size: 2.5em;
+  }
+  .highlight {
+    top: 14px;
+    bottom: 7px;
+  }
+}

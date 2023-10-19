@@ -1,22 +1,17 @@
 .page {
-  background-color: dodgerblue;
   padding: 0 0 80px;
   line-height: 1.4;
 }
 
-.page-white {
-  background-color: white;
-}
-
 .body {
-  background-color: dodgerblue;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 1em;
 }
 
 .top-level-container {
-  margin: 3em 0 0 0;
+  margin: 3em auto 0;
+  padding: 0 1em;
+  max-width: 1200px;
 }
 
 .vertical-container {
@@ -26,50 +21,12 @@
   gap: 10px;
 }
 
-.App-link {
-  color: #61dafb;
-  transition: 0.5s;
-}
-.App-link:hover {
-  color: #8fe7ff;
-}
-
-/* splash image */
-.splash-background {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  width: calc(100vw / 2);
-  height: calc(100vh / 2);
-  height: calc(100vh * 2);
-  transform: translate(-50%, -50%);
-  transition: 1s;
-  z-index: -1;
-}
-
-.splash-background.large {
-  width: calc(100vw * 3);
-  height: calc(100vh * 3);
-  transition: 1s;
-}
-
-.splash {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  width: calc(100vw / 2);
-  height: calc(100vh / 2);
-  height: calc(100vh * 2);
-  transform: translate(-50%, -50%);
-  transition: 1s;
-}
-
 .button {
   display: inline-block;
   height: 40px;
   width: 150px;
   border-radius: 20px;
-  background-color: #007bff;
+  border: 1px solid #007bff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -78,22 +35,37 @@
 }
 
 .button.secondary {
-  background-color: white;
-}
-
-.button-text {
-  color: #fff;
-  text-decoration: none;
-}
-
-.button:hover {
-  background-color: #0056b3;
-}
-
-.button-text.secondary {
-  color: #007bff;
+  background-color: #ddd;
+  border: none;
 }
 
 .button.secondary:hover {
-  background-color: #e9f4ff;
+  background-color: #ccc;
+}
+
+.button-text {
+  color: black;
+  text-decoration: none;
+}
+
+.button-text.secondary {
+  color: black;
+}
+
+.text-link {
+  color: black;
+  text-decoration: none;
+}
+
+.text-link:hover {
+  color: black;
+}
+
+.text-link-content {
+  border-bottom: black solid 2px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
 }

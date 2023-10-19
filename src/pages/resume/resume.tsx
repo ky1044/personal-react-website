@@ -1,8 +1,8 @@
 import resume from "./resume.json";
 
 import { Divider, Row } from "antd";
-import { Button } from "src/components/shared/shared";
 import { NavBar } from "src/components/nav/NavBar";
+import { TextLink } from "src/components/shared/shared";
 
 const ResumePage = () => {
   const onButtonClick = () => {
@@ -21,24 +21,24 @@ const ResumePage = () => {
       <div className="body">
         <NavBar />
 
-        <div className="top-level-container white">
+        <div className="top-level-container black">
           <div className="vertical-container">
             <Row
               align="middle"
               justify="space-between"
               style={{ marginBottom: 50 }}
             >
-              <h1>Resume</h1>
-              <Button
-                type="Secondary"
+              <h1>RESUME</h1>
+              <TextLink
                 text="Download PDF"
+                linkType="download"
                 onClick={onButtonClick}
               />
             </Row>
 
             <div>
               <h2>Work Experience</h2>
-              <Divider style={{ borderColor: "white" }} />
+              <Divider style={{ borderColor: "black" }} />
               {resume.work_experience.map((job, index) => (
                 <div key={index}>
                   <Row justify="space-between">
@@ -60,7 +60,7 @@ const ResumePage = () => {
             </div>
             <div>
               <h2>Education</h2>
-              <Divider style={{ borderColor: "white" }} />
+              <Divider style={{ borderColor: "black" }} />
               {resume.education.map((education, index) => (
                 <div key={index}>
                   <Row justify="space-between">
@@ -81,7 +81,7 @@ const ResumePage = () => {
 
             <div>
               <h2>Additional Info</h2>
-              <Divider style={{ borderColor: "white" }} />
+              <Divider style={{ borderColor: "black" }} />
               <ul>
                 {resume.additional_information.map((info, index) => (
                   <li key={index}>{info}</li>

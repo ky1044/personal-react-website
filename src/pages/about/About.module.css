@@ -22,9 +22,8 @@
 .centerBlock {
   display: flex;
   flex-direction: column;
-  vertical-align: middle;
+  justify-content: center;
   flex-grow: 1;
-  color: white;
 }
 
 .aboutLink {
@@ -50,13 +49,13 @@
 
 .emojiLabel {
   font-weight: 600;
-  color: rgb(143, 216, 255);
+  color: dodgerblue;
   cursor: "pointer";
   transition: color 0.3s;
 }
 
 .emojiLabel.hovered {
-  color: rgb(235, 244, 255);
+  color: rgb(101, 170, 255);
 }
 
 .businessCardWrapper {
@@ -86,6 +85,13 @@
   justify-content: baseline;
   text-align: center;
   white-space: nowrap;
+}
+
+.linksContainer{
+  display: flex;
+  flex-direction: column;
+  gap:1em;
+  width: fit-content;
 }
 
 @media (max-width: 680px) {

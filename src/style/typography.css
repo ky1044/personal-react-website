@@ -11,27 +11,31 @@ h2,
 h3,
 h4 {
   line-height: 1;
-}
-
-p,
-li {
-  line-height: 1.5;
+  font-family: Roboto Flex;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
 }
 
 .p1 {
-  font-size: 1em;
+  font-size: 1.2em;
 }
 
+p,
+li,
 .p2 {
-  font-size: .9em;
+  font-size: 1em;
+  line-height: 1.5;
 }
 
 .p3 {
-  font-size: .8em;
+  font-size: 0.8em;
 }
 
 h1 {
-  font-size: 3em;
+  color: dodgerblue;
+  font-size: 4em;
+  font-stretch: 150%;
 }
 
 h2 {
@@ -51,41 +55,50 @@ li {
   font-size: 16px;
 }
 
-
-.handwritten {
-  font-family: 'Kalam', cursive;
+.stretched {
+  font-stretch: 150%;
 }
-
 
 .logo {
-  color: white;
-  font-family: "Libre Franklin";
-  font-style: bold;
-  font-variant: normal;
-  font-weight: 700;
-  text-decoration: none;
-  -webkit-text-stroke: 1px white;
-
-  transition: color 0.5s, letter-spacing 1.5s;
-}
-
-.logo:hover {
+  padding: 0 4px;
+  border: 2px solid #0085ff;
   color: dodgerblue;
-  letter-spacing: 0.2px;
+  font-size: 24px;
+  font-family: "Jost";
+  font-variant: normal;
+  text-decoration: none;
+  letter-spacing: 1.6px;
 }
 
 @media screen and (max-width: 680px) {
+  .p1 {
+    font-size: 0.9em;
+  }
+  p,
+  li,
+  .p2 {
+    font-size: 0.8em;
+  }
 
-p, .p1 {
-  font-size: .8em;
+  .p3 {
+    font-size: 0.6em;
+  }
+
+  h1 {
+    font-size: 3em;
+  }
+
+  h2 {
+    font-size: 1.5em;
+  }
+
+  h3 {
+    font-size: 1em;
+  }
 }
 
-.p2 {
-  font-size: .7em;
-}
-
-.p3 {
-  font-size: .6em;
-}
-
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 2em;
+  }
 }

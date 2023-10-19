@@ -6,17 +6,14 @@ import "./style/App.css";
 import "./style/typography.css";
 import "./style/colors.css";
 
-
 function App() {
   return (
     <Router>
-      <div>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/resume" element={<ResumePage />} />
-          <Route path="/about" element={<AboutPage />} />
-        </Routes>
-      </div>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/resume" element={<ResumePage />} />
+        <Route path="/about" element={<AboutPage />} />
+      </Routes>
     </Router>
   );
 }

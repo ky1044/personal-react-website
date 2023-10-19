@@ -5,9 +5,8 @@ export const projects: ProjectDetail[] = [
     title: "Personal Website",
     date: "March, 2023",
     image: `${process.env.PUBLIC_URL}/project-images/personal-project.png`,
-    imageWidth: 150,
     description:
-      "Personal portfolio website (the one you're on right now), to hone in and showcase front-end skills and experiment a little.",
+      "Personal portfolio website (the one you're on right now), to try out new front-end libraries and industry practices.",
     tech: "React.js, HTML, CSS, Github Actions",
     url: "https://github.com/ky1044/personal-react-website",
   },
