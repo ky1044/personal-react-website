@@ -1,6 +1,6 @@
-import { Row } from "antd";
 import { ProjectDetail } from "src/utils/types";
-import { Button, TextLink } from "../shared/shared";
+import TechTag from "../shared/TechTag";
+import { TextLink } from "../shared/shared";
 import styles from "./Projects.module.css";
 
 const ProjectCard = ({ project }: { project: ProjectDetail }) => {
@@ -15,8 +15,12 @@ const ProjectCard = ({ project }: { project: ProjectDetail }) => {
         </div>
         <p>{project.description}</p>
         <div>
-          <Row justify={"space-between"} align={"middle"}>
-            <h4 className="grey">Tech: {project.tech}</h4>
+          <div className={styles.bottomContainer}>
+            <div className={styles.techList}>
+              {project.tech.map((tech) => (
+                <TechTag name={tech} key={tech} />
+              ))}
+            </div>
             <div className={styles.projectLinks}>
               <TextLink
                 text="Visit Project"
@@ -24,7 +28,7 @@ const ProjectCard = ({ project }: { project: ProjectDetail }) => {
                 linkType="external"
               />
             </div>
-          </Row>
+          </div>
         </div>
       </div>
       <div className={styles.imageContainer}>
