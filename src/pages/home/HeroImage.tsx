@@ -1,11 +1,14 @@
 import { useEffect, useState } from "react";
 import styles from "./HeroImage.module.css";
+import useWindow from "src/hooks/useWindow";
 
 function HeroImage({ scrollPosition }: { scrollPosition: number }) {
+  const { isMobile } = useWindow();
+  const heroImage = isMobile ? "hero-mobile.jpg" : "hero.jpg";
   return (
     <div className={styles.heroImageContainer}>
       <img
-        src={`${process.env.PUBLIC_URL}/hero.jpg`}
+        src={`${process.env.PUBLIC_URL}/${heroImage}`}
         className={styles.heroImage}
       />
       <div
