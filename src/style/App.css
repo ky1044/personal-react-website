@@ -52,35 +52,3 @@
   color: black;
 }
 
-.text-link {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-
-.text-link-content {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: 6px;
-  background: linear-gradient(
-      to left,
-      rgb(0, 0, 0) 0%,
-      rgb(0, 0, 0) 34%,
-      rgb(255, 255, 255) 34%,
-      rgb(255, 255, 255) 66%,
-      rgb(0, 0, 0) 66%,
-      rgba(83, 0, 30, 1) 100%
-    )
-    left bottom #ffffff no-repeat;
-  background-size: 300% 2px;
-  background-position-x: 100%;
-  transition: background-position-x 0s;
-}
-
-.text-link-content:hover {
-  background-position-x: 0;
-  transition: background-position-x 0.7s;
-}

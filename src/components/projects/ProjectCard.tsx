@@ -1,6 +1,6 @@
 import { ProjectDetail } from "src/utils/types";
 import TechTag from "../shared/TechTag";
-import { TextLink } from "../shared/shared";
+import { TextLink } from "../shared/TextLink";
 import styles from "./Projects.module.css";
 
 const ProjectCard = ({ project }: { project: ProjectDetail }) => {

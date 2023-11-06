@@ -2,7 +2,7 @@ import resume from "./resume.json";
 
 import { Divider, Row } from "antd";
 import { NavBar } from "src/components/nav/NavBar";
-import { TextLink } from "src/components/shared/shared";
+import { TextLink } from "src/components/shared/TextLink";
 
 const ResumePage = () => {
   const onButtonClick = () => {

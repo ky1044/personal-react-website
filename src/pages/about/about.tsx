@@ -6,7 +6,7 @@ import { EmojiProvider, useEmojiContext } from "./emojiContext";
 import useEmoji from "./useEmoji";
 import { links } from "./links";
 import styles from "./About.module.css";
-import { TextLink } from "src/components/shared/shared";
+import { TextLink } from "src/components/shared/TextLink";
 
 const Emoji = ({ emojiKey }: { emojiKey: Emojis }) => {
   const { onHover, hoveredKey } = useEmojiContext();
