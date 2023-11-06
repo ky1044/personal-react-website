@@ -7,8 +7,7 @@ export function NavBar() {
   return (
     <>
       <div
-        id="nav-bar"
-        className={`${styles.navBarContainer} ${styles.sticky}`}
+        className={styles.navBarContainer}
       >
         <Row
           justify="space-between"

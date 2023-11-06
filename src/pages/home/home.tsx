@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
-import { NavBar } from "src/components/nav/NavBar";
+import { NavBar } from "src/components/skeleton/NavBar";
 
 import ProjectsSection from "src/components/projects/ProjectsSection";
-import SketchesSection from "src/components/p5/SketchesSection";
 import Splash from "./Splash";
 import ContextSection from "./ContextSection";
+import { Footer } from "src/components/skeleton/Footer";
 
 const HomePage = () => {
   return (
@@ -14,6 +14,7 @@ const HomePage = () => {
 
       <ContextSection />
       <ProjectsSection />
+      <Footer />
     </div>
   );
 };

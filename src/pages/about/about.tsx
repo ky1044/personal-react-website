@@ -1,6 +1,6 @@
 import { Row } from "antd";
 import { useMemo } from "react";
-import { NavBar } from "src/components/nav/NavBar";
+import { NavBar } from "src/components/skeleton/NavBar";
 import { Emojis, EMOJI_MAPPING } from "./emoji";
 import { EmojiProvider, useEmojiContext } from "./emojiContext";
 import useEmoji from "./useEmoji";

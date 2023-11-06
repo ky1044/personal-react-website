@@ -1,7 +1,7 @@
 import resume from "./resume.json";
 
 import { Divider, Row } from "antd";
-import { NavBar } from "src/components/nav/NavBar";
+import { NavBar } from "src/components/skeleton/NavBar";
 import { TextLink } from "src/components/shared/TextLink";
 
 const ResumePage = () => {
