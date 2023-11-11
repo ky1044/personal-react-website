@@ -1,0 +1,45 @@
+.resumeGrid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 40px 1fr 6fr;
+}
+
+.timeline {
+  width: 6px;
+  background-color: rgb(30, 144, 255);
+  margin: 0 auto 0 12x;
+  position: relative;
+}
+
+.timeline.end {
+  background: linear-gradient(
+    180deg,
+    rgb(30, 144, 255) 65%,
+    rgb(30, 144, 255, 0) 90%
+  );
+}
+
+.timelineDot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 5px solid dodgerblue;
+  background-color: white;
+  position: absolute;
+  left: -10px;
+}
+
+.dateAndLocation {
+  margin-right: 1em;
+  margin-bottom: 2em;
+}
+
+.roleAndDescription {
+  margin-bottom: 1em;
+}
+
+@media screen and (max-width: 680px) {
+  .resumeGrid {
+    grid-template-columns: 40px 1fr;
+  }
+}

@@ -56,9 +56,6 @@
 }
 
 @media screen and (max-width: 680px) {
-}
-
-@media screen and (max-width: 680px) {
   .gridContainer {
     width: 100%;
     aspect-ratio: 5/7;
