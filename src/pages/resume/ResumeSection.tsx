@@ -2,6 +2,7 @@ import { Col, Row } from "antd";
 import useWindow from "src/hooks/useWindow";
 import styles from "./ResumeSection.module.css";
 import { RESUME } from "./resumeData";
+import TechTag from "src/components/shared/TechTag";
 
 export default function ResumeSection() {
   const { isMobile } = useWindow();
@@ -30,7 +31,7 @@ export default function ResumeSection() {
               </h2>
             </Row>
             {isMobile && (
-              <Col >
+              <Col>
                 <h4>{role.duration}</h4>
                 <h4 className="grey">{role.location}</h4>
               </Col>
@@ -41,6 +42,13 @@ export default function ResumeSection() {
                 <li key={idx}>{bullet}</li>
               ))}
             </ul>
+            {role.tech && (
+              <div className={styles.techList}>
+                {role.tech?.map((tech) => (
+                  <TechTag name={tech} key={tech} />
+                ))}
+              </div>
+            )}
           </div>
         </>
       ))}

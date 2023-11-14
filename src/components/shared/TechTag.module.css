@@ -1,9 +1,12 @@
 .tagContainer {
-  background-color: #bebebe; 
   display: flex;
   justify-content: center;
   align-items: center;
   height: 28px;
-  border-radius: 8px;
-  padding: 0 8px;
+  border-radius: 28px;
+  border-width: 3px;
+  border-style: solid;
+  border-color: #8b8b8b;
+  padding: 1px 10px;
+  font-weight: 600;
 }

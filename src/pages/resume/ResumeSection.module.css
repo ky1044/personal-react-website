@@ -38,6 +38,14 @@
   margin-bottom: 1em;
 }
 
+.techList {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-left: 24px;
+}
+
 @media screen and (max-width: 680px) {
   .resumeGrid {
     grid-template-columns: 40px 1fr;
