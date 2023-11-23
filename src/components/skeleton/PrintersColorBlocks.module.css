@@ -1,0 +1,10 @@
+.colorBarContainer {
+  display: flex;
+  gap: 3px;
+}
+
+.colorBlock {
+  flex-grow: 1;
+  height: 20px;
+  width: 20px;
+}

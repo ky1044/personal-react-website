@@ -1,6 +1,7 @@
-import { Row } from "antd";
+import { Col, Row } from "antd";
 import { useMemo } from "react";
 import styles from "./Footer.module.css";
+import PrintersColorBlocks from "./PrintersColorBlocks";
 
 export function Footer() {
   const year = useMemo(() => {
@@ -21,7 +22,10 @@ export function Footer() {
             maxWidth: 1200,
           }}
         >
-          <p className="grey">Ken Yokokawa {year}</p>
+          <Col align="middle">
+            <p className="grey">Ken Yokokawa {year}</p>
+            <PrintersColorBlocks />
+          </Col>
         </Row>
       </div>
     </>
