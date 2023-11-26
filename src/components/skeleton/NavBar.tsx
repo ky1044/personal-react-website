@@ -6,9 +6,7 @@ import styles from "./NavBar.module.css";
 export function NavBar() {
   return (
     <>
-      <div
-        className={styles.navBarContainer}
-      >
+      <div className={styles.navBarContainer}>
         <Row
           justify="space-between"
           align-items="baseline"
@@ -27,8 +25,8 @@ export function NavBar() {
 
           <Col>
             <Row>
-              <Link to="/resume">
-                <p className={styles.navLink}>RESUME</p>
+              <Link to="/experience">
+                <p className={styles.navLink}>EXPERIENCE</p>
               </Link>
               <Divider
                 type="vertical"

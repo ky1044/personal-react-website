@@ -21,6 +21,15 @@
   gap: 10px;
 }
 
+.narrow-vertical-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
+  max-width: 820px;
+  margin: 0 auto;
+}
+
 .button {
   display: inline-block;
   height: 40px;
@@ -51,4 +60,3 @@
 .button-text.secondary {
   color: black;
 }
-

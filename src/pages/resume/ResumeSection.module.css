@@ -38,12 +38,17 @@
   margin-bottom: 1em;
 }
 
+.noBreak{
+  white-space: nowrap;
+}
+
 .techList {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 4px;
   margin-left: 24px;
+  margin-bottom: 1em;
 }
 
 @media screen and (max-width: 680px) {

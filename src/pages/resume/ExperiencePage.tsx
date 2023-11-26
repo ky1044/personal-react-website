@@ -4,7 +4,7 @@ import { Footer } from "src/components/skeleton/Footer";
 import { NavBar } from "src/components/skeleton/NavBar";
 import ResumeSection from "./ResumeSection";
 
-const ResumePage = () => {
+const ExperiencePage = () => {
   const onButtonClick = () => {
     fetch("resume.pdf").then((response) => {
       response.blob().then((blob) => {
@@ -21,15 +21,15 @@ const ResumePage = () => {
       <NavBar />
 
       <div className="top-level-container black">
-        <div className="vertical-container">
+        <div className="narrow-vertical-container">
           <Row
             align="middle"
             justify="space-between"
             style={{ marginBottom: 50 }}
           >
-            <h1>RESUME</h1>
+            <h1>EXPERIENCE</h1>
             <TextLink
-              text="Download PDF"
+              text="Download Resume"
               linkType="download"
               onClick={onButtonClick}
             />
@@ -43,4 +43,4 @@ const ResumePage = () => {
   );
 };
 
-export default ResumePage;
+export default ExperiencePage;

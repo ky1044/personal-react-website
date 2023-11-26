@@ -27,7 +27,8 @@ export default function ResumeSection() {
           <div key={index} className={styles.roleAndDescription}>
             <Row justify="space-between">
               <h2>
-                {role.title} @ {role.organization}
+                {role.title}{" "}
+                <span className={styles.noBreak}> @ {role.organization}</span>
               </h2>
             </Row>
             {isMobile && (
