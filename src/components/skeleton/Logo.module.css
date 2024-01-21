@@ -1,0 +1,40 @@
+.logo {
+  padding: 0 3px;
+  border: 2px solid #0085ff;
+  color: dodgerblue;
+  font-size: 24px;
+  font-family: "Jost";
+  font-variant: normal;
+  text-decoration: none;
+  letter-spacing: 1.6px;
+  transition: 0.2s ease;
+  overflow: hidden;
+}
+
+.logo.tall {
+  width: 57px;
+  height: 103px;
+}
+
+.logo.wide {
+  width: 70px;
+  height: 34px;
+}
+
+.logoText {
+  transition: 0.2s ease;
+}
+
+.logoText.expand {
+  width: 65px;
+}
+
+.logoText.shrink {
+  width: 55px;
+}
+
+.logoTopRow {
+  display: flex;
+  flex-direction: row;
+  width: 200px;
+}

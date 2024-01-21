@@ -2,8 +2,14 @@ import { Col, Divider, Row } from "antd";
 import { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import styles from "./NavBar.module.css";
+import useScroll from "src/hooks/useScroll";
+import Logo from "./Logo";
 
 export function NavBar() {
+  const scrollHeight = useScroll();
+
+  const isNavBarExpanded = scrollHeight < 30;
+
   return (
     <>
       <div className={styles.navBarContainer}>
@@ -12,16 +18,13 @@ export function NavBar() {
           align-items="baseline"
           align="middle"
           style={{
-            padding: "12px 0 ",
+            transition: "0.2s ease",
+            height: isNavBarExpanded ? 130 : 61,
             margin: "0 auto",
             maxWidth: 1200,
           }}
         >
-          <header>
-            <Link to="/">
-              <h1 className="logo">Ken Y</h1>
-            </Link>
-          </header>
+          <Logo expanded={isNavBarExpanded} />
 
           <Col>
             <Row>
@@ -44,7 +47,7 @@ export function NavBar() {
           </Col>
         </Row>
       </div>
-      <div style={{ height: 70 }}></div>
+      <div style={{ height: 130 }}></div>
     </>
   );
 }
