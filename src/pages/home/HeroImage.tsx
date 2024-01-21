@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import styles from "./HeroImage.module.css";
 import useWindow from "src/hooks/useWindow";
 
-function HeroImage({ scrollPosition }: { scrollPosition: number }) {
+function HeroImage({ scrollHeight }: { scrollHeight: number }) {
   const { isMobile } = useWindow();
   const heroImage = isMobile ? "hero-mobile.jpg" : "hero.jpg";
   return (
@@ -14,19 +14,19 @@ function HeroImage({ scrollPosition }: { scrollPosition: number }) {
       <div
         className={styles.square1}
         style={{
-          transform: `translateX(${-scrollPosition / 64}px)`,
+          transform: `translateX(${-scrollHeight / 64}px)`,
         }}
       />
       <div
         className={styles.square2}
         style={{
-          transform: `translateX(${-scrollPosition / 16}px)`,
+          transform: `translateX(${-scrollHeight / 16}px)`,
         }}
       />
       <div
         className={styles.square3}
         style={{
-          transform: `translateX(${scrollPosition / 36}px)`,
+          transform: `translateX(${scrollHeight / 36}px)`,
         }}
       />
     </div>
