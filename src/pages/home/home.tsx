@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { NavBar } from "src/components/skeleton/NavBar";
+import { NavBar } from "src/components/skeleton/NavBar/NavBar";
 
 import ProjectsSection from "src/components/projects/ProjectsSection";
 import Splash from "./Splash";
@@ -8,7 +8,7 @@ import { Footer } from "src/components/skeleton/Footer";
 
 const HomePage = () => {
   return (
-    <div className="body">
+    <div className="page-content">
       <NavBar />
       <Splash />
 

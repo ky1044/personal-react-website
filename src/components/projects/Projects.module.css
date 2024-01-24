@@ -8,13 +8,17 @@
 }
 
 .projectCard {
-  border-top: 1px solid black;
+  border-top: 1px solid var(--content-tertiary);
   padding: 0.5em 0;
-  background-color: white;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   gap: 7em;
+}
+
+.subHed {
+  color: var(--content-secondary);
+  font-size: 16px;
 }
 
 .projectSummary {

@@ -1,9 +1,19 @@
+* {
+  transition: color 0.2s;
+  transition: background-color 0.2s;
+}
+
+/* for SVGs */
+path {
+  stroke: var(--content-primary);
+}
+
 .page {
   padding: 0 0 80px;
   line-height: 1.4;
 }
 
-.body {
+.page-content {
   max-width: 1200px;
   margin: 0 auto;
 }

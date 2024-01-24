@@ -4,6 +4,7 @@ import { Link, useLocation } from "react-router-dom";
 import styles from "./NavBar.module.css";
 import useScroll from "src/hooks/useScroll";
 import Logo from "./Logo";
+import NavLinks from "./NavLinks";
 
 export function NavBar() {
   const scrollHeight = useScroll();
@@ -22,29 +23,11 @@ export function NavBar() {
             height: isNavBarExpanded ? 130 : 61,
             margin: "0 auto",
             maxWidth: 1200,
+            overflow: "hidden",
           }}
         >
           <Logo expanded={isNavBarExpanded} />
-
-          <Col>
-            <Row>
-              <Link to="/experience">
-                <p className={styles.navLink}>EXPERIENCE</p>
-              </Link>
-              <Divider
-                type="vertical"
-                orientation="center"
-                style={{
-                  marginTop: "8px",
-                  height: "16px",
-                  backgroundColor: "black",
-                }}
-              />
-              <Link to="/about">
-                <p className={styles.navLink}>ABOUT</p>
-              </Link>
-            </Row>
-          </Col>
+          <NavLinks expanded={isNavBarExpanded} />
         </Row>
       </div>
       <div style={{ height: 130 }}></div>

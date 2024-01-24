@@ -1,6 +1,6 @@
 import { Row } from "antd";
 import { useMemo } from "react";
-import { NavBar } from "src/components/skeleton/NavBar";
+import { NavBar } from "src/components/skeleton/NavBar/NavBar";
 import { Emojis, EMOJI_MAPPING } from "./emoji";
 import { EmojiProvider, useEmojiContext } from "./emojiContext";
 import useEmoji from "./useEmoji";
@@ -65,19 +65,19 @@ const BusinessCard = () => {
 
   return (
     <div className={styles.businessCardWrapper}>
-      <p className="black">let me introduce myself</p>
+      <p>let me introduce myself</p>
       <div className={styles.businessCard}>
-        <h3> Ken Yokokawa</h3>
+        <h3 className={styles.businessCardText}> Ken Yokokawa</h3>
         <div className={styles.businessCardPosition}>
           <span>
-            <p>Software Engineer</p>
+            <p className={styles.businessCardText}>Software Engineer</p>
           </span>
           <span>
-            <p>@ Book of the Month</p>
+            <p className={styles.businessCardText}>@ Book of the Month</p>
           </span>
         </div>
         <div>
-          <p className="p2">
+          <p className={`${styles.businessCardText} p2`}>
             <i>
               {yoeText} {moeText && <span className="p3">{moeText}</span>}of
               industry experience
@@ -85,10 +85,12 @@ const BusinessCard = () => {
           </p>
         </div>
         <div>
-          <p className="p2">kenyokokawa@gmail.com</p>
+          <p className={`${styles.businessCardText} p2`}>
+            kenyokokawa@gmail.com
+          </p>
         </div>
         <div>
-          <p className="p2">New York, NY</p>
+          <p className={`${styles.businessCardText} p2`}>New York, NY</p>
         </div>
       </div>
     </div>
@@ -110,7 +112,7 @@ const AboutPage = () => {
 
   return (
     <div className="page">
-      <div className="body">
+      <div className="page-content">
         <NavBar />
         <div className="top-level-container">
           <div className={styles.body}>

@@ -12,7 +12,7 @@
   transition: background-position-x 0.7s;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin: 3em 0;
+  margin: 4em 0 !important;
 }
 
 .activeGradient {
@@ -44,7 +44,7 @@
 }
 
 .highlight {
-  background-color: #d0eeff;
+  background-color: var(--highlight-primary);
   position: absolute;
   top: 20px;
   bottom: 10px;

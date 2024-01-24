@@ -17,13 +17,13 @@ export function Footer() {
           align-items="baseline"
           align="middle"
           style={{
-            padding: "12px 0 ",
+            padding: "12px 0 24px",
             margin: "0 auto",
             maxWidth: 1200,
           }}
         >
           <Col align="middle">
-            <p className="grey">Ken Yokokawa {year}</p>
+            <p className={styles.name}>Ken Yokokawa {year}</p>
             <PrintersColorBlocks />
           </Col>
         </Row>

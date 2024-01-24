@@ -49,13 +49,13 @@
 
 .emojiLabel {
   font-weight: 600;
-  color: dodgerblue;
+  color: var(--primary-blue);
   cursor: "pointer";
   transition: color 0.3s;
 }
 
 .emojiLabel.hovered {
-  color: rgb(101, 170, 255);
+  color: var(--secondary-blue);
 }
 
 .businessCardWrapper {
@@ -87,10 +87,14 @@
   white-space: nowrap;
 }
 
-.linksContainer{
+.businessCardText {
+  color: black;
+}
+
+.linksContainer {
   display: flex;
   flex-direction: column;
-  gap:1em;
+  gap: 1em;
   width: fit-content;
 }
 

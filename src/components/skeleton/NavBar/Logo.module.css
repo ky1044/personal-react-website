@@ -1,7 +1,7 @@
 .logo {
   padding: 0 3px;
-  border: 2px solid #0085ff;
-  color: dodgerblue;
+  border: 2px solid var(--primary-blue);
+  color: var(--primary-blue);
   font-size: 24px;
   font-family: "Jost";
   font-variant: normal;

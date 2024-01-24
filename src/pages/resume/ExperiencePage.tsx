@@ -1,7 +1,7 @@
 import { Row } from "antd";
 import { TextLink } from "src/components/shared/TextLink";
 import { Footer } from "src/components/skeleton/Footer";
-import { NavBar } from "src/components/skeleton/NavBar";
+import { NavBar } from "src/components/skeleton/NavBar/NavBar";
 import ResumeSection from "./ResumeSection";
 
 const ExperiencePage = () => {
@@ -17,7 +17,7 @@ const ExperiencePage = () => {
     });
   };
   return (
-    <div className="body">
+    <div className="page-content">
       <NavBar />
 
       <div className="top-level-container black">
@@ -27,7 +27,7 @@ const ExperiencePage = () => {
             justify="space-between"
             style={{ marginBottom: 50 }}
           >
-            <h1>EXPERIENCE</h1>
+            <h1 className="blue">EXPERIENCE</h1>
             <TextLink
               text="Download Resume"
               linkType="download"

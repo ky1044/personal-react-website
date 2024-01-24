@@ -1,5 +1,4 @@
 .textLink {
-  color: black !important;
   text-decoration: none;
   cursor: pointer;
 }
@@ -12,14 +11,14 @@
   gap: 6px;
   background: linear-gradient(
       to left,
-      rgb(0, 0, 0) 0%,
-      rgb(0, 0, 0) 34%,
-      rgb(255, 255, 255) 34%,
-      rgb(255, 255, 255) 66%,
-      rgb(0, 0, 0) 66%,
-      rgba(83, 0, 30, 1) 100%
+      var(--content-primary) 0%,
+      var(--content-primary) 34%,
+      var(--background-primary) 34%,
+      var(--background-primary) 66%,
+      var(--content-primary) 66%,
+      var(--content-primary) 100%
     )
-    left bottom #ffffff no-repeat;
+    left bottom rgba(0, 0, 0, 0) no-repeat;
   background-size: 300% 2px;
   background-position-x: 100%;
   transition: background-position-x 0s;

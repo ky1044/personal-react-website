@@ -23,8 +23,8 @@
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  border: 5px solid dodgerblue;
-  background-color: white;
+  border: 5px solid var(--primary-blue);
+  background-color: var(--background-primary);
   position: absolute;
   left: -10px;
 }
@@ -38,7 +38,7 @@
   margin-bottom: 1em;
 }
 
-.noBreak{
+.noBreak {
   white-space: nowrap;
 }
 

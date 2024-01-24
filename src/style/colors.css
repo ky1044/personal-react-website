@@ -9,3 +9,39 @@
 .grey {
   color: rgb(104, 104, 104);
 }
+
+body {
+  --primary-blue: #1d90ff;
+  --secondary-blue: #00deff;
+
+  --content-primary: #0e0f0c;
+  --content-secondary: #454745;
+  --content-tertiary: #bfbfbf;
+
+  --border-light: 1px lightgrey solid;
+
+  --background-primary: white;
+  --background-secondary: #e4e4e4;
+
+  --highlight-primary: #d0eeff;
+
+  background-color: var(--background-primary);
+}
+
+body.dark {
+  --primary-blue: #1d90ff;
+  --secondary-blue: #00deff;
+
+  --content-primary: #f6f6f6;
+  --content-secondary: #b2b2b2;
+  --content-tertiary: #505050;
+
+  --border-light: 1px rgb(117, 117, 117) solid;
+
+  --background-primary: rgb(40, 40, 40);
+  --background-secondary: #666666;
+
+  --highlight-primary: #3f5866;
+
+  background-color: var(--background-primary);
+}

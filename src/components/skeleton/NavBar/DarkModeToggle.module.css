@@ -1,0 +1,34 @@
+.mainContainer {
+  display: flex;
+  flex-direction: row;
+  cursor: pointer;
+  gap: 6px;
+}
+
+.iconContainer {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  position: relative;
+}
+
+.icon {
+  width: 20px;
+  height: 46px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  gap: 6px;
+  transition: transform 0.2s ease;
+  bottom: 0;
+}
+
+.icon.light {
+  transform: translateY(25px);
+}
+
+.icon.dark {
+  transform: translateY(0);
+}

@@ -1,7 +1,7 @@
 .heroImageContainer {
   width: 100%;
   max-width: 1600px;
-  margin: 120px 0 80px;
+  margin: 5em 0;
   height: max(40vh, 40vw);
   max-height: 700px;
   position: relative;

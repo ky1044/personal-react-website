@@ -18,7 +18,8 @@ module.exports = {
   rules: {
     "react/react-in-jsx-scope": "off",
     "prefer-const": "off",
-    "@typescript-eslint/no-unused-vars":"off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "@typescript-eslint/no-empty-function": "off",
     "react/jsx-filename-extension": [
       1,
       { extensions: [".js", ".jsx", "ts", "tsx"] },

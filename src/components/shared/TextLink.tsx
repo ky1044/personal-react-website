@@ -66,9 +66,7 @@ export const TextLink = ({
         }`}
         onClick={() => onClick?.()}
       >
-        <p style={{ fontSize: 18 }} className="black">
-          {text}
-        </p>
+        <p style={{ fontSize: 18 }}>{text}</p>
         <div style={{ position: "relative", width: 22, height: 22 }}>
           {linkIcon}
         </div>

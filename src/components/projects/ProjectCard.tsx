@@ -9,9 +9,7 @@ const ProjectCard = ({ project }: { project: ProjectDetail }) => {
       <div className={styles.projectSummary}>
         <div>
           <h2>{project.title}</h2>
-          <p className="grey" style={{ fontSize: 16 }}>
-            Since {project.date}
-          </p>
+          <p className={styles.subHed}>Since {project.date}</p>
         </div>
         <p>{project.description}</p>
         <div>

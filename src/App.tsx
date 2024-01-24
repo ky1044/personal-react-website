@@ -5,16 +5,19 @@ import AboutPage from "src/pages/about/about";
 import "./style/App.css";
 import "./style/typography.css";
 import "./style/colors.css";
+import { DarkModeProvider } from "./providers/DarkModeProvider";
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<HomePage />} />
-        <Route path="/experience" element={<ExperiencePage />} />
-        <Route path="/about" element={<AboutPage />} />
-      </Routes>
-    </Router>
+    <DarkModeProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/experience" element={<ExperiencePage />} />
+          <Route path="/about" element={<AboutPage />} />
+        </Routes>
+      </Router>
+    </DarkModeProvider>
   );
 }
 
