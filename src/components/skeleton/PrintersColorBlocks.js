@@ -2,12 +2,12 @@ import styles from "./PrintersColorBlocks.module.css";
 
 const PrintersColorBlocks = () => {
   const colors = [
-    "#000000",
-    "#8B8B8B",
-    "#F4F3F3",
-    "#0179EB",
-    "#1D90FF",
-    "#00DEFF",
+    "var(--primary-blue",
+    "var(--secondary-blue",
+    "var(--highlight-primary",
+    "var(--content-primary)",
+    "var(--content-secondary)",
+    "var(--content-tertiary",
   ];
 
   return (
