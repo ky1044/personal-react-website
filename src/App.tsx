@@ -6,11 +6,14 @@ import "./style/App.css";
 import "./style/typography.css";
 import "./style/colors.css";
 import { DarkModeProvider } from "./providers/DarkModeProvider";
+import ScrollToTop from "./components/shared/ScrollToTop";
 
 function App() {
+
   return (
     <DarkModeProvider>
       <Router>
+        <ScrollToTop/>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/experience" element={<ExperiencePage />} />
