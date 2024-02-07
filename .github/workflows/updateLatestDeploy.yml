@@ -1,0 +1,35 @@
+name: Update data.json with latestDeploy
+
+on:
+  push:
+    branches:
+      - data
+
+jobs:
+  update-latest-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: "data"
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "14"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run updateLatestDeploy.js
+        run: node data/updateLatestDeploy.js
+
+      - name: Commit and push if there are changes
+        run: |
+          git config --global user.email "ky1044@nyu.edu"
+          git config --global user.name "Ken Yokokawa - Github Actions"
+          git add data/data.json
+          git commit -m 'update latestDeploy value in data.json'
+          git push origin data
+
