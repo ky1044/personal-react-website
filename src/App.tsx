@@ -7,19 +7,21 @@ import "./style/typography.css";
 import "./style/colors.css";
 import { DarkModeProvider } from "./providers/DarkModeProvider";
 import ScrollToTop from "./components/shared/ScrollToTop";
+import { SiteDataProvider } from "./providers/SiteDataProvider";
 
 function App() {
-
   return (
     <DarkModeProvider>
-      <Router>
-        <ScrollToTop/>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/experience" element={<ExperiencePage />} />
-          <Route path="/about" element={<AboutPage />} />
-        </Routes>
-      </Router>
+      <SiteDataProvider>
+        <Router>
+          <ScrollToTop />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/experience" element={<ExperiencePage />} />
+            <Route path="/about" element={<AboutPage />} />
+          </Routes>
+        </Router>
+      </SiteDataProvider>
     </DarkModeProvider>
   );
 }
