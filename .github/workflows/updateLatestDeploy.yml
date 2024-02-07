@@ -3,7 +3,7 @@ name: Update data.json with latestDeploy
 on:
   push:
     branches:
-      - data
+      - master
 
 jobs:
   update-latest-deploy:
