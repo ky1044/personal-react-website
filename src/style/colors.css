@@ -23,6 +23,9 @@ body {
   --background-primary: white;
   --background-secondary: #e4e4e4;
 
+  --background-gradient-top: #f4f3f3;
+  --background-gradient-bottom: #f1efef;
+
   --highlight-primary: #d0eeff;
 
   background-color: var(--background-primary);
@@ -40,6 +43,9 @@ body.dark {
 
   --background-primary: rgb(40, 40, 40);
   --background-secondary: #666666;
+
+  --background-gradient-top: #dadada;
+  --background-gradient-bottom: #d3d2d2;
 
   --highlight-primary: #3f5866;
 

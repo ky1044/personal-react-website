@@ -11,7 +11,6 @@ const HomePage = () => {
     <div className="page-content">
       <NavBar />
       <Splash />
-
       <ContextSection />
       <ProjectsSection />
       <Footer />

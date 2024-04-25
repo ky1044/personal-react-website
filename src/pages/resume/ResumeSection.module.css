@@ -51,6 +51,10 @@
   margin-bottom: 1em;
 }
 
+.location {
+  color: var(--content-secondary);
+}
+
 @media screen and (max-width: 680px) {
   .resumeGrid {
     grid-template-columns: 40px 1fr;

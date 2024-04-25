@@ -21,7 +21,7 @@ export default function ResumeSection() {
           {!isMobile && (
             <div className={styles.dateAndLocation}>
               <h4>{role.duration}</h4>
-              <h4 className="grey">{role.location}</h4>
+              <h4 className={styles.location}>{role.location}</h4>
             </div>
           )}
           <div key={index} className={styles.roleAndDescription}>
@@ -34,7 +34,7 @@ export default function ResumeSection() {
             {isMobile && (
               <Col>
                 <h4>{role.duration}</h4>
-                <h4 className="grey">{role.location}</h4>
+                <h4 className={styles.location}>{role.location}</h4>
               </Col>
             )}
 
