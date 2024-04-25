@@ -20,7 +20,11 @@
 }
 
 .gridItem {
-  background: linear-gradient(180deg, rgb(244, 243, 243), rgb(241, 239, 239));
+  background: linear-gradient(
+    180deg,
+    var(--background-gradient-top),
+    var(--background-gradient-bottom)
+  );
   border-radius: 12px;
   position: relative;
   display: flex;
