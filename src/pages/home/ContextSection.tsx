@@ -75,29 +75,31 @@ const ContextSection = () => {
 
   return (
     <div className="top-level-container">
-      <h1 className="blue">CONTEXT</h1>
-      <h3 className={styles.dek}>
-        I have experience in the full stack, but lately I’m focused more on
-        front-end development. Here are some of the languages and libraries I
-        have experience with:
-      </h3>
-      <div className={styles.gridContainer}>
-        <div className={styles.grid}>
-          {skills.map((skill) => (
-            <div
-              key={skill.name}
-              className={styles.gridItem}
-              style={{ ...(isMobile ? skill.mobileStyle : skill.style) }}
-            >
-              {skill.img && (
-                <img
-                  src={`${process.env.PUBLIC_URL}/tech/${skill.img}`}
-                  className={styles.techImage}
-                />
-              )}
-              <div className={styles.skillText}>{skill.name}</div>
-            </div>
-          ))}
+      <div className={styles.container}>
+        <h1 className="blue">TECH STACK</h1>
+        <h3 className={styles.dek}>
+          I have experience in the full stack, but lately I’m focused more on
+          front-end development. Here are some of the languages and libraries I
+          have experience with:
+        </h3>
+        <div className={styles.gridContainer}>
+          <div className={styles.grid}>
+            {skills.map((skill) => (
+              <div
+                key={skill.name}
+                className={styles.gridItem}
+                style={{ ...(isMobile ? skill.mobileStyle : skill.style) }}
+              >
+                {skill.img && (
+                  <img
+                    src={`${process.env.PUBLIC_URL}/tech/${skill.img}`}
+                    className={styles.techImage}
+                  />
+                )}
+                <div className={styles.skillText}>{skill.name}</div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </div>
