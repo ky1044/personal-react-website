@@ -1,9 +1,13 @@
+.container {
+  padding-bottom: 3em;
+}
+
 .dek {
   max-width: 700px;
 }
 
 .gridContainer {
-  margin: 2em auto;
+  margin: 2em auto 0;
   width: 100%;
   max-width: 900px;
   aspect-ratio: 5/3;
