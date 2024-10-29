@@ -12,7 +12,7 @@
   transition: background-position-x 0.7s;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  margin: 4em 0 !important;
+  margin: 4em auto;
 }
 
 .activeGradient {
