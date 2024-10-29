@@ -1,0 +1,63 @@
+.container {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  transition: 1.4s ease-in-out;
+  transition-delay: 0s;
+}
+
+.active {
+  transition-delay: 0.25s;
+}
+
+.yearText {
+  color: transparent;
+  transition: all 0.2s ease-out;
+  height: 24px;
+  flex: 0 0 24px;
+  justify-content: space-between;
+}
+
+.active .yearText {
+  color: white;
+}
+
+.yearContainer {
+  height: calc(100% - 96px);
+  padding: 12px 36px 36px;
+  display: flex;
+  flex-direction: column;
+}
+
+.year {
+  height: calc(100% + 24px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.quarter {
+  flex: 1 1 200px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.month {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.currentMonth {
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.95) 10%,
+    transparent 60%
+  );
+  box-shadow: -4px -3px 3px rgba(0, 0, 0, 0.05);
+}

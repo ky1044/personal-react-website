@@ -1,0 +1,129 @@
+.container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/2;
+}
+
+.active > .sphere2 {
+  background-color: #0a3161;
+}
+
+.active > .sphere1 {
+  background-color: #bc002d;
+}
+
+.sphere1,
+.sphere2 {
+  position: absolute;
+  width: 30%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+/* .sphere1,
+.sphere2 {
+  animation: orbit 6s infinite linear;
+}
+
+.sphere2 {
+  animation-delay: -3s;
+}
+
+@keyframes orbit {
+  0% {
+    transform: translate(115%, 55%) rotate(0deg) translateY(50%) scale(1);
+  }
+
+  50% {
+    transform: translate(115%, 55%) rotate(180deg) translateY(50%) scale(0.6);
+  }
+
+  100% {
+    transform: translate(115%, 55%) rotate(360deg) translateY(50%) scale(1);
+  }
+} */
+
+.sphere1,
+.sphere2 {
+  /* offset-path: path("M1,100 C1,-32 301,-32 301,101 C301,234 1,234 1,100Z"); */
+
+  offset-path: ellipse(25% 22% at 50% 50%);
+  animation: move 6s infinite linear, scale 6s infinite ease-in-out;
+}
+
+.sphere2 {
+  animation-delay: -3s;
+}
+
+@keyframes move {
+  0% {
+    offset-distance: 25%;
+  }
+  100% {
+    offset-distance: 125%;
+  }
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.75);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* 
+@keyframes scale {
+  0% {
+    transform: scale(.9);
+  }
+
+  25% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.9);
+  }
+
+  75% {
+    transform: scale(.8);
+  }
+
+  100% {
+    transform: scale(.9);
+  }
+}
+*/
+
+/* 
+
+.sphere2 {
+  offset-path: path("M1,23 C1,-7 201,-7 201,23 C201,53 1,53 1,23Z");
+  animation: move 3000ms infinite linear;
+
+  animation-delay: -3s;
+}
+ */
+
+/* @keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateY(100%) rotate(0deg) scale(1);
+  }
+
+  50% {
+    transform: rotate(180deg) translateY(100%) rotate(-180deg) scale(0.6);
+  }
+
+  100% {
+    transform: rotate(360deg) translateY(100%) rotate(-360deg) scale(1);
+  }
+} */
