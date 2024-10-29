@@ -1,7 +1,7 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HomePage from "src/pages/home/home";
 import ExperiencePage from "src/pages/resume/ExperiencePage";
-import AboutPage from "src/pages/about/about";
+import AboutPage from "src/pages/about/AboutPage";
 import "./style/App.css";
 import "./style/typography.css";
 import "./style/colors.css";

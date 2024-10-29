@@ -1,0 +1,27 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+}
+
+.row {
+  display: flex;
+  gap: 32px;
+}
+
+.reversed {
+  flex-direction: row-reverse;
+}
+
+.aboutBlock {
+  background: linear-gradient(180deg, #24a0ff, #0185ff);
+  border-radius: 12px;
+  width: 100%;
+  flex: 1 1 400px;
+  aspect-ratio: 3/2;
+  overflow-x: hidden;
+}
+
+.aboutText {
+  flex: 0 1 330px;
+}

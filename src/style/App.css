@@ -4,7 +4,7 @@
 }
 
 /* for SVGs */
-path {
+.sharedIcon path {
   stroke: var(--content-primary);
 }
 
