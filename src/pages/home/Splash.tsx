@@ -20,9 +20,9 @@ const Splash = () => {
   }, [scrollHeight]);
 
   return (
-    <div className="top-level-container">
+    <>
       <div
-        className={` ${styles.heroWrapper} ${
+        className={`top-level-container ${styles.heroWrapper} ${
           scrollHeight > 5 ? styles.activeGradient : ""
         }`}
       >
@@ -40,7 +40,7 @@ const Splash = () => {
         </Row>
       </div>
       <HeroImage scrollHeight={scrollHeight} />
-      <div>
+      <div className="top-level-container">
         <div className={styles.headerWrapper}>
           <p className={styles.headerText} id="splash-header-text">
             approaching <br />
@@ -59,7 +59,7 @@ const Splash = () => {
           </p>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 
