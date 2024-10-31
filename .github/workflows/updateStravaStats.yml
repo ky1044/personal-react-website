@@ -5,7 +5,7 @@ on:
     - cron: "21 9 * * *" # Runs daily at 9:21 AM UTC
 
 jobs:
-  update-latest-deploy:
+  update-strava-stats:
     runs-on: ubuntu-latest
 
     steps:
