@@ -1,0 +1,43 @@
+name: Update data.json with stravaStats
+
+on:
+  schedule:
+    - cron: "21 * * * *" # Runs daily at 9:21 AM UTC
+
+jobs:
+  update-strava-stats:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          ref: "data"
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "20.10.0"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: load env variables
+        env:
+          STRAVA_CLIENT_ID: ${{ secrets.STRAVA_CLIENT_ID }}
+          STRAVA_CLIENT_SECRET: ${{ secrets.STRAVA_CLIENT_SECRET }}
+          STRAVA_REFRESH_TOKEN: ${{ secrets.STRAVA_REFRESH_TOKEN }}
+        run: |
+          echo "STRAVA_CLIENT_ID=$STRAVA_CLIENT_ID" >> $GITHUB_ENV
+          echo "STRAVA_CLIENT_SECRET=$STRAVA_CLIENT_SECRET" >> $GITHUB_ENV
+          echo "STRAVA_REFRESH_TOKEN=$STRAVA_REFRESH_TOKEN" >> $GITHUB_ENV
+
+      - name: Run updateStravaStats.js
+        run: node data/updateStravaStats.js
+
+      - name: Commit and push if there are changes
+        run: |
+          git config --global user.email "ky1044@nyu.edu"
+          git config --global user.name "Ken Yokokawa - Github Actions"
+          git add data/data.json
+          git commit -m 'update stravaStats in data.json'
+          git push origin data
