@@ -43,4 +43,4 @@ jobs:
           git config --global user.name "Ken Yokokawa - Github Actions"
           git add data/data.json
           git commit -m 'update latestDeploy value in data.json'
-          git push origin data
+          git push origin strava
