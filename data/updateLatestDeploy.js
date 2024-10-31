@@ -1,26 +1,25 @@
-const fs = require("fs");
+const fs = require("fs").promises;
 const path = require("path");
 
 const dataPath = path.join(__dirname, "data.json");
-fs.readFile(dataPath, "utf8", (err, data) => {
-  if (err) {
-    console.error("Error reading file:", err);
-    return;
+
+async function updateData() {
+  try {
+    const data = await fs.readFile(dataPath, "utf8");
+    const json = JSON.parse(data);
+    json.latestDeploy = Date.now();
+
+    await fs.writeFile(dataPath, JSON.stringify(json, null, 2), "utf8");
+
+    console.log(
+      "Data updated successfully. File name: " +
+        dataPath +
+        ". Data: " +
+        JSON.stringify(json, null, 2)
+    );
+  } catch (err) {
+    console.error("Error:", err);
   }
+}
 
-  const json = JSON.parse(data);
-  json.latestDeploy = Date.now();
-
-  fs.writeFile(dataPath, JSON.stringify(json, null, 2), "utf8", (err) => {
-    if (err) {
-      console.error("Error writing file:", err);
-    } else {
-      console.log(
-        "Data updated successfully. File name: " +
-          dataPath +
-          ". Data: " +
-          JSON.stringify(json, null, 2)
-      );
-    }
-  });
-});
+updateData();
