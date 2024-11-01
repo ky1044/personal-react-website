@@ -2,7 +2,7 @@ name: Update data.json with stravaStats
 
 on:
   schedule:
-    - cron: "21 * * * *" # Runs daily at 9:21 AM UTC
+    - cron: "21 9 * * *" # Runs daily at 9:21 AM UTC
 
 jobs:
   update-strava-stats:
@@ -39,5 +39,11 @@ jobs:
           git config --global user.email "ky1044@nyu.edu"
           git config --global user.name "Ken Yokokawa - Github Actions"
           git add data/data.json
-          git commit -m 'update stravaStats in data.json'
-          git push origin data
+
+          # Check if there are staged changes
+          if [[ -n "$(git diff --cached --name-only)" ]]; then
+            git commit -m 'update stravaStats in data.json'
+            git push origin data
+          else
+            echo "No changes to commit"
+          fi
