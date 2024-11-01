@@ -1,4 +1,4 @@
-function getOrdinalSuffix(date) {
+function getOrdinalSuffix(date: number) {
   if (date > 3 && date < 21) return "th";
   switch (date % 10) {
     case 1:

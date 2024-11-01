@@ -22,7 +22,7 @@ export function Footer() {
             maxWidth: 1200,
           }}
         >
-          <Col align="middle">
+          <Col>
             <p className={styles.name}>Ken Yokokawa {year}</p>
             <PrintersColorBlocks />
           </Col>
