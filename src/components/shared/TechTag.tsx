@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./TechTag.module.css";
 
-const TECH_MAP = {
+const TECH_MAP: Record<string, { borderColor: string }> = {
   "React.js": {
     borderColor: "#61dbfb",
   },
