@@ -2,6 +2,10 @@ import React, { createContext, useContext, useEffect, useState } from "react";
 
 type SiteData = {
   latestDeploy: number | null;
+  stravaStats: {
+    ytdDistance: number | null;
+    allTimeDistance: number | null;
+  };
 };
 interface ISiteDataProvider {
   data: SiteData;
@@ -10,6 +14,10 @@ interface ISiteDataProvider {
 const initialState = {
   data: {
     latestDeploy: null,
+    stravaStats: {
+      ytdDistance: null,
+      allTimeDistance: null,
+    },
   },
   loading: true,
 };

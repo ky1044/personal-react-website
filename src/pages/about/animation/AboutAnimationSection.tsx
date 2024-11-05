@@ -1,13 +1,18 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useState } from "react";
 import styles from "./AboutAnimationSection.module.css";
 import SpheresBlock from "./SpheresBlock";
 import CalendarBlock from "./CalendarBlock";
 import AboutAnimationBlock from "./AboutAnimationBlock";
 import RunningBlock from "./RunningBlock";
+import { useSiteData } from "src/providers/SiteDataProvider";
 
 const AboutAnimationSection = () => {
+  const { data } = useSiteData();
+  const { stravaStats } = data || {};
+
+  const [today, _] = useState(new Date());
+
   const experienceText = useMemo(() => {
-    const today = new Date();
     const startDate = new Date("02/01/2021");
     let yoe = today.getFullYear() - startDate.getFullYear();
     const moe = today.getMonth() - startDate.getMonth();
@@ -19,7 +24,7 @@ const AboutAnimationSection = () => {
       moeText = " and 1 month ";
     }
     return yoeText + moeText;
-  }, []);
+  }, [today]);
 
   return (
     <div className={styles.container}>
@@ -46,8 +51,12 @@ const AboutAnimationSection = () => {
         Animation={RunningBlock}
         text={
           <>
-            <span className="blue">city runner</span>, logging over 603km on Strava
-            in 2024
+            <span className="blue">city runner</span>, logging{" "}
+            {stravaStats?.ytdDistance
+              ? `${
+                  stravaStats?.ytdDistance
+                }km on Strava in ${today.getFullYear()}`
+              : `over 2000km on Strava in total`}
           </>
         }
       />
