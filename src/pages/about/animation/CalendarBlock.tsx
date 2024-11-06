@@ -1,12 +1,21 @@
-import React, { useState } from "react";
+import { useEffect, useState } from "react";
 import styles from "./CalendarBlock.module.css";
 const CalendarBlock = ({ isActive }: { isActive: boolean }) => {
   const [today] = useState(new Date());
   const thisYear = today.getFullYear();
   const numYears = thisYear - 2020;
   const howManyMonthsSoFarThisYear = today.getMonth() + 1;
-
   const years = Array.from({ length: numYears }, (_, i) => i + 2021);
+
+  const [waveOffset, setWaveOffset] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setWaveOffset((prevOffset) => (prevOffset + 1) % 36);
+    }, 96);
+
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div
@@ -19,7 +28,7 @@ const CalendarBlock = ({ isActive }: { isActive: boolean }) => {
           : "",
       }}
     >
-      {years.map((year, yearIndex) => {
+      {years.map((year) => {
         return (
           <div
             key={year}
@@ -35,6 +44,13 @@ const CalendarBlock = ({ isActive }: { isActive: boolean }) => {
                   <div key={quarterIndex} className={styles.quarter}>
                     {Array.from({ length: 4 }).map((_, monthIndex) => {
                       const month = quarterIndex * 4 + monthIndex + 1;
+
+                      const isCurrentWave =
+                        (month === waveOffset || month === waveOffset + 1) &&
+                        year === thisYear;
+                      const monthStyle = isCurrentWave
+                        ? { transform: "scale(1.1)" }
+                        : {};
 
                       if (
                         (year === 2021 && month === 1) ||
@@ -57,6 +73,7 @@ const CalendarBlock = ({ isActive }: { isActive: boolean }) => {
                           className={`${styles.month} ${
                             isCurentMonth ? styles.currentMonth : ""
                           }`}
+                          style={monthStyle}
                         ></div>
                       );
                     })}
@@ -67,30 +84,6 @@ const CalendarBlock = ({ isActive }: { isActive: boolean }) => {
           </div>
         );
       })}
-      {/* <style>{`
-        .container {
-          position: absolute;
-          width: 400%;
-          display:grid:
-          grid-template-columns: repeat(4, 1fr);
-          gap: 24px;
-        }
-
-        .year {
-          // width: 100%;
-          display: grid;
-          grid-template-columns: repeat(4, 1fr);
-          gap: 12px;
-        }
-
-        .month {
-          width: 100%;
-          height: 40px;
-          background-color: white;
-          border-radius: 4px;
-          box-shadow: 0 0px 5px rgba(0, 0, 0, 0.2);
-        }
-      `}</style> */}
     </div>
   );
 };

@@ -1,16 +1,10 @@
-import React, { useEffect, useState } from "react";
+import useAnimationFrame from "src/hooks/useAnimationFrame";
 import styles from "./RunningBlock.module.css";
 
 const RunningBlock = ({ isActive }: { isActive: boolean }) => {
-  const [offset, setOffset] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setOffset((prevOffset) => prevOffset + 1);
-    }, 32);
-
-    return () => clearInterval(interval);
-  }, []);
+  const { animationFrame: offset } = useAnimationFrame({
+    animationSpeed: 0.03,
+  });
 
   return (
     <div className={`${styles.container} ${isActive ? styles.active : ""}`}>
@@ -49,16 +43,14 @@ const RunningBlock = ({ isActive }: { isActive: boolean }) => {
           strokeDasharray={"10% 130%"}
         />
 
-        <radialGradient id="grad1" cx="50%" cy="50%" r="50%" fx="50%" fy="50%">
-          <stop offset="0%" style={{ stopColor: "white", stopOpacity: "1" }} />
-          <stop
-            offset="100%"
-            style={{ stopColor: "black", stopOpacity: "1" }}
+        <mask id="background-mask">
+          <ellipse
+            className={styles.maskRect}
+            cx="50%"
+            cy="50%"
+            rx="65%"
+            ry="65%"
           />
-        </radialGradient>
-        <mask id="background-mask" className={styles.backgroundMask}>
-          <rect x="0" y="0" width="100%" height="100%" fill="url(#grad1)" />
-          <rect x="0" y="0" width="100%" height="100%" fill="white" />
         </mask>
         <g mask="url(#background-mask)">
           <path d="M211.487 24.2933L202.877 19.6544L187.865 45.4995L140.62 19.6544L94.2576 28.7112L92.7122 53.4519L88.5176 84.1568L84.5437 108.677L79.466 133.196L74.3882 154.403L69.5312 173.179L76.5959 172.737L80.7906 173.842L80.1283 182.678L86.7514 189.305L89.5 190L101.543 186.654L106.621 183.34L107.945 180.69L123.399 167.657L126.049 166.773L127.815 164.343L131.568 161.25L144.814 151.973L160.048 149.322L176.385 146.45L194.046 142.253L213.253 140.044L214.357 133.859L223.85 132.313L229.59 119.721L234.889 104.038V99.8406L236.434 97.8525L237.98 92.551L240.85 90.7838L243.72 87.4703L247.031 74.6582L248.135 65.6013L247.031 62.9505L249.018 54.1146V45.4995L245.486 39.5353L239.967 33.7919L237.98 28.7112L216.123 16.7827L211.487 24.2933Z" />
