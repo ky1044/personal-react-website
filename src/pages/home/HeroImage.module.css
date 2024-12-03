@@ -17,25 +17,33 @@
   width: 180px;
   height: 180px;
   position: absolute;
-  background-color: #a4bbc6;
+  background-color: rgba(154, 186, 201, 0.4);
   top: -20px;
   left: calc(40% - 180px);
+
+  -webkit-backdrop-filter: blur(15px);
+  backdrop-filter: blur(15px);
 }
 .square2 {
-  width: 140px;
-  height: 140px;
+  width: 150px;
+  height: 150px;
   position: absolute;
-  background-color: #8a9691;
+  background-color: rgba(39, 121, 148, 0.4);
   bottom: -20px;
   left: calc(25% - 140px);
+
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
 }
 .square3 {
   width: 120px;
   height: 120px;
   position: absolute;
-  background-color: #009ec9;
-  top: 20%;
-  right: calc(35% - 120px);
+  background-color: rgba(92, 155, 255, 0.4);
+  bottom: 18%;
+  right: calc(25% - 120px);
+  -webkit-backdrop-filter: blur(7px);
+  backdrop-filter: blur(7px);
 }
 
 @media (max-width: 960px) {
@@ -58,18 +66,23 @@
 
 @media (max-width: 680px) {
   .square1 {
-    width: 90px;
-    height: 90px;
+    width: 110px;
+    height: 110px;
     left: calc(40% - 90px);
   }
   .square2 {
-    width: 80px;
-    height: 80px;
-    left: calc(25% - 80px);
+    width: 90px;
+    height: 90px;
+    left: calc(35% - 80px);
+
+    -webkit-backdrop-filter: blur(6px);
+    backdrop-filter: blur(6px);
   }
   .square3 {
     width: 70px;
     height: 70px;
-    right: calc(35% - 70px);
+    right: calc(25% - 70px);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
   }
 }
