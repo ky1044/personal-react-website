@@ -1,6 +1,6 @@
-import { useEffect, useState } from "react";
-import styles from "./HeroImage.module.css";
+import { motion } from "framer-motion";
 import useWindow from "src/hooks/useWindow";
+import styles from "./HeroImage.module.css";
 
 function HeroImage({ scrollHeight }: { scrollHeight: number }) {
   const { isMobile } = useWindow();
@@ -11,22 +11,31 @@ function HeroImage({ scrollHeight }: { scrollHeight: number }) {
         src={`${process.env.PUBLIC_URL}/${heroImage}`}
         className={styles.heroImage}
       />
-      <div
+      <motion.div
         className={styles.square1}
-        style={{
-          transform: `translateX(${-scrollHeight / 64}px)`,
+        animate={{
+          x: -scrollHeight / 64,
+          transition: {
+            default: { type: "easeInOut" },
+          }
         }}
       />
-      <div
+      <motion.div
         className={styles.square2}
-        style={{
-          transform: `translateX(${-scrollHeight / 16}px)`,
+        animate={{
+          x: -scrollHeight / 16,
+          transition: {
+            default: { type: "easeInOut" },
+          }
         }}
       />
-      <div
+      <motion.div
         className={styles.square3}
-        style={{
-          transform: `translateX(${scrollHeight / 36}px)`,
+        animate={{
+          x: scrollHeight / 36,
+          transition: {
+            default: { type: "easeInOut" },
+          }
         }}
       />
     </div>
