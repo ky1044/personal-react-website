@@ -3,7 +3,8 @@
   border: 2px solid var(--primary-blue);
   color: var(--primary-blue);
   font-size: 24px;
-  font-family: "Jost";
+  font-weight: 500;
+  font-family: Jost, Futura, Helvetica;
   font-variant: normal;
   text-decoration: none;
   letter-spacing: 1.6px;
