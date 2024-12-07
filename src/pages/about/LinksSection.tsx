@@ -2,10 +2,18 @@ import React from "react";
 import { links } from "./links";
 import { TextLink } from "src/components/shared/TextLink";
 import styles from "./LinksSection.module.css";
+import { animationVariants } from "src/consts/animation";
+import { motion } from "framer-motion";
 
 const LinksSection = () => {
   return (
-    <div style={{ display: "flex", flexDirection: "row" }}>
+    <motion.div
+      style={{ display: "flex", flexDirection: "row" }}
+      variants={animationVariants.individual}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true }}
+    >
       <div className={styles.sidebarBlock} />
       <div className={styles.centerBlock} style={{ flex: 12 }}>
         <div className={styles.linksContainer}>
@@ -21,7 +29,7 @@ const LinksSection = () => {
         </div>
       </div>
       <div className={styles.sidebarBlock} />
-    </div>
+    </motion.div>
   );
 };
 

@@ -2,6 +2,8 @@ import React, { useMemo } from "react";
 import { useEmojiContext } from "./emojiContext";
 import { EMOJI_MAPPING, Emojis } from "./emoji";
 import styles from "./EmojiSection.module.css";
+import { motion } from "framer-motion";
+import { animationVariants } from "src/consts/animation";
 
 const Emoji = ({ emojiKey }: { emojiKey: Emojis }) => {
   const { onHover, hoveredKey } = useEmojiContext();
@@ -55,18 +57,47 @@ const EmojiSection = () => {
   }, []);
   return (
     <div style={{ display: "flex", flexDirection: "row" }}>
-      <div className={styles.sidebarBlock} style={{ minHeight: 336 }}>
-        <Emoji emojiKey={Emojis.NYC} />
-        <Emoji emojiKey={Emojis.COLLEGE} />
-        <Emoji emojiKey={Emojis.RUNNING} />
-        <Emoji emojiKey={Emojis.MUSIC} />
-      </div>
-      <div className={styles.centerBlock}>
-        <p className="p1" style={{ marginBottom: 40 }}>
+      <motion.div
+        className={styles.sidebarBlock}
+        style={{ minHeight: 336 }}
+        variants={animationVariants.containerQuick}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+      >
+        <motion.div variants={animationVariants.individual}>
+          <Emoji emojiKey={Emojis.NYC} />
+        </motion.div>
+        <motion.div variants={animationVariants.individual}>
+          <Emoji emojiKey={Emojis.COLLEGE} />
+        </motion.div>
+        <motion.div variants={animationVariants.individual}>
+          <Emoji emojiKey={Emojis.RUNNING} />
+        </motion.div>
+        <motion.div variants={animationVariants.individual}>
+          <Emoji emojiKey={Emojis.MUSIC} />
+        </motion.div>
+      </motion.div>
+      <motion.div
+        className={styles.centerBlock}
+        variants={animationVariants.containerQuick}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+      >
+        <motion.p
+          className="p1"
+          style={{ marginBottom: 40 }}
+          variants={animationVariants.individual}
+        >
           Hi there, my name is Ken. {"I'm"} {age} years old and live in{" "}
           <EmojiLabel emojiKey={Emojis.NYC} />.
-        </p>
-        <p className="p1" style={{ marginBottom: 40 }}>
+        </motion.p>
+        <motion.p
+          className="p1"
+          style={{ marginBottom: 40 }}
+          variants={animationVariants.individual}
+        >
           Born in New York and having moved to{" "}
           <EmojiLabel emojiKey={Emojis.TOKYO} /> at the age of five, I spent
           most of my life in Japan. I moved back to New York for{" "}
@@ -75,20 +106,35 @@ const EmojiSection = () => {
           Stanley, a startup called CertiK, and currently working for Book of
           the Month. I specialize in full-stack web development work, and am
           most familiar with React.js, React Native, and Node.js.
-        </p>
-        <p className="p1">
+        </motion.p>
+        <motion.p className="p1" variants={animationVariants.individual}>
           For fun, I like <EmojiLabel emojiKey={Emojis.RUNNING} /> and{" "}
           <EmojiLabel emojiKey={Emojis.CYCLING} />, listening to{" "}
           <EmojiLabel emojiKey={Emojis.MUSIC} />, and taking{" "}
           <EmojiLabel emojiKey={Emojis.PHOTOGRAPHY} />.
-        </p>
-      </div>
-      <div className={styles.sidebarBlock} style={{ minHeight: 336 }}>
-        <Emoji emojiKey={Emojis.TOKYO} />
-        <Emoji emojiKey={Emojis.SOFTWARE_ENGINEER} />
-        <Emoji emojiKey={Emojis.CYCLING} />
-        <Emoji emojiKey={Emojis.PHOTOGRAPHY} />
-      </div>
+        </motion.p>
+      </motion.div>
+      <motion.div
+        className={styles.sidebarBlock}
+        style={{ minHeight: 336 }}
+        variants={animationVariants.containerQuick}
+        initial="hidden"
+        whileInView="show"
+        viewport={{ once: true }}
+      >
+        <motion.div variants={animationVariants.individual}>
+          <Emoji emojiKey={Emojis.TOKYO} />
+        </motion.div>
+        <motion.div variants={animationVariants.individual}>
+          <Emoji emojiKey={Emojis.SOFTWARE_ENGINEER} />
+        </motion.div>
+        <motion.div variants={animationVariants.individual}>
+          <Emoji emojiKey={Emojis.CYCLING} />
+        </motion.div>
+        <motion.div variants={animationVariants.individual}>
+          <Emoji emojiKey={Emojis.PHOTOGRAPHY} />
+        </motion.div>
+      </motion.div>
     </div>
   );
 };
