@@ -1,6 +1,7 @@
 import useWindow from "src/hooks/useWindow";
 import styles from "./Context.module.css";
-
+import { motion } from "framer-motion";
+import { animationVariants } from "src/consts/animation";
 const skills: {
   style: object;
   mobileStyle: object;
@@ -85,10 +86,14 @@ const ContextSection = () => {
         <div className={styles.gridContainer}>
           <div className={styles.grid}>
             {skills.map((skill) => (
-              <div
+              <motion.div
                 key={skill.name}
                 className={styles.gridItem}
                 style={{ ...(isMobile ? skill.mobileStyle : skill.style) }}
+                variants={animationVariants.individualLarge}
+                initial="hidden"
+                whileInView="show"
+                viewport={{ once: true }}
               >
                 {skill.img && (
                   <img
@@ -97,7 +102,7 @@ const ContextSection = () => {
                   />
                 )}
                 <div className={styles.skillText}>{skill.name}</div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

@@ -25,9 +25,13 @@
   font-size: 96px;
   font-style: normal;
   font-stretch: 150%;
-  font-weight: 600;
+  font-weight: 650;
   line-height: normal;
   letter-spacing: 4.8px;
+
+  font-optical-sizing: auto;
+  font-variation-settings: "slnt" 0, "wdth" 125, "GRAD" 0, "XOPQ" 78, "XTRA" 498,
+    "YOPQ" 79, "YTAS" 750, "YTDE" -203, "YTFI" 738, "YTLC" 514, "YTUC" 712;
 }
 
 .headerWrapper {
@@ -51,11 +55,6 @@
   left: 0px;
   right: 100%;
   z-index: -1;
-  transition: right 0.5s ease-in-out;
-}
-
-.highlightActive {
-  right: 0px;
 }
 
 @media screen and (max-width: 960px) {

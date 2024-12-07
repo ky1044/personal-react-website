@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import HeroImage from "./HeroImage";
 import styles from "./Splash.module.css";
 import useScroll from "src/hooks/useScroll";
+import { motion } from "framer-motion";
 
 const Splash = () => {
   const [hightlightActive, setHighlightActive] = useState(false);
@@ -49,10 +50,14 @@ const Splash = () => {
             with{" "}
             <span className="blue" style={{ position: "relative" }}>
               people
-              <div
-                className={`${styles.highlight} ${
-                  hightlightActive ? styles.highlightActive : ""
-                }`}
+              <motion.div
+                className={styles.highlight}
+                animate={{
+                  width: hightlightActive ? "100%" : 0,
+                  transition: {
+                    duration: 0.5,
+                  },
+                }}
               />
             </span>{" "}
             in mind
