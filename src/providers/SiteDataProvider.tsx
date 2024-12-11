@@ -29,25 +29,34 @@ export const useSiteData = () => useContext(SiteDataContext);
 export const SiteDataProvider: React.FC<{
   children: React.ReactNode;
 }> = ({ children }) => {
-  const [data, setData] = useState<ISiteDataProvider>(initialState);
+  const [data, setData] = useState<SiteData>(initialState.data);
+  const [loading, setLoading] = useState(initialState.loading);
 
   useEffect(() => {
     async function fetchData() {
+      setLoading(true);
       try {
         const resp = await fetch(
           "https://ky1044.github.io/personal-react-website/data/data.json"
         );
         const respJson = await resp.json();
-        setData({ data: respJson, loading: false });
+        setData(respJson);
       } catch (e) {
         console.log("error loading static data file\n", e);
-        setData((prev) => ({ ...prev, loading: false }));
       }
+      setLoading(false);
     }
     fetchData();
   }, []);
 
   return (
-    <SiteDataContext.Provider value={data}>{children}</SiteDataContext.Provider>
+    <SiteDataContext.Provider
+      value={{
+        data,
+        loading,
+      }}
+    >
+      {children}
+    </SiteDataContext.Provider>
   );
 };

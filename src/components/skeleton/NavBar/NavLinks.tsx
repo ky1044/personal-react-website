@@ -9,6 +9,7 @@ import styles from "./NavLinks.module.css";
 function NavBarLinks({ expanded }: { expanded: boolean }) {
   const { data, loading } = useSiteData();
   const { latestDeploy } = data;
+
   const formattedDate = useMemo(() => {
     if (loading) {
       return null;
@@ -26,10 +27,7 @@ function NavBarLinks({ expanded }: { expanded: boolean }) {
       } else {
         return `Last updated ${daysDiff} days ago`;
       }
-    } else {
-      // fallback if we can't get latestDeploy, show current date
-      return formatDate(new Date());
-    }
+    } else return null;
   }, [latestDeploy, loading]);
 
   return (
@@ -58,7 +56,7 @@ function NavBarLinks({ expanded }: { expanded: boolean }) {
       <div
         className={`${styles.bottomContent} ${
           expanded ? styles.short : styles.tall
-        }`}
+        } ${formattedDate ? styles.showing : ""}`}
       >
         <p>{formattedDate}</p>
       </div>
