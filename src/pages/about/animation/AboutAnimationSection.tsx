@@ -18,7 +18,7 @@ const AboutAnimationSection = () => {
     let yoe = today.getFullYear() - startDate.getFullYear();
     const moe = today.getMonth() - startDate.getMonth();
     const yoeText = `${yoe} years`;
-    let moeText = null;
+    let moeText = "";
     if (moe > 1) {
       moeText = ` and ${moe} months`;
     } else if (moe === 1) {
