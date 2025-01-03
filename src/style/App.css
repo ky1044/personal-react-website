@@ -70,3 +70,19 @@
 .button-text.secondary {
   color: black;
 }
+
+.spacer-xs {
+  height: 2em;
+}
+
+.spacer-sm {
+  height: 4em;
+}
+
+.spacer-md {
+  height: 6em;
+}
+
+.spacer-lg {
+  height: 9em;
+}

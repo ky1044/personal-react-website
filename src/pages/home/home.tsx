@@ -5,6 +5,7 @@ import ProjectsSection from "src/components/projects/ProjectsSection";
 import Splash from "./Splash";
 import ContextSection from "./ContextSection";
 import { Footer } from "src/components/skeleton/Footer";
+import UpNextSection from "./UpNextSection";
 
 const HomePage = () => {
   return (
@@ -13,6 +14,9 @@ const HomePage = () => {
       <Splash />
       <ContextSection />
       <ProjectsSection />
+      <div className="spacer-md" />
+      <UpNextSection />
+      <div className="spacer-xs" />
       <Footer />
     </div>
   );

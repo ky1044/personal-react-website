@@ -1,0 +1,16 @@
+.headerWrapper {
+  width: fit-content;
+  margin: 6em auto;
+}
+
+.headerText {
+  font-family: Roboto Flex;
+  font-size: 3em;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 1.2px;
+}
+
+.headerText a {
+  color: var(--primary-blue);
+}
