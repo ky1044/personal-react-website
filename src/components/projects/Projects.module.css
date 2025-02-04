@@ -26,6 +26,7 @@
   flex-direction: column;
   justify-content: space-between;
   gap: 1em;
+  width: 100%;
 }
 
 .imageContainer {

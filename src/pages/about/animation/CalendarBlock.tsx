@@ -46,8 +46,7 @@ const CalendarBlock = ({ isActive }: { isActive: boolean }) => {
                       const month = quarterIndex * 4 + monthIndex + 1;
 
                       const isCurrentWave =
-                        (month === waveOffset || month === waveOffset + 1) &&
-                        year === thisYear;
+                        month === waveOffset || month === waveOffset + 1;
                       const monthStyle = isCurrentWave
                         ? { transform: "scale(1.1)" }
                         : {};
