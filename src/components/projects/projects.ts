@@ -2,6 +2,14 @@ import { ProjectDetail } from "src/utils/types";
 
 export const projects: ProjectDetail[] = [
   {
+    title: "//TODO:",
+    date: "August, 2024",
+    image: `${process.env.PUBLIC_URL}/project-images/todo.png`,
+    description: "A minimalist todo app, made to be simple and easy to use.",
+    tech: ["React.js", "Tailwind CSS", "shadcn/ui"],
+    url: "https://github.com/kenyokokawa/todo",
+  },
+  {
     title: "Personal Website",
     date: "March, 2023",
     image: `${process.env.PUBLIC_URL}/project-images/personal-project.png`,
