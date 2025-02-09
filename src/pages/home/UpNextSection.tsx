@@ -1,8 +1,7 @@
-import React from "react";
-import styles from "./UpNextSection.module.css";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { animationVariants } from "src/consts/animation";
-
+import styles from "./UpNextSection.module.css";
 const UpNextSection = () => {
   return (
     <div className="top-level-container">
@@ -15,9 +14,15 @@ const UpNextSection = () => {
         viewport={{ once: true }}
       >
         <p className={styles.headerText} id="splash-header-text">
-          Thanks for visiting! <br />
-          Check out my <a href="/experience">experience</a>, or learn <br />
-          more <a href="/about">about </a>me.
+          Thanks for visiting! Check out my{" "}
+          <Link to="/experience">
+            <span className={styles.link}>experience</span>
+          </Link>
+          , or learn more{" "}
+          <Link to="/about">
+            <span className={styles.link}>about me</span>
+          </Link>
+          .
         </p>
       </motion.div>
     </div>

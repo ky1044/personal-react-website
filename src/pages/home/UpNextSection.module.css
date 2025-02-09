@@ -1,6 +1,6 @@
 .headerWrapper {
   width: fit-content;
-  margin: 6em auto;
+  margin: 4em auto;
 }
 
 .headerText {
@@ -9,8 +9,27 @@
   font-weight: 600;
   line-height: normal;
   letter-spacing: 1.2px;
+  max-width:640px;
 }
 
 .headerText a {
   color: var(--primary-blue);
+  line-height: 1.5;
+}
+
+.link {
+  background-color: var(--primary-blue);
+  color: var(--background-primary) !important;
+  text-decoration: none;
+  border-radius: 30px;
+  padding: 0 16px;
+  border-width: 1px;
+  border-style: solid;
+  transition: border-color 0.2s ease-in-out;
+  border-color: var(--background-primary);
+  white-space: nowrap;
+}
+
+.link:hover {
+  border-color: var(--primary-blue);
 }
