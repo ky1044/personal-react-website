@@ -21,19 +21,20 @@ const LinksSection = () => {
             <h3>Media I like</h3>
             <ul>
               <li>Dark Matter</li>
-              <li>Succession</li>
+              <li>Smash Brothers</li>
               <li>Tomorrow, and Tomorrow, and Tomorrow</li>
-              <li>Severance (both by Ling Ma and Ben Stiller)</li>
+              <li>Severance (both by Ling Ma and on Apple TV+)</li>
             </ul>
           </div>
           <div className={styles.linkColumn}>
             <h3>Go-to NYC spots</h3>
             <ul>
-              <li>La Dong</li>
-              <li>Four Horsemen</li>
               <li>Soothr</li>
+              <li>Four Horsemen</li>
+              <li>Nubiani</li>
+              <li>Tabetomo</li>
+              <li>La Dong</li>
               <li>886</li>
-              <li>The NoMad</li>
             </ul>
           </div>
           <div className={styles.linkColumn}>
