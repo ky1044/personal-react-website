@@ -47,6 +47,21 @@ const TECH_MAP: Record<string, { borderColor: string }> = {
   Flask: {
     borderColor: "#111",
   },
+  "Next.js App Router": {
+    borderColor: "#111",
+  },
+  Clerk: {
+    borderColor: "#111",
+  },
+  Postgres: {
+    borderColor: "#699eca",
+  },
+  "drizzle ORM": {
+    borderColor: "#C5F74E",
+  },
+  "Tailwind CSS": {
+    borderColor: "#00BCFF",
+  },
 };
 
 function TechTag({ name }: { name: string }) {

@@ -20,8 +20,15 @@ const ProjectCard = ({ project }: { project: ProjectDetail }) => {
               ))}
             </div>
             <div className={styles.projectLinks}>
+              {project.site && (
+                <TextLink
+                  text="Visit Site"
+                  link={project.site}
+                  linkType="external"
+                />
+              )}
               <TextLink
-                text="Visit Project"
+                text="Visit Repo"
                 link={project.url}
                 linkType="external"
               />
