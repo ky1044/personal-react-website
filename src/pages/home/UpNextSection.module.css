@@ -9,7 +9,7 @@
   font-weight: 600;
   line-height: normal;
   letter-spacing: 1.2px;
-  max-width:640px;
+  max-width: 640px;
 }
 
 .headerText a {
@@ -32,4 +32,11 @@
 
 .link:hover {
   border-color: var(--primary-blue);
+}
+
+@media (max-width: 680px) {
+  .headerText {
+    font-size: 2em;
+    letter-spacing: 0.8px;
+  }
 }

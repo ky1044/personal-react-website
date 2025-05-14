@@ -5,6 +5,7 @@
   height: max(40vh, 40vw);
   max-height: 700px;
   position: relative;
+  overflow-x: clip;
 }
 
 .heroImage {
