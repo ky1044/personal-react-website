@@ -11,31 +11,31 @@ const AboutPage = () => {
   const emojiHook = useEmoji();
 
   return (
-    <div className="page-content">
+    <div className="max-w-[1200px] mx-auto mt-12 px-4 pb-20 leading-snug">
       <NavBar />
 
-      <div className="top-level-container black">
+      <div className="max-w-[1200px] mx-auto mt-12 px-4">
         <div
-          className="narrow-vertical-container"
+          className="flex flex-col justify-between gap-2.5 max-w-[820px] mx-auto"
           style={{ textAlign: "center" }}
         >
           <h1>a little bit about myself</h1>
         </div>
       </div>
-      <div className="top-level-container ">
-        <div className="narrow-vertical-container">
+      <div className="max-w-[1200px] mx-auto mt-12 px-4 ">
+        <div className="flex flex-col justify-between gap-2.5 max-w-[820px] mx-auto">
           <AboutBlocks />
         </div>
       </div>
-      <div className="top-level-container" style={{ marginTop: 100 }}>
-        <div className="narrow-vertical-container">
+      <div className="max-w-[1200px] mx-auto mt-[100px] px-4" >
+        <div className="flex flex-col justify-between gap-2.5 max-w-[820px] mx-auto">
           <EmojiProvider value={emojiHook}>
             <EmojiSection />
           </EmojiProvider>
         </div>
       </div>
-      <div className="top-level-container" style={{ marginTop: 100 }}>
-        <div className="narrow-vertical-container">
+      <div className="max-w-[1200px] mx-auto mt-[100px] px-4" >
+        <div className="flex flex-col justify-between gap-2.5 max-w-[820px] mx-auto">
           <LinksSection />
         </div>
       </div>

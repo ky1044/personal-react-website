@@ -9,14 +9,14 @@ import UpNextSection from "./UpNextSection";
 
 const HomePage = () => {
   return (
-    <div className="page-content">
+    <div className="max-w-[1200px] mx-auto mt-12 pb-20 ">
       <NavBar />
       <Splash />
       <ContextSection />
       <ProjectsSection />
-      <div className="spacer-md" />
+      <div className="h-24" />
       <UpNextSection />
-      <div className="spacer-xs" />
+      <div className="h-8" />
       <Footer />
     </div>
   );

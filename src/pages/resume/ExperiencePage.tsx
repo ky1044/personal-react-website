@@ -17,17 +17,17 @@ const ExperiencePage = () => {
     });
   };
   return (
-    <div className="page-content">
+    <div className="max-w-[1200px] mx-auto mt-12 px-4 pb-20 leading-snug">
       <NavBar />
 
-      <div className="top-level-container black">
-        <div className="narrow-vertical-container">
+      <div className="max-w-[1200px] mx-auto mt-12 px-4">
+        <div className="flex flex-col justify-between gap-2.5 max-w-[820px] mx-auto">
           <Row
             align="middle"
             justify="space-between"
             style={{ marginBottom: 50 }}
           >
-            <h1 className="blue">EXPERIENCE</h1>
+            <h1 className="text-primary-blue">EXPERIENCE</h1>
             <TextLink
               text="Download Resume"
               linkType="download"

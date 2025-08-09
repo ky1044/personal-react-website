@@ -7,9 +7,7 @@ function Logo({ expanded }: { expanded: boolean }) {
     <header>
       <Link to="/">
         <h1
-          className={`${styles.logo} ${
-            expanded ? styles.tall : styles.wide
-          }`}
+          className={`${styles.logo} ${expanded ? styles.tall : styles.wide}`}
         >
           <div className={styles.logoTopRow}>
             <div

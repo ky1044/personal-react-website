@@ -75,9 +75,9 @@ const ContextSection = () => {
   const { isMobile } = useWindow();
 
   return (
-    <div className="top-level-container">
+    <div className="max-w-[1200px] mx-auto mt-12 px-4">
       <div className={styles.container}>
-        <h1 className="blue">TECH STACK</h1>
+        <h1 className="text-primary-blue">TECH STACK</h1>
         <h3 className={styles.dek}>
           I have experience in the full stack, but lately I’m focused more on
           front-end development. Here are some of the languages and libraries I

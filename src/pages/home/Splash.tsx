@@ -23,7 +23,7 @@ const Splash = () => {
   return (
     <>
       <div
-        className={`top-level-container ${styles.heroWrapper} ${
+        className={`max-w-[1200px] mx-auto mt-12 px-4 ${styles.heroWrapper} ${
           scrollHeight > 5 ? styles.activeGradient : ""
         }`}
       >
@@ -41,14 +41,14 @@ const Splash = () => {
         </Row>
       </div>
       <HeroImage scrollHeight={scrollHeight} />
-      <div className="top-level-container">
+      <div className="max-w-[1200px] mx-auto mt-12 px-4">
         <div className={styles.headerWrapper}>
           <p className={styles.headerText} id="splash-header-text">
             approaching <br />
-            <span className="blue">software development</span>
+            <span className="text-primary-blue">software development</span>
             <br />
             with{" "}
-            <span className="blue" style={{ position: "relative" }}>
+            <span className="text-primary-blue" style={{ position: "relative" }}>
               people
               <motion.div
                 className={styles.highlight}

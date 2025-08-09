@@ -6,8 +6,8 @@ import { motion } from "framer-motion";
 
 const ProjectsSection = () => {
   return (
-    <div className="top-level-container">
-      <h1 className="blue">PROJECTS</h1>
+    <div className="max-w-[1200px] mx-auto mt-12 px-4">
+      <h1 className="text-primary-blue">PROJECTS</h1>
       <div className={styles.projectsSection}>
         {projects.map((project, index) => (
           <motion.div

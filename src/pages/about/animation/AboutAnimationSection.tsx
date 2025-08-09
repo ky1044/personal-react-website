@@ -40,7 +40,7 @@ const AboutAnimationSection = () => {
           Animation={SpheresBlock}
           text={
             <>
-              <span className="blue">mixed background</span>, growing up in
+              <span className="text-primary-blue">mixed background</span>, growing up in
               Japan and the United States
             </>
           }
@@ -52,7 +52,7 @@ const AboutAnimationSection = () => {
           Animation={CalendarBlock}
           text={
             <>
-              <span className="blue">experienced developer</span>,{" "}
+              <span className="text-primary-blue">experienced developer</span>,{" "}
               {experienceText} of industry experience to be exact
             </>
           }
@@ -64,7 +64,7 @@ const AboutAnimationSection = () => {
           Animation={RunningBlock}
           text={
             <>
-              <span className="blue">city runner</span>, logging{" "}
+              <span className="text-primary-blue">city runner</span>, logging{" "}
               {stravaStats?.ytdDistance
                 ? `${
                     stravaStats?.ytdDistance

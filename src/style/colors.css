@@ -1,14 +1,8 @@
-.blue {
-  color: dodgerblue;
-}
+/* Tailwind replacement: use `text-primary-blue` */
 
-.white {
-  color: white;
-}
+/* Tailwind replacement: use `text-white` */
 
-.grey {
-  color: rgb(104, 104, 104);
-}
+/* Tailwind replacement: use `text-neutral-500` or `text-[rgb(104,104,104)]` */
 
 body {
   --primary-blue: #1d90ff;
