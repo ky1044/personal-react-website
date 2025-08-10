@@ -4,7 +4,6 @@ import {
   ExternalLinkIcon,
   InternalLinkIcon,
 } from "src/icons/Icons";
-import styles from "./TextLink.module.css";
 
 type TextLinkProps = {
   linkType?: "internal" | "external" | "download";
@@ -30,22 +29,31 @@ export const TextLink = ({
   };
 
   const linkIcon = useMemo(() => {
+    const baseClass =
+      "absolute w-5 h-5 transition-all duration-300";
+    const offset = isHovered ? 2 : 0;
     switch (linkType) {
       case "internal":
         return (
-          <div className={`${styles.iconContainer} ${styles.right}`}>
+          <div
+            className={baseClass}
+            style={{ left: offset, bottom: 0 }}
+          >
             <InternalLinkIcon />
           </div>
         );
       case "external":
         return (
-          <div className={`${styles.iconContainer} ${styles.topRight}`}>
+          <div
+            className={baseClass}
+            style={{ left: offset, bottom: offset }}
+          >
             <ExternalLinkIcon />
           </div>
         );
       case "download":
         return (
-          <div className={`${styles.iconContainer} ${styles.bottom}`}>
+          <div className={baseClass} style={{ top: offset }}>
             <DownloadLinkIcon />
           </div>
         );
@@ -54,20 +62,25 @@ export const TextLink = ({
 
   return (
     <a
-      className={styles.textLink}
+      className="no-underline cursor-pointer group"
       href={link}
       target="_blank"
       rel="noreferrer"
       onMouseEnter={handleMouseEnter}
     >
       <div
-        className={`${styles.textLinkContent} ${
-          isHovered ? styles.active : ""
-        }`}
+        className="flex flex-row justify-between items-center gap-1"
+        style={{
+          background:
+            "linear-gradient(to left, var(--content-primary) 0%, var(--content-primary) 34%, var(--background-primary) 34%, var(--background-primary) 66%, var(--content-primary) 66%, var(--content-primary) 100%) left bottom transparent no-repeat",
+          backgroundSize: "300% 2px",
+          backgroundPositionX: isHovered ? "0%" : "100%",
+          transition: isHovered ? "background-position-x 0.7s" : undefined,
+        }}
         onClick={() => onClick?.()}
       >
-        <p style={{ fontSize: 18 }}>{text}</p>
-        <div style={{ position: "relative", width: 22, height: 22 }}>
+        <p className="text-[18px]">{text}</p>
+        <div className="relative" style={{ width: 22, height: 22 }}>
           {linkIcon}
         </div>
       </div>

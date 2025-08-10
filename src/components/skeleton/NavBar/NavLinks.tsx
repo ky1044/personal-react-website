@@ -4,7 +4,6 @@ import { Link } from "react-router-dom";
 import { useSiteData } from "src/providers/SiteDataProvider";
 import { formatDate } from "src/utils/date";
 import DarkModeToggle from "./DarkModeToggle";
-import styles from "./NavLinks.module.css";
 
 function NavBarLinks({ expanded }: { expanded: boolean }) {
   const { data, loading } = useSiteData();
@@ -31,14 +30,10 @@ function NavBarLinks({ expanded }: { expanded: boolean }) {
   }, [latestDeploy, loading]);
 
   return (
-    <div
-      className={`${styles.linksContainer} ${
-        expanded ? styles.tall : styles.short
-      }`}
-    >
+    <div className="flex flex-col justify-center items-end gap-3">
       <div
-        className={`${styles.topContent} ${
-          expanded ? styles.short : styles.tall
+        className={`flex flex-row items-center gap-2 overflow-hidden transition-all ${
+          expanded ? "h-[22px]" : "h-0"
         }`}
       >
         <DarkModeToggle />
@@ -46,19 +41,21 @@ function NavBarLinks({ expanded }: { expanded: boolean }) {
 
       <Row>
         <Link to="/experience">
-          <p className={styles.navLink}>EXPERIENCE</p>
+          <p className="text-content-primary text-[20px] font-medium">
+            EXPERIENCE
+          </p>
         </Link>
-        <div className={styles.divider} />
+        <div className="border-r-[1px] border-content-tertiary my-[6px] mx-2" />
         <Link to="/about">
-          <p className={styles.navLink}>ABOUT</p>
+          <p className="text-content-primary text-[20px] font-medium">ABOUT</p>
         </Link>
       </Row>
       <div
-        className={`${styles.bottomContent} ${
-          expanded ? styles.short : styles.tall
-        } ${formattedDate ? styles.showing : ""}`}
+        className={`opacity-0 transition-all duration-300 ${
+          formattedDate ? "opacity-100" : ""
+        } ${expanded ? "h-[22px]" : "h-0"}`}
       >
-        <p>{formattedDate}</p>
+        <p className="text-sm">{formattedDate}</p>
       </div>
     </div>
   );

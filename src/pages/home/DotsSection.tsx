@@ -1,5 +1,4 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import styles from "./DotsSection.module.css";
 
 const DOT_SIZE = 3; // px
 const DOT_GAP = 15; // px, space around each dot
@@ -57,7 +56,7 @@ const DotsSection = () => {
         dotElements.push(
           <div
             key={`${r}-${c}`}
-            className={styles.dot}
+            className="bg-black rounded-full animate-wave origin-center m-[7.5px] will-change-transform will-change-opacity"
             style={{
               width: `${currentDotScaledSize}px`,
               height: `${currentDotScaledSize}px`,
@@ -71,10 +70,10 @@ const DotsSection = () => {
   }, [numCols]);
 
   return (
-    <div className={styles.dotsContainerWrapper}>
+    <div className="w-full overflow-hidden relative">
       <div
         ref={containerRef}
-        className={styles.dotsContainer}
+        className="grid justify-start items-center gap-0 w-fit animate-scroll-dots mx-auto will-change-transform"
         style={{
           gridTemplateColumns: `repeat(${Math.max(0, numCols) + 5}, ${
             DOT_SIZE + DOT_GAP

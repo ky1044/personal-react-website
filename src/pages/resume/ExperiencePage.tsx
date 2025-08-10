@@ -17,9 +17,8 @@ const ExperiencePage = () => {
     });
   };
   return (
-    <div className="max-w-[1200px] mx-auto mt-12 px-4 pb-20 leading-snug">
+    <div>
       <NavBar />
-
       <div className="max-w-[1200px] mx-auto mt-12 px-4">
         <div className="flex flex-col justify-between gap-2.5 max-w-[820px] mx-auto">
           <Row

@@ -1,5 +1,4 @@
 import { ComponentType, ReactNode, useState } from "react";
-import styles from "./AboutAnimationBlock.module.css";
 
 type AnimationComponentProps = {
   isActive: boolean;
@@ -16,9 +15,13 @@ const AboutAnimationBlock = ({
 }) => {
   const [isActive, setIsActive] = useState(false);
   return (
-    <div className={`${styles.container} ${isReversed ? styles.reversed : ""}`}>
+    <div
+      className={`w-full flex gap-8 ${
+        isReversed ? "flex-row-reverse" : ""
+      } max-[680px]:block`}
+    >
       <div
-        className={styles.aboutBlock}
+        className="relative bg-[linear-gradient(180deg,#24a0ff,#0185ff)] rounded-[12px] w-[60%] aspect-[3/2] overflow-clip max-[680px]:w-full"
         onMouseEnter={() => {
           setIsActive(true);
         }}
@@ -28,7 +31,11 @@ const AboutAnimationBlock = ({
       >
         <Animation isActive={isActive} />
       </div>
-      <div className={`${styles.aboutText} ${isActive ? styles.active : ""}`}>
+      <div
+        className={`flex-[0_1_330px] ${
+          isActive ? "[&_.text-primary-blue]:text-secondary-blue" : ""
+        } max-[680px]:mt-6`}
+      >
         <h2>{text}</h2>
       </div>
     </div>

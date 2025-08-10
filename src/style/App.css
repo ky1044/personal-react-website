@@ -3,38 +3,6 @@
   transition: background-color 0.2s;
 }
 
-/* for SVGs */
 .sharedIcon path {
   stroke: var(--content-primary);
 }
-
-/* Tailwind replacement: use `pb-20 leading-snug` */
-
-/* .page-content {
-  max-width: 1200px;
-  margin: 0 auto;
-} */
-
-/* Tailwind replacement: use `max-w-[1200px] mx-auto mt-12 px-4` */
-
-/* Tailwind replacement: use `flex flex-col justify-between gap-2.5` */
-
-/* Tailwind replacement: use `flex flex-col justify-between gap-2.5 max-w-[820px] mx-auto` */
-
-/* Tailwind replacement for `.button`: `inline-flex h-10 w-[150px] rounded-[20px] border border-blue-500 items-center justify-center transition-colors cursor-pointer` */
-
-/* Tailwind: `bg-neutral-300 border-0` */
-
-/* Tailwind: `hover:bg-neutral-400` */
-
-/* Tailwind: `text-black no-underline` */
-
-/* Tailwind: `text-black` */
-
-/* Tailwind replacement: `h-8` */
-
-/* Tailwind replacement: `h-16` */
-
-/* Tailwind replacement: `h-24` */
-
-/* Tailwind replacement: `h-36` */

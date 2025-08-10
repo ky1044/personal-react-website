@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "./TechTag.module.css";
 
 const TECH_MAP: Record<string, { borderColor: string }> = {
   "React.js": {
@@ -66,8 +65,11 @@ const TECH_MAP: Record<string, { borderColor: string }> = {
 
 function TechTag({ name }: { name: string }) {
   return (
-    <div className={styles.tagContainer} style={TECH_MAP[name]}>
-      <p className="p3">{name}</p>
+    <div
+      className="flex justify-center items-center h-10 rounded-full border-[3px] border-solid px-4 font-semibold"
+      style={TECH_MAP[name]}
+    >
+      <p className="text-xs">{name}</p>
     </div>
   );
 }

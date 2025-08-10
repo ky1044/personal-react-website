@@ -1,7 +1,6 @@
 import React, { useMemo } from "react";
 import { useEmojiContext } from "./emojiContext";
 import { EMOJI_MAPPING, Emojis } from "./emoji";
-import styles from "./EmojiSection.module.css";
 import { motion } from "framer-motion";
 import { animationVariants } from "src/consts/animation";
 
@@ -18,14 +17,16 @@ const Emoji = ({ emojiKey }: { emojiKey: Emojis }) => {
 
   return (
     <span
-      className={`${styles.emoji} ${isHovered ? styles.hovered : ""}`}
+      className={`inline-flex items-center justify-center align-middle h-[84px] mx-[3px] transition-all duration-300 cursor-pointer ${
+        isHovered ? "text-[64px]" : "text-[44px]"
+      }`}
       role="img"
       aria-label={label ? label : ""}
       aria-hidden={label ? "false" : "true"}
       onMouseOver={() => onHover(emojiKey)}
       onMouseLeave={() => onHover(null)}
     >
-      <div style={{ margin: "auto" }}>{symbol}</div>
+      {symbol}
     </span>
   );
 };
@@ -37,7 +38,9 @@ const EmojiLabel = ({ emojiKey }: { emojiKey: Emojis }) => {
     <span
       onMouseOver={() => onHover(emojiKey)}
       onMouseLeave={() => onHover(null)}
-      className={`${styles.emojiLabel} ${isHovered ? styles.hovered : ""}`}
+      className={`font-semibold cursor-pointer transition-colors duration-300 ${
+        isHovered ? "text-secondary-blue" : "text-primary-blue"
+      }`}
     >
       {EMOJI_MAPPING[emojiKey].label}
     </span>
@@ -56,9 +59,9 @@ const EmojiSection = () => {
     return age;
   }, []);
   return (
-    <div style={{ display: "flex", flexDirection: "row" }}>
+    <div className="flex flex-row">
       <motion.div
-        className={styles.sidebarBlock}
+        className="min-w-[84px] flex flex-col justify-evenly"
         style={{ minHeight: 336 }}
         variants={animationVariants.containerQuick}
         initial="hidden"
@@ -79,7 +82,7 @@ const EmojiSection = () => {
         </motion.div>
       </motion.div>
       <motion.div
-        className={styles.centerBlock}
+        className="flex flex-col justify-center grow"
         variants={animationVariants.containerQuick}
         initial="hidden"
         whileInView="show"
@@ -115,7 +118,7 @@ const EmojiSection = () => {
         </motion.p>
       </motion.div>
       <motion.div
-        className={styles.sidebarBlock}
+        className="min-w-[84px] flex flex-col justify-evenly"
         style={{ minHeight: 336 }}
         variants={animationVariants.containerQuick}
         initial="hidden"

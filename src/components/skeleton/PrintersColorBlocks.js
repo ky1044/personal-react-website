@@ -1,5 +1,3 @@
-import styles from "./PrintersColorBlocks.module.css";
-
 const PrintersColorBlocks = () => {
   const colors = [
     "var(--primary-blue",
@@ -11,11 +9,11 @@ const PrintersColorBlocks = () => {
   ];
 
   return (
-    <div className={styles.colorBarContainer}>
+    <div className="flex gap-[3px]">
       {colors.map((color, index) => (
         <div
           key={index}
-          className={styles.colorBlock}
+          className="flex-grow h-5 w-5"
           style={{ backgroundColor: color }}
         />
       ))}

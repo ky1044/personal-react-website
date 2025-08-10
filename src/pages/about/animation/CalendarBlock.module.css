@@ -24,7 +24,7 @@
 }
 
 .yearContainer {
-  height: calc(100% - 96px);
+  height: calc(100% - 48px);
   padding: 12px 36px 36px;
   display: flex;
   flex-direction: column;

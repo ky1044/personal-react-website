@@ -2,7 +2,6 @@ import { motion } from "framer-motion";
 import { TextLink } from "src/components/shared/TextLink";
 import { animationVariants } from "src/consts/animation";
 import { links } from "./links";
-import styles from "./LinksSection.module.css";
 
 const LinksSection = () => {
   return (
@@ -16,8 +15,8 @@ const LinksSection = () => {
         <h2>{"Some <ul>s to wrap things up"}</h2>
       </motion.div>
       <motion.div variants={animationVariants.individual}>
-        <div className={styles.linksContainer}>
-          <div className={styles.linkColumn}>
+        <div className="flex gap-4 justify-between mt-6 max-[680px]:flex-col max-[680px]:gap-12">
+          <div className="flex flex-col gap-4 basis-1/3">
             <h3>Media I like</h3>
             <ul>
               <li>Dark Matter</li>
@@ -26,7 +25,7 @@ const LinksSection = () => {
               <li>Severance (both by Ling Ma and on Apple TV+)</li>
             </ul>
           </div>
-          <div className={styles.linkColumn}>
+          <div className="flex flex-col gap-4 basis-1/3">
             <h3>Go-to NYC spots</h3>
             <ul>
               <li>Soothr</li>
@@ -37,7 +36,7 @@ const LinksSection = () => {
               <li>886</li>
             </ul>
           </div>
-          <div className={styles.linkColumn}>
+          <div className="flex flex-col gap-4 basis-1/3">
             <h3>Links</h3>
             {links.map((link, idx) => (
               <TextLink

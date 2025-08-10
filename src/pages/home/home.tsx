@@ -9,7 +9,7 @@ import UpNextSection from "./UpNextSection";
 
 const HomePage = () => {
   return (
-    <div className="max-w-[1200px] mx-auto mt-12 pb-20 ">
+    <div className="mt-12">
       <NavBar />
       <Splash />
       <ContextSection />

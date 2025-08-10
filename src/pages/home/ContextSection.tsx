@@ -1,5 +1,4 @@
 import useWindow from "src/hooks/useWindow";
-import styles from "./Context.module.css";
 import { motion } from "framer-motion";
 import { animationVariants } from "src/consts/animation";
 const skills: {
@@ -76,19 +75,19 @@ const ContextSection = () => {
 
   return (
     <div className="max-w-[1200px] mx-auto mt-12 px-4">
-      <div className={styles.container}>
+      <div className="pb-12">
         <h1 className="text-primary-blue">TECH STACK</h1>
-        <h3 className={styles.dek}>
+        <h3 className="max-w-[700px]">
           I have experience in the full stack, but lately I’m focused more on
           front-end development. Here are some of the languages and libraries I
           have experience with:
         </h3>
-        <div className={styles.gridContainer}>
-          <div className={styles.grid}>
+        <div className="mt-8 mx-auto w-full max-w-[900px] aspect-[5/3] flex justify-center max-[680px]:aspect-[5/7]">
+          <div className="grid w-full gap-[6px] grid-cols-8 grid-rows-5 max-[680px]:grid-cols-5 max-[680px]:grid-rows-7 max-[680px]:gap-[2px]">
             {skills.map((skill) => (
               <motion.div
                 key={skill.name}
-                className={styles.gridItem}
+                className={`relative group bg-[linear-gradient(180deg,var(--background-gradient-top),var(--background-gradient-bottom))] rounded-[12px] flex justify-center items-center text-center transition-[margin] duration-200 overflow-hidden m-1 max-[680px]:m-1`}
                 style={{ ...(isMobile ? skill.mobileStyle : skill.style) }}
                 variants={animationVariants.individualLarge}
                 initial="hidden"
@@ -98,10 +97,12 @@ const ContextSection = () => {
                 {skill.img && (
                   <img
                     src={`${process.env.PUBLIC_URL}/tech/${skill.img}`}
-                    className={styles.techImage}
+                    className="w-1/2 h-1/2 object-scale-down transition-[width,height] duration-200"
                   />
                 )}
-                <div className={styles.skillText}>{skill.name}</div>
+                <div className="absolute bottom-[-20px] group-hover:bottom-[2px] transition-all duration-200 font-medium text-sm">
+                  {skill.name}
+                </div>
               </motion.div>
             ))}
           </div>

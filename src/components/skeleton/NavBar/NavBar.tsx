@@ -1,7 +1,3 @@
-import { Col, Divider, Row } from "antd";
-import { useEffect, useState } from "react";
-import { Link, useLocation } from "react-router-dom";
-import styles from "./NavBar.module.css";
 import useScroll from "src/hooks/useScroll";
 import Logo from "./Logo";
 import NavLinks from "./NavLinks";
@@ -13,22 +9,15 @@ export function NavBar() {
 
   return (
     <>
-      <div className={styles.navBarContainer}>
-        <Row
-          justify="space-between"
-          align-items="baseline"
-          align="middle"
-          style={{
-            transition: "0.2s ease",
-            height: isNavBarExpanded ? 130 : 61,
-            margin: "0 auto",
-            maxWidth: 1200,
-            overflow: "hidden",
-          }}
+      <div className="fixed top-0 left-0 right-0 mx-auto px-4 z-10 bg-background-primary border-b-[1px] border-content-tertiary">
+        <div
+          className={`flex flex-row justify-between items-center transition-all w-[min(100vw-40px,1200px)] m-auto overflow-hidden ${
+            isNavBarExpanded ? "h-[130px]" : "h-[61px]"
+          }`}
         >
           <Logo expanded={isNavBarExpanded} />
           <NavLinks expanded={isNavBarExpanded} />
-        </Row>
+        </div>
       </div>
       <div style={{ height: 130 }}></div>
     </>
