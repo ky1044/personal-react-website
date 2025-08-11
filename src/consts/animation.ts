@@ -27,24 +27,24 @@ export const animationVariants = {
     },
   },
   individual: {
-    hidden: { y: 20, opacity: 0 },
+    hidden: { scale: 0.8, opacity: 0 },
     show: {
-      y: 0,
+      scale: 1,
       opacity: 1,
       transition: {
-        y: { type: "spring", stiffness: 100, damping: 20 },
+        scale: { duration: 0.5, type: "spring", stiffness: 100, damping: 20 },
         opacity: { duration: 0.5 },
       },
     },
   },
 
   individualLarge: {
-    hidden: { y: 50, opacity: 0 },
+    hidden: { scale: 0.8, opacity: 0 },
     show: {
-      y: 0,
+      scale: 1,
       opacity: 1,
       transition: {
-        y: { type: "spring", stiffness: 100, damping: 20 },
+        scale: { duration: 0.5, type: "spring", stiffness: 100, damping: 20 },
         opacity: { duration: 0.5 },
       },
     },
@@ -56,7 +56,18 @@ export const animationVariants = {
       height: "auto",
       opacity: 1,
       transition: {
-        y: { type: "spring", stiffness: 100, damping: 20 },
+        scale: { duration: 0.5, type: "spring", stiffness: 100, damping: 20 },
+        opacity: { duration: 0.5 },
+      },
+    },
+  },
+  introduceDown: {
+    hidden: { y: 20, opacity: 0 },
+    show: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        y: { duration: 0.5, type: "spring", stiffness: 100, damping: 20 },
         opacity: { duration: 0.5 },
       },
     },

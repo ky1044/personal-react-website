@@ -1,31 +1,57 @@
-import { Col, Row } from "antd";
 import { useMemo } from "react";
 import PrintersColorBlocks from "./PrintersColorBlocks";
-import DotsSection from "src/pages/home/DotsSection";
+import { useLocation } from "react-router-dom";
 
 export function Footer() {
-  const year = useMemo(() => {
-    const today = new Date();
-    return today.getFullYear();
-  }, []);
+  const year = useMemo(() => new Date().getFullYear(), []);
+
+  const internalLinks: { label: string; href: string }[] = [
+    { label: "Home", href: "/" },
+    { label: "Experience", href: "/experience" },
+    { label: "About", href: "/about" },
+    {
+      label: "Source code",
+      href: "https://github.com/ky1044/personal-react-website",
+    },
+  ];
+  const location = useLocation();
 
   return (
-    <>
-      <div id="nav-bar" className="relative overflow-hidden mt-[100px]">
-        <div>
-          <DotsSection />
-        </div>
-        <div className="absolute z-[1] bottom-0 left-0 right-0 w-full">
-          <div className="flex justify-end w-[min(100vw-40px,1200px)] m-auto">
-            <div className="mb-4 p-1 bg-background-primary">
-              <p className="text-center text-content-secondary">
-                Ken Yokokawa {year}
+    <footer className="border-t border-layout-divider">
+      <div className="max-w-[1200px] mx-auto p-4 pb-12 border-l border-r border-layout-divider backdrop-blur-[50px]">
+        <div className="flex justify-between gap-10 items-start">
+          <div className="flex flex-col">
+            <div className="flex flex-row gap-4 items-baseline">
+              <p className="text-content-secondary text-lg font-bold">
+                Ken Yokokawa
               </p>
-              <PrintersColorBlocks />
+              <p className="text-content-secondary text-sm">{year}</p>
+            </div>
+            <PrintersColorBlocks />
+          </div>
+          <div className="flex gap-12 max-[680px]:gap-8">
+            <div className="flex flex-col gap-1">
+              <h4 className="text-content-secondary text-sm">Sitemap</h4>
+              <ul className="flex flex-col">
+                {internalLinks.map((l) => (
+                  <li key={l.href}>
+                    <a
+                      href={l.href}
+                      className={`text-xs no-underline hover:text-primary-blue transition-colors ${
+                        location.pathname === l.href
+                          ? "text-primary-blue"
+                          : "text-content-primary"
+                      }`}
+                    >
+                      {l.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
       </div>
-    </>
+    </footer>
   );
 }

@@ -34,10 +34,11 @@ export const DarkModeProvider: React.FC<{
 
   useEffect(() => {
     localStorage.setItem("darkMode", isDarkMode.toString());
+    const htmlElement = document.documentElement;
     if (isDarkMode) {
-      document.body.classList.add("dark");
+      htmlElement.classList.add("dark");
     } else {
-      document.body.classList.remove("dark");
+      htmlElement.classList.remove("dark");
     }
   }, [isDarkMode]);
 

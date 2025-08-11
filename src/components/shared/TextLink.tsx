@@ -29,25 +29,18 @@ export const TextLink = ({
   };
 
   const linkIcon = useMemo(() => {
-    const baseClass =
-      "absolute w-5 h-5 transition-all duration-300";
+    const baseClass = "absolute w-5 h-5 transition-all duration-300";
     const offset = isHovered ? 2 : 0;
     switch (linkType) {
       case "internal":
         return (
-          <div
-            className={baseClass}
-            style={{ left: offset, bottom: 0 }}
-          >
+          <div className={baseClass} style={{ left: offset, bottom: 0 }}>
             <InternalLinkIcon />
           </div>
         );
       case "external":
         return (
-          <div
-            className={baseClass}
-            style={{ left: offset, bottom: offset }}
-          >
+          <div className={baseClass} style={{ left: offset, bottom: offset }}>
             <ExternalLinkIcon />
           </div>
         );
@@ -79,7 +72,7 @@ export const TextLink = ({
         }}
         onClick={() => onClick?.()}
       >
-        <p className="text-[18px]">{text}</p>
+        <p className="text-[18px] whitespace-nowrap">{text}</p>
         <div className="relative" style={{ width: 22, height: 22 }}>
           {linkIcon}
         </div>

@@ -39,8 +39,6 @@ const DotsSection = () => {
     };
   }, []); // DOT_SIZE and DOT_GAP are constants, no need to include them as dependencies
 
-  console.log({ numCols });
-
   const dots = useMemo(() => {
     const dotElements = [];
     const colsToRender = Math.max(0, numCols);

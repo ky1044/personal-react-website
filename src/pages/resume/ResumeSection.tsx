@@ -31,7 +31,7 @@ export default function ResumeSection() {
 
           <motion.span
             key={index}
-            variants={animationVariants.individualLarge}
+            variants={animationVariants.introduceDown}
             style={{
               display: "grid",
               gridColumn: "2/-1",
@@ -63,7 +63,9 @@ export default function ResumeSection() {
 
               <ul>
                 {role.bullets.map((bullet, idx) => (
-                  <li key={idx}>{bullet}</li>
+                  <li key={idx} className="list-disc ml-6">
+                    {bullet}
+                  </li>
                 ))}
               </ul>
               {role.tech && (

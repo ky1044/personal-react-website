@@ -37,7 +37,7 @@ const TECH_MAP: Record<string, { borderColor: string }> = {
   NoSQL: {
     borderColor: "#339933",
   },
-  "MinIO ": {
+  MinIO: {
     borderColor: "#4393c4",
   },
   DynamoDB: {
@@ -63,13 +63,24 @@ const TECH_MAP: Record<string, { borderColor: string }> = {
   },
 };
 
-function TechTag({ name }: { name: string }) {
+type TechTagProps = { name: string; size?: "sm" | "md"; hasGlow?: boolean };
+
+function TechTag({ name, size = "md", hasGlow = false }: TechTagProps) {
+  const wrapperClass =
+    size === "sm"
+      ? "flex justify-center items-center h-5 rounded-full border-[2px] border-solid px-2 font-semibold"
+      : "flex justify-center items-center h-8 rounded-full border-[3px] border-solid px-4 font-semibold";
+  const textClass = size === "sm" ? "text-[10px]" : "text-xs";
+  const borderColor = TECH_MAP[name]?.borderColor;
+  const tagStyle: React.CSSProperties | undefined = borderColor
+    ? {
+        borderColor,
+        boxShadow: hasGlow ? `0 0 15px ${borderColor}44` : undefined,
+      }
+    : undefined;
   return (
-    <div
-      className="flex justify-center items-center h-10 rounded-full border-[3px] border-solid px-4 font-semibold"
-      style={TECH_MAP[name]}
-    >
-      <p className="text-xs">{name}</p>
+    <div className={wrapperClass} style={tagStyle}>
+      <p className={textClass}>{name}</p>
     </div>
   );
 }

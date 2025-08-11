@@ -1,5 +1,4 @@
 import React, { useMemo, useState } from "react";
-import styles from "./AboutAnimationSection.module.css";
 import SpheresBlock from "./SpheresBlock";
 import CalendarBlock from "./CalendarBlock";
 import AboutAnimationBlock from "./AboutAnimationBlock";
@@ -29,51 +28,61 @@ const AboutAnimationSection = () => {
 
   return (
     <motion.ul
-      className={styles.container}
       variants={animationVariants.container}
       initial="hidden"
       animate="show"
       style={{ listStyleType: "none" }}
     >
-      <motion.li variants={animationVariants.individualLarge} key="spheres">
-        <AboutAnimationBlock
-          Animation={SpheresBlock}
-          text={
-            <>
-              <span className="text-primary-blue">mixed background</span>, growing up in
-              Japan and the United States
-            </>
-          }
-        />
-      </motion.li>
+      <div className="p-4">
+        <motion.li variants={animationVariants.individualLarge} key="spheres">
+          <AboutAnimationBlock
+            Animation={SpheresBlock}
+            text={
+              <>
+                <span className="text-primary-blue">mixed background</span>,
+                growing up in Japan and the United States
+              </>
+            }
+            figNumber={1}
+          />
+        </motion.li>
+      </div>
 
-      <motion.li variants={animationVariants.individualLarge} key="calendar">
-        <AboutAnimationBlock
-          Animation={CalendarBlock}
-          text={
-            <>
-              <span className="text-primary-blue">experienced developer</span>,{" "}
-              {experienceText} of industry experience to be exact
-            </>
-          }
-          isReversed
-        />
-      </motion.li>
-      <motion.li variants={animationVariants.individualLarge} key="running">
-        <AboutAnimationBlock
-          Animation={RunningBlock}
-          text={
-            <>
-              <span className="text-primary-blue">city runner</span>, logging{" "}
-              {stravaStats?.ytdDistance
-                ? `${
-                    stravaStats?.ytdDistance
-                  }km on Strava in ${today.getFullYear()}`
-                : `over 2000km on Strava in total`}
-            </>
-          }
-        />
-      </motion.li>
+      <div className="w-full border-t border-layout-divider" />
+      <div className="p-4">
+        <motion.li variants={animationVariants.individualLarge} key="calendar">
+          <AboutAnimationBlock
+            Animation={CalendarBlock}
+            text={
+              <>
+                <span className="text-primary-blue">experienced developer</span>
+                , {experienceText} of industry experience to be exact
+              </>
+            }
+            isReversed
+            figNumber={2}
+          />
+        </motion.li>
+      </div>
+      <div className="w-full border-t border-layout-divider" />
+      <div className="p-4">
+        <motion.li variants={animationVariants.individualLarge} key="running">
+          <AboutAnimationBlock
+            Animation={RunningBlock}
+            text={
+              <>
+                <span className="text-primary-blue">city runner</span>, logging{" "}
+                {stravaStats?.ytdDistance
+                  ? `${
+                      stravaStats?.ytdDistance
+                    }km on Strava in ${today.getFullYear()}`
+                  : `over 2000km on Strava in total`}
+              </>
+            }
+            figNumber={3}
+          />
+        </motion.li>
+      </div>
     </motion.ul>
   );
 };

@@ -22,7 +22,7 @@ const Splash = () => {
   return (
     <>
       <div
-        className={`max-w-[1200px] mx-auto mt-12 px-4 my-16`}
+        className={`max-w-[1200px] mx-auto mt-12 px-4`}
         style={{
           background:
             "linear-gradient(45deg, #36b2ff 25%, #0079eb 40%, #0079eb 60%, #36b2ff 75%)",
@@ -38,9 +38,7 @@ const Splash = () => {
           <h1 className="leading-none font-[Roboto_Flex,Arial] text-[96px] font-[650] tracking-[4.8px] max-[960px]:text-[9.5vw] max-[960px]:tracking-[0.4vw]">
             KEN
           </h1>
-          <h1
-            className="leading-none font-[Roboto_Flex,Arial] text-[96px] font-[650] tracking-[4.8px] text-right max-[960px]:text-[9.5vw] max-[960px]:tracking-[0.4vw]"
-          >
+          <h1 className="leading-none font-[Roboto_Flex,Arial] text-[96px] font-[650] tracking-[4.8px] text-right max-[960px]:text-[9.5vw] max-[960px]:tracking-[0.4vw]">
             SOFTWARE
           </h1>
         </Row>
@@ -48,16 +46,14 @@ const Splash = () => {
           <h1 className="leading-none font-[Roboto_Flex,Arial] text-[96px] font-[650] tracking-[4.8px] max-[960px]:text-[9.5vw] max-[960px]:tracking-[0.4vw]">
             YOKOKAWA
           </h1>
-          <h1
-            className="leading-none font-[Roboto_Flex,Arial] text-[96px] font-[650] tracking-[4.8px] text-right max-[960px]:text-[9.5vw] max-[960px]:tracking-[0.4vw]"
-          >
+          <h1 className="leading-none font-[Roboto_Flex,Arial] text-[96px] font-[650] tracking-[4.8px] text-right max-[960px]:text-[9.5vw] max-[960px]:tracking-[0.4vw]">
             DEV
           </h1>
         </Row>
       </div>
       <HeroImage scrollHeight={scrollHeight} />
-      <div className="max-w-[1200px] mx-auto mt-12 px-4">
-        <div className="w-fit my-24 mx-auto">
+      <div className="max-w-[1200px] mx-auto border-l border-r border-layout-divider ">
+        <div className="w-fit py-36 px-4 mx-auto">
           <p
             className="font-[Roboto_Flex] text-[clamp(24px,4vw,64px)] font-semibold leading-normal tracking-[1.2px]"
             id="splash-header-text"
@@ -67,9 +63,9 @@ const Splash = () => {
             <br />
             with{" "}
             <span className="text-primary-blue relative">
-              people
+              <span className="relative z-[1]">people</span>
               <motion.div
-                className="bg-highlight-primary absolute top-[14px] bottom-[7px] left-0 right-[100%] -z-[1]"
+                className="bg-highlight-primary absolute top-[5px] bottom-[5px] sm:top-[14px] sm:bottom-[7px] left-0 right-[100%]"
                 animate={{
                   width: hightlightActive ? "100%" : 0,
                   transition: {
@@ -82,6 +78,7 @@ const Splash = () => {
           </p>
         </div>
       </div>
+      <div className="w-screen border-t border-layout-divider relative left-1/2 -translate-x-1/2" />
     </>
   );
 };

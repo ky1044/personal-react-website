@@ -1,19 +1,19 @@
 const PrintersColorBlocks = () => {
   const colors = [
-    "var(--primary-blue",
-    "var(--secondary-blue",
-    "var(--highlight-primary",
+    "var(--primary-blue)",
+    "var(--secondary-blue)",
+    "var(--highlight-primary)",
     "var(--content-primary)",
     "var(--content-secondary)",
-    "var(--content-tertiary",
+    "var(--content-tertiary)",
   ];
 
   return (
-    <div className="flex gap-[3px]">
+    <div className="flex gap-[2%] w-full">
       {colors.map((color, index) => (
         <div
           key={index}
-          className="flex-grow h-5 w-5"
+          className="flex-grow aspect-square "
           style={{ backgroundColor: color }}
         />
       ))}
