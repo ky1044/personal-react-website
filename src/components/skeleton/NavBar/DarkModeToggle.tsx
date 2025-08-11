@@ -1,22 +1,20 @@
 import { useEffect } from "react";
 import { MoonIcon, SunIcon } from "src/icons/Icons";
 import { useDarkMode } from "src/providers/DarkModeProvider";
-import styles from "./DarkModeToggle.module.css";
 
 function DarkModeToggle() {
-  const {isDarkMode, setIsDarkMode} = useDarkMode()
+  const { isDarkMode, setIsDarkMode } = useDarkMode();
 
   return (
     <div
-      className={styles.mainContainer}
+      className="flex flex-row cursor-pointer gap-1.5"
       onClick={() => setIsDarkMode((prev) => !prev)}
     >
-      {" "}
-      <p>{isDarkMode ? "Dark" : "Light"} mode</p>
-      <div className={styles.iconContainer}>
+      <p className="text-sm">{isDarkMode ? "Dark" : "Light"} mode</p>
+      <div className="w-5 h-5 cursor-pointer relative">
         <div
-          className={`${styles.icon} ${
-            isDarkMode ? styles.light : styles.dark
+          className={`w-5 h-[46px] flex flex-col justify-center items-center absolute gap-1.5 transition-transform duration-200 bottom-0 gap-[6px] ${
+            isDarkMode ? "translate-y-[25px]" : "translate-y-0"
           }`}
         >
           <MoonIcon size={18} />

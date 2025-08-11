@@ -1,21 +1,19 @@
-import styles from "./PrintersColorBlocks.module.css";
-
 const PrintersColorBlocks = () => {
   const colors = [
-    "var(--primary-blue",
-    "var(--secondary-blue",
-    "var(--highlight-primary",
+    "var(--primary-blue)",
+    "var(--secondary-blue)",
+    "var(--highlight-primary)",
     "var(--content-primary)",
     "var(--content-secondary)",
-    "var(--content-tertiary",
+    "var(--content-tertiary)",
   ];
 
   return (
-    <div className={styles.colorBarContainer}>
+    <div className="flex gap-[2%] w-full">
       {colors.map((color, index) => (
         <div
           key={index}
-          className={styles.colorBlock}
+          className="flex-grow aspect-square "
           style={{ backgroundColor: color }}
         />
       ))}

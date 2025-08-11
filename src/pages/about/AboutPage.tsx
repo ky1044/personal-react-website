@@ -1,47 +1,45 @@
 import React from "react";
-import { NavBar } from "src/components/skeleton/NavBar/NavBar";
 import AboutBlocks from "./animation/AboutAnimationSection";
-import { Footer } from "src/components/skeleton/Footer";
 import { EmojiProvider } from "./emojiContext";
-import EmojiSection from "./EmojiSection";
+import AboutIconsSection from "./AboutIconsSection";
 import useEmoji from "./useEmoji";
 import LinksSection from "./LinksSection";
+import Hr from "src/components/shared/Hr";
 
 const AboutPage = () => {
   const emojiHook = useEmoji();
 
   return (
-    <div className="page-content">
-      <NavBar />
-
-      <div className="top-level-container black">
+    <>
+      <div className="max-w-[1200px] mx-auto mt-12 px-4">
         <div
-          className="narrow-vertical-container"
+          className="flex flex-col justify-between gap-2.5 max-w-[912px] mx-auto"
           style={{ textAlign: "center" }}
         >
           <h1>a little bit about myself</h1>
         </div>
       </div>
-      <div className="top-level-container ">
-        <div className="narrow-vertical-container">
+      <Hr />
+      <div className="max-w-[1200px] mx-auto  ">
+        <div className="flex flex-col justify-between max-w-[912px] mx-auto border-r border-l border-layout-divider">
           <AboutBlocks />
         </div>
       </div>
-      <div className="top-level-container" style={{ marginTop: 100 }}>
-        <div className="narrow-vertical-container">
+      <Hr />
+      <div className="mx-auto">
+        <div className="flex flex-col justify-between gap-2.5 max-w-[1200px] mx-auto">
           <EmojiProvider value={emojiHook}>
-            <EmojiSection />
+            <AboutIconsSection />
           </EmojiProvider>
         </div>
       </div>
-      <div className="top-level-container" style={{ marginTop: 100 }}>
-        <div className="narrow-vertical-container">
+      <Hr />
+      <div className="max-w-[1200px] mx-auto">
+        <div className="flex flex-col justify-between gap-2.5 max-w-[1200px] mx-auto">
           <LinksSection />
         </div>
       </div>
-
-      <Footer />
-    </div>
+    </>
   );
 };
 

@@ -1,5 +1,4 @@
 import useWindow from "src/hooks/useWindow";
-import styles from "./Context.module.css";
 import { motion } from "framer-motion";
 import { animationVariants } from "src/consts/animation";
 const skills: {
@@ -75,37 +74,48 @@ const ContextSection = () => {
   const { isMobile } = useWindow();
 
   return (
-    <div className="top-level-container">
-      <div className={styles.container}>
-        <h1 className="blue">TECH STACK</h1>
-        <h3 className={styles.dek}>
-          I have experience in the full stack, but lately I’m focused more on
-          front-end development. Here are some of the languages and libraries I
-          have experience with:
-        </h3>
-        <div className={styles.gridContainer}>
-          <div className={styles.grid}>
-            {skills.map((skill) => (
-              <motion.div
-                key={skill.name}
-                className={styles.gridItem}
-                style={{ ...(isMobile ? skill.mobileStyle : skill.style) }}
-                variants={animationVariants.individualLarge}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true }}
-              >
-                {skill.img && (
-                  <img
-                    src={`${process.env.PUBLIC_URL}/tech/${skill.img}`}
-                    className={styles.techImage}
-                  />
-                )}
-                <div className={styles.skillText}>{skill.name}</div>
-              </motion.div>
-            ))}
+    <div className="max-w-[1200px] mx-auto border-l border-r border-layout-divider">
+      <div>
+        <div className="flex flex-row justify-between text-primary-blue px-4 pt-24">
+          <h1 className="text-primary-blue">TECH STACK</h1>
+          <h1 className="text-background-site leading-none sm:block hidden">
+            技術
+          </h1>
+        </div>
+        <div className="w-screen border-t border-layout-divider relative left-1/2 -translate-x-1/2" />
+        <div className=" relative p-4">
+          <h3 className="max-w-[700px]">
+            I have experience in the full stack, but lately I’m focused more on
+            front-end development. Here are some of the languages and libraries
+            I have experience with:
+          </h3>
+          <div className="mt-8 mx-auto w-full max-w-[900px] aspect-[5/3] flex justify-center max-[680px]:aspect-[5/7]">
+            <div className="grid w-full gap-[6px] grid-cols-8 grid-rows-5 max-[680px]:grid-cols-5 max-[680px]:grid-rows-7 max-[680px]:gap-[2px]">
+              {skills.map((skill) => (
+                <motion.div
+                  key={skill.name}
+                  className={`relative group bg-[linear-gradient(180deg,var(--background-gradient-top),var(--background-gradient-bottom))] rounded-[12px] flex justify-center items-center text-center transition-[margin] duration-200 overflow-hidden m-1 hover:m-0`}
+                  style={{ ...(isMobile ? skill.mobileStyle : skill.style) }}
+                  variants={animationVariants.individualLarge}
+                  initial="hidden"
+                  whileInView="show"
+                  viewport={{ once: true }}
+                >
+                  {skill.img && (
+                    <img
+                      src={`${process.env.PUBLIC_URL}/tech/${skill.img}`}
+                      className="w-1/2 h-1/2 object-scale-down transition-[width,height] duration-200"
+                    />
+                  )}
+                  <div className="absolute bottom-[-20px] group-hover:bottom-[2px] transition-all duration-200 font-medium text-sm text-black">
+                    {skill.name}
+                  </div>
+                </motion.div>
+              ))}
+            </div>
           </div>
         </div>
+        <div className="w-screen border-t border-layout-divider relative left-1/2 -translate-x-1/2" />
       </div>
     </div>
   );
