@@ -13,7 +13,7 @@ const LinksSection = () => {
       className="border-l border-r border-layout-divider"
     >
       <motion.div variants={animationVariants.individual}>
-        <div className="flex flex-row justify-between p-4 pt-12 border-b border-layout-divider items-end">
+        <div className="flex flex-row justify-between px-4 pt-12 border-b border-layout-divider items-end">
           <h2>
             Some <span className="text-lime-600">{"<ul>"}</span>s to wrap things
             up

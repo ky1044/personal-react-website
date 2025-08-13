@@ -24,19 +24,18 @@ const AboutAnimationBlock = ({
 
   return (
     <div
-      className={`w-full flex gap-8 ${
+      className={`w-full block sm:flex gap-8 ${
         isReversed ? "flex-row-reverse" : ""
-      } max-[680px]:block relative`}
+      } relative`}
     >
-      {/* Animation wrapper with corner lines */}
-      <div className="relative w-[60%] aspect-[3/2] max-[680px]:w-full p-4">
-        <span className="pointer-events-none absolute top-0 left-0 h-4 w-4 border-t-2 border-l-2 border-content-secondary rounded-tl-md" />
-        <span className="pointer-events-none absolute top-0 right-0 h-4 w-4 border-t-2 border-r-2 border-content-secondary rounded-tr-md" />
-        <span className="pointer-events-none absolute bottom-0 left-0 h-4 w-4 border-b-2 border-l-2 border-content-secondary rounded-bl-md" />
-        <span className="pointer-events-none absolute bottom-0 right-0 h-4 w-4 border-b-2 border-r-2 border-content-secondary rounded-br-md" />
+      <div className="relative w-full sm:w-[60%] aspect-[3/2] p-4">
+        <span className="pointer-events-none absolute top-0 left-0 h-4 w-4 border-t-2 border-l-2 border-content-secondary rounded-tl-[0px]" />
+        <span className="pointer-events-none absolute top-0 right-0 h-4 w-4 border-t-2 border-r-2 border-content-secondary rounded-tr-[0px]" />
+        <span className="pointer-events-none absolute bottom-0 left-0 h-4 w-4 border-b-2 border-l-2 border-content-secondary rounded-bl-[0px]" />
+        <span className="pointer-events-none absolute bottom-0 right-0 h-4 w-4 border-b-2 border-r-2 border-content-secondary rounded-br-[0px]" />
 
         <div
-          className="relative bg-[linear-gradient(180deg,#24a0ff,#0185ff)] rounded-md h-full w-full overflow-clip"
+          className="relative bg-[linear-gradient(180deg,#24a0ff,#0185ff)] rounded-[0px] h-full w-full overflow-clip"
           onMouseEnter={() => {
             setIsActive(true);
           }}
@@ -55,7 +54,7 @@ const AboutAnimationBlock = ({
           className={`flex items-center gap-2 text-[14px] text-content-secondary absolute top-0 left-0`}
         >
           <span
-            className={`inline-block h-2.5 w-2.5 rounded-full bg-primary-blue transition-all duration-300 ${
+            className={`inline-block h-2.5 w-2.5 rounded-full transition-all duration-300 ${
               isActive
                 ? "bg-primary-blue animate-pulse shadow-[0_0_12px_rgba(36,160,255,0.8)]"
                 : "bg-background-secondary"

@@ -10,7 +10,7 @@ function ProjectStack({ tech }: { tech: string[] }) {
       onMouseLeave={() => setExpanded(false)}
       style={{ width: "calc(100% - 12px)", height: "96px" }}
     >
-      <div className="relative h-16 w-[calc(100%-48px)] ml-auto mr-4 rounded-[16px] overflow-hidden">
+      <div className="relative h-full w-[calc(100%-48px)] ml-auto mr-4 rounded-[16px] overflow-hidden flex justify-end">
         <div
           className="absolute right-0 top-0 h-full bg-background-tertiary rounded-[16px] overflow-hidden pr-11 flex items-start"
           style={{

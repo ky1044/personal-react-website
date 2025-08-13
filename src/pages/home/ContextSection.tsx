@@ -89,8 +89,8 @@ const ContextSection = () => {
             front-end development. Here are some of the languages and libraries
             I have experience with:
           </h3>
-          <div className="mt-8 mx-auto w-full max-w-[900px] aspect-[5/3] flex justify-center max-[680px]:aspect-[5/7]">
-            <div className="grid w-full gap-[6px] grid-cols-8 grid-rows-5 max-[680px]:grid-cols-5 max-[680px]:grid-rows-7 max-[680px]:gap-[2px]">
+          <div className="mt-8 mx-auto w-full max-w-[900px] flex justify-center aspect-[5/7] sm:aspect-[5/3]">
+            <div className="grid w-full sm:gap-[6px] sm:grid-cols-8 sm:grid-rows-5 grid-cols-5 grid-rows-7 gap-[2px]">
               {skills.map((skill) => (
                 <motion.div
                   key={skill.name}

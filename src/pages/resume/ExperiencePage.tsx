@@ -1,4 +1,3 @@
-import { Row } from "antd";
 import { TextLink } from "src/components/shared/TextLink";
 import ResumeSection from "./ResumeSection";
 
@@ -16,11 +15,15 @@ const ExperiencePage = () => {
   };
   return (
     <div className="max-w-[1200px] mx-auto mt-12 px-4 mb-12">
-      <div className="flex flex-col justify-between gap-2.5 max-w-[820px] mx-auto">
-        <Row align="middle" justify="space-between" style={{ marginBottom: 50 }}>
+      <div className="flex flex-col justify-between gap-2.5 max-w-[820px] mx-auto items-start sm:items-stretch">
+        <div className="flex flex-col justify-between items-start mb-12 sm:flex-row sm:items-end">
           <h1 className="text-primary-blue">EXPERIENCE</h1>
-          <TextLink text="Download Resume" linkType="download" onClick={onButtonClick} />
-        </Row>
+          <TextLink
+            text="Download Resume"
+            linkType="download"
+            onClick={onButtonClick}
+          />
+        </div>
         <ResumeSection />
       </div>
     </div>

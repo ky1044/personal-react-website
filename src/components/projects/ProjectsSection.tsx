@@ -9,7 +9,7 @@ const ProjectsSection = () => {
       <div className="max-w-[1200px] mx-auto border-l border-r border-layout-divider">
         <div className="flex flex-row justify-between text-primary-blue px-4 pt-24">
           <h1 className="text-primary-blue">PROJECTS</h1>
-          <h1 className="text-background-site leading-none lg:block hidden">
+          <h1 className="text-background-site leading-none sm:block hidden">
             プロジェクト
           </h1>
         </div>

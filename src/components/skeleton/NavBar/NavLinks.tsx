@@ -1,4 +1,3 @@
-import { Row } from "antd";
 import { useMemo, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useSiteData } from "src/providers/SiteDataProvider";
@@ -71,7 +70,7 @@ function NavBarLinks({ expanded }: { expanded: boolean }) {
         <DarkModeToggle />
       </div>
 
-      <Row>
+      <div className="flex gap-1">
         <Link
           to="/experience"
           className="relative inline-block group px-2 py-1"
@@ -91,7 +90,6 @@ function NavBarLinks({ expanded }: { expanded: boolean }) {
             EXPERIENCE
           </p>
         </Link>
-        <div className=" mx-2" />
         <Link
           to="/about"
           className="relative inline-block group px-2 py-1"
@@ -109,7 +107,7 @@ function NavBarLinks({ expanded }: { expanded: boolean }) {
           />
           <p className="text-content-primary text-[20px] font-medium">ABOUT</p>
         </Link>
-      </Row>
+      </div>
       <div
         className={`opacity-0 transition-all duration-300 ${
           formattedDate ? "opacity-100" : ""

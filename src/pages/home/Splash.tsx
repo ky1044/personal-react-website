@@ -1,4 +1,3 @@
-import { Row } from "antd";
 import { useEffect, useState } from "react";
 import HeroImage from "./HeroImage";
 import useScroll from "src/hooks/useScroll";
@@ -34,28 +33,28 @@ const Splash = () => {
           transition: "background-position-x 0.7s",
         }}
       >
-        <Row justify="space-between" align-items="baseline">
+        <div className="flex flex-row justify-between items-baseline">
           <h1 className="leading-none font-[Roboto_Flex,Arial] text-[96px] font-[650] tracking-[4.8px] max-[960px]:text-[9.5vw] max-[960px]:tracking-[0.4vw]">
             KEN
           </h1>
           <h1 className="leading-none font-[Roboto_Flex,Arial] text-[96px] font-[650] tracking-[4.8px] text-right max-[960px]:text-[9.5vw] max-[960px]:tracking-[0.4vw]">
             SOFTWARE
           </h1>
-        </Row>
-        <Row justify="space-between" align-items="baseline">
+        </div>
+        <div className="flex flex-row justify-between items-baseline">
           <h1 className="leading-none font-[Roboto_Flex,Arial] text-[96px] font-[650] tracking-[4.8px] max-[960px]:text-[9.5vw] max-[960px]:tracking-[0.4vw]">
             YOKOKAWA
           </h1>
           <h1 className="leading-none font-[Roboto_Flex,Arial] text-[96px] font-[650] tracking-[4.8px] text-right max-[960px]:text-[9.5vw] max-[960px]:tracking-[0.4vw]">
             DEV
           </h1>
-        </Row>
+        </div>
       </div>
       <HeroImage scrollHeight={scrollHeight} />
       <div className="max-w-[1200px] mx-auto border-l border-r border-layout-divider ">
         <div className="w-fit py-36 px-4 mx-auto">
-          <p
-            className="font-[Roboto_Flex] text-[clamp(24px,4vw,64px)] font-semibold leading-normal tracking-[1.2px]"
+          <div
+            className="font-[Roboto_Flex] text-3xl sm:text-5xl lg:text-6xl font-semibold leading-normal sm:leading-[1.4] lg:leading-[1.6] sm:tracking-[1.2px]"
             id="splash-header-text"
           >
             approaching <br />
@@ -75,7 +74,7 @@ const Splash = () => {
               />
             </span>{" "}
             in mind
-          </p>
+          </div>
         </div>
       </div>
       <div className="w-screen border-t border-layout-divider relative left-1/2 -translate-x-1/2" />

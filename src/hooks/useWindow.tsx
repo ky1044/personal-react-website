@@ -5,7 +5,7 @@ const useWindow = () => {
   const [height, setHeight] = useState(window?.innerHeight ?? 0);
 
   const isTablet = width <= 960;
-  const isMobile = width <= 680;
+  const isMobile = width <= 640;
 
   if (global.window) {
     useLayoutEffect(() => {

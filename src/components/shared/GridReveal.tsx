@@ -5,9 +5,8 @@ import {
   useSpring,
   useReducedMotion,
 } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
-// Reveals a dotted grid under the cursor using a radial mask
 const GridReveal = () => {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -31,7 +30,35 @@ const GridReveal = () => {
     reduceMotion ? { stiffness: 1000, damping: 100 } : springConfig
   );
 
+  const [isHoverCapable, setIsHoverCapable] = useState<boolean>(false);
+
   useEffect(() => {
+    if (
+      typeof window === "undefined" ||
+      typeof window.matchMedia !== "function"
+    ) {
+      setIsHoverCapable(false);
+      return;
+    }
+
+    const mediaQuery = window.matchMedia("(hover: hover) and (pointer: fine)");
+    const update = () => setIsHoverCapable(mediaQuery.matches);
+    update();
+
+    if (typeof mediaQuery.addEventListener === "function") {
+      mediaQuery.addEventListener("change", update);
+      return () => mediaQuery.removeEventListener("change", update);
+    } else {
+      mediaQuery.addListener(update);
+      return () => {
+        mediaQuery.removeListener(update);
+      };
+    }
+  }, []);
+
+  useEffect(() => {
+    // Do nothing on devices that don't support hover
+    if (!isHoverCapable) return;
     const updateFromClientCoords = (clientX: number, clientY: number) => {
       const el = containerRef.current;
       if (!el) return;
@@ -40,7 +67,7 @@ const GridReveal = () => {
       mouseY.set(clientY - rect.top);
     };
 
-    const handlePointerMove = (event: PointerEvent) => {
+    const handlePointerMove: (event: PointerEvent) => void = (event) => {
       lastClientXRef.current = event.clientX;
       lastClientYRef.current = event.clientY;
       updateFromClientCoords(event.clientX, event.clientY);
@@ -49,7 +76,7 @@ const GridReveal = () => {
     window.addEventListener("pointermove", handlePointerMove, {
       passive: true,
     });
-    const handleScrollOrResize = () => {
+    const handleScrollOrResize: () => void = () => {
       const cx = lastClientXRef.current;
       const cy = lastClientYRef.current;
       const el = containerRef.current;
@@ -70,7 +97,7 @@ const GridReveal = () => {
       window.removeEventListener("scroll", handleScrollOrResize);
       window.removeEventListener("resize", handleScrollOrResize);
     };
-  }, [mouseX, mouseY]);
+  }, [mouseX, mouseY, isHoverCapable]);
 
   const radius = 200;
   const feather = 80;
@@ -85,37 +112,41 @@ const GridReveal = () => {
 
   return (
     <>
-      {/* Subtle flashlight tint behind the dots */}
-      <motion.div
-        ref={containerRef}
-        aria-hidden
-        className="absolute inset-0 pointer-events-none z-0"
-        style={
-          {
-            backgroundColor: "var(--background-primary)",
-            WebkitMaskImage: spotlightMask as unknown as string,
-            maskImage: spotlightMask as unknown as string,
-            opacity: 0.8,
-          } as React.CSSProperties
-        }
-      />
+      {isHoverCapable && (
+        <>
+          {/* flashlight */}
+          <motion.div
+            ref={containerRef}
+            aria-hidden
+            className="absolute inset-0 pointer-events-none z-0"
+            style={
+              {
+                backgroundColor: "var(--background-primary)",
+                WebkitMaskImage: spotlightMask as unknown as string,
+                maskImage: spotlightMask as unknown as string,
+                opacity: 0.8,
+              } as React.CSSProperties
+            }
+          />
 
-      {/* Dotted grid on top */}
-      <motion.div
-        aria-hidden
-        className="absolute inset-0 pointer-events-none z-0"
-        style={
-          {
-            backgroundImage:
-              "radial-gradient(currentColor 1px, transparent 1px)",
-            backgroundSize: "18px 18px",
-            color: "var(--content-tertiary)",
-            WebkitMaskImage: maskImage as unknown as string,
-            maskImage: maskImage as unknown as string,
-            opacity: 0.5,
-          } as React.CSSProperties
-        }
-      />
+          {/* Dotted grid */}
+          <motion.div
+            aria-hidden
+            className="absolute inset-0 pointer-events-none z-0"
+            style={
+              {
+                backgroundImage:
+                  "radial-gradient(currentColor 1px, transparent 1px)",
+                backgroundSize: "18px 18px",
+                color: "var(--content-tertiary)",
+                WebkitMaskImage: maskImage as unknown as string,
+                maskImage: maskImage as unknown as string,
+                opacity: 0.5,
+              } as React.CSSProperties
+            }
+          />
+        </>
+      )}
     </>
   );
 };

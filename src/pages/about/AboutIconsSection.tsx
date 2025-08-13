@@ -85,7 +85,9 @@ const AboutIconLabel = ({ emojiKey }: { emojiKey: Emojis }) => {
       {EMOJI_MAPPING[emojiKey].label}
       <sup
         className={`text-[13px] inline-block w-[6px] align-super text-content-primary transition-all duration-300 inline-block ${
-          isHovered ? "text-primary-blue text-[16px] " : "text-content-primary "
+          isHovered
+            ? "text-primary-blue text-[17px] font-bold"
+            : "text-content-primary "
         }`}
       >
         {number}
@@ -140,10 +142,13 @@ const AboutIconsSection = () => {
     },
   ] as const;
 
+  const iconColumnClass =
+    "min-w-[96px] md:min-w-[144px] flex-col justify-between gap-4 border-layout-divider px-2 py-3 md:px-4 md:py-4";
+
   return (
     <div className="flex flex-row">
       <div
-        className="min-w-[96px] md:min-w-[144px] flex flex-col justify-between gap-4 border-l  border-layout-divider px-2 py-4 md:px-4 md:py-6"
+        className={`${iconColumnClass} flex border-l`}
         style={{ minHeight: 360 }}
       >
         {emojiList.map((emoji) => (
@@ -197,7 +202,7 @@ const AboutIconsSection = () => {
         </motion.p>
       </motion.div>
       <div
-        className="min-w-[96px] md:min-w-[144px] flex-col justify-between items-end  gap-4 border-r border-layout-divider p-2 py-4 flex hidden md:flex  md:px-4 md:py-6"
+        className={`${iconColumnClass} border-r hidden md:flex`}
         style={{ minHeight: 360 }}
       >
         {emojiList
