@@ -8,7 +8,7 @@ function ProjectStack({ tech }: { tech: string[] }) {
     <div
       className="hidden md:block absolute top-1/2 -translate-y-1/2 select-none"
       onMouseLeave={() => setExpanded(false)}
-      style={{ width: "calc(100% - 12px)", height: "96px" }}
+      style={{ width: "calc(100% - 12px)", height: "min(96px , 100% - 12px)" }}
     >
       <div className="relative h-full w-[calc(100%-48px)] ml-auto mr-4 rounded-[16px] overflow-hidden flex justify-end">
         <div
