@@ -5,7 +5,7 @@ function HeroImage({ scrollHeight }: { scrollHeight: number }) {
   const { isMobile } = useWindow();
   const heroImage = isMobile ? "hero-mobile.jpg" : "hero.jpg";
   return (
-    <div className="w-full max-w-[1600px] mt-20 mx-auto h-[max(40vh,40vw)] max-h-[700px] relative overflow-x-clip">
+    <div className="w-full max-w-[1600px] mx-auto h-[max(40vh,40vw)] max-h-[700px] relative overflow-x-clip">
       <img
         src={`${process.env.PUBLIC_URL}/${heroImage}`}
         className="w-full h-full object-cover"
