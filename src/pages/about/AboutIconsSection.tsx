@@ -9,8 +9,8 @@ import CollegeSvg from "src/components/assets/about/CollegeSvg";
 import SoftwareEngineerSvg from "src/components/assets/about/SoftwareEngineerSvg";
 import RunningSvg from "src/components/assets/about/RunningSvg";
 import CyclingSvg from "src/components/assets/about/CyclingSvg";
-import MusicSvg from "src/components/assets/about/MusicSvg";
 import PhotographySvg from "src/components/assets/about/PhotographySvg";
+import BooksSvg from "src/components/assets/about/BooksSvg";
 
 const ORDERED_EMOJIS: Emojis[] = [
   Emojis.NYC,
@@ -19,7 +19,7 @@ const ORDERED_EMOJIS: Emojis[] = [
   Emojis.SOFTWARE_ENGINEER,
   Emojis.RUNNING,
   Emojis.CYCLING,
-  Emojis.MUSIC,
+  Emojis.BOOKS,
   Emojis.PHOTOGRAPHY,
 ];
 
@@ -33,7 +33,7 @@ const EmojiToSvg: Record<Emojis, React.ComponentType> = {
   [Emojis.SOFTWARE_ENGINEER]: SoftwareEngineerSvg,
   [Emojis.RUNNING]: RunningSvg,
   [Emojis.CYCLING]: CyclingSvg,
-  [Emojis.MUSIC]: MusicSvg,
+  [Emojis.BOOKS]: BooksSvg,
   [Emojis.PHOTOGRAPHY]: PhotographySvg,
 };
 
@@ -133,7 +133,7 @@ const AboutIconsSection = () => {
       desktopPosition: "right",
     },
     {
-      emojiKey: Emojis.MUSIC,
+      emojiKey: Emojis.BOOKS,
       desktopPosition: "left",
     },
     {
@@ -196,8 +196,8 @@ const AboutIconsSection = () => {
         </motion.p>
         <motion.p variants={animationVariants.individual}>
           For fun, I like <AboutIconLabel emojiKey={Emojis.RUNNING} /> and{" "}
-          <AboutIconLabel emojiKey={Emojis.CYCLING} />, listening to{" "}
-          <AboutIconLabel emojiKey={Emojis.MUSIC} />, and taking{" "}
+          <AboutIconLabel emojiKey={Emojis.CYCLING} />, collecting{" "}
+          <AboutIconLabel emojiKey={Emojis.BOOKS} />, and taking{" "}
           <AboutIconLabel emojiKey={Emojis.PHOTOGRAPHY} />.
         </motion.p>
       </motion.div>

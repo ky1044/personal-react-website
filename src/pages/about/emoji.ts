@@ -5,7 +5,7 @@ export enum Emojis {
   SOFTWARE_ENGINEER = "SOFTWARE_ENGINEER",
   RUNNING = "RUNNING",
   CYCLING = "CYCLING",
-  MUSIC = "MUSIC",
+  BOOKS = "BOOKS",
   PHOTOGRAPHY = "PHOTOGRAPHY",
 }
 
@@ -39,9 +39,9 @@ export const EMOJI_MAPPING: { [key in Emojis]: EmojiData } = {
     id: "cycling",
     label: "cycling",
   },
-  [Emojis.MUSIC]: {
-    id: "music",
-    label: "music",
+  [Emojis.BOOKS]: {
+    id: "books",
+    label: "coffee table books",
   },
   [Emojis.PHOTOGRAPHY]: {
     id: "photography",
