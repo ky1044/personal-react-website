@@ -18,7 +18,7 @@ const LinksSection = () => {
             Some <span className="text-lime-600">{"<ul>"}</span>s to wrap things
             up
           </h2>
-          <h2 className="text-background-site leading-none sm:block hidden">
+          <h2 className="text-background-site leading-none md:block hidden">
             〆に
           </h2>
         </div>

@@ -8,7 +8,7 @@ const UpNextSection = () => {
     <div className="max-w-[1200px] mx-auto px-4 border-l border-r border-layout-divider ">
       <div className="flex flex-row justify-between text-primary-blue px-4 pt-24">
         <h1 className="text-primary-blue">UP NEXT</h1>
-        <h1 className="text-background-site leading-none sm:block hidden">
+        <h1 className="text-background-site leading-none md:block hidden">
           次に
         </h1>
       </div>

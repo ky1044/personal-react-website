@@ -78,7 +78,7 @@ const ContextSection = () => {
       <div>
         <div className="flex flex-row justify-between text-primary-blue px-4 pt-24">
           <h1 className="text-primary-blue">TECH STACK</h1>
-          <h1 className="text-background-site leading-none sm:block hidden">
+          <h1 className="text-background-site leading-none md:block hidden">
             技術
           </h1>
         </div>
