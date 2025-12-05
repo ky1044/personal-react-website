@@ -22,8 +22,9 @@ export const projects: ProjectDetail[] = [
     title: "//TODO:",
     date: "August, 2024",
     image: `${process.env.PUBLIC_URL}/project-images/todo.png`,
-    description: "A minimalist todo app, made to be simple and easy to use.",
+    description: "A minimalist to do app, made to be simple and easy to use.",
     tech: ["React.js", "Tailwind CSS", "shadcn/ui"],
+    site: "https://kenyokokawa.github.io/todo/",
     url: "https://github.com/kenyokokawa/todo",
   },
   {

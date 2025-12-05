@@ -32,17 +32,18 @@ const LinksSection = () => {
               <li>Smash Brothers</li>
               <li>Tomorrow, and Tomorrow, and Tomorrow</li>
               <li>Severance (both by Ling Ma and on Apple TV+)</li>
+              <li>Factorio</li>
             </ul>
           </div>
           <div className="flex flex-col gap-4 basis-1/3 p-4">
-            <h3>Go-to NYC spots</h3>
+            <h3>Favorite spots in NYC</h3>
             <ul className="list-disc ml-6">
+              <li>Tompkins Square Park</li>
               <li>Soothr</li>
-              <li>Four Horsemen</li>
               <li>Nubiani</li>
               <li>Tabetomo</li>
-              <li>La Dong</li>
               <li>886</li>
+              <li>Williamsburg Bridge bike path</li>
             </ul>
           </div>
           <div className="flex flex-col gap-4 basis-1/3 sm:border-l border-layout-divider p-4">
