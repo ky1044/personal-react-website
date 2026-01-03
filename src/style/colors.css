@@ -11,6 +11,7 @@
   --content-primary: #0e0f0c;
   --content-secondary: #696969;
   --content-tertiary: #bfbfbf;
+  --content-tertiary-light: #a5a4a4;
 
   --border-light: 1px lightgrey solid;
 
@@ -36,6 +37,8 @@
   --content-primary: #f6f6f6;
   --content-secondary: #b2b2b2;
   --content-tertiary: #505050;
+  --content-tertiary-light: #666666;
+
 
   --border-light: 1px rgb(117, 117, 117) solid;
 

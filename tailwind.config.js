@@ -10,6 +10,7 @@ module.exports = {
         "content-primary": "var(--content-primary)",
         "content-secondary": "var(--content-secondary)",
         "content-tertiary": "var(--content-tertiary)",
+        "content-tertiary-light": "var(--content-tertiary-light)",
         "background-primary": "var(--background-primary)",
         "background-secondary": "var(--background-secondary)",
         "background-tertiary": "var(--background-tertiary)",
