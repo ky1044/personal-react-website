@@ -1,20 +1,28 @@
 import { useMemo } from "react";
 import PrintersColorBlocks from "./PrintersColorBlocks";
-import { useLocation } from "react-router-dom";
 
 export function Footer() {
   const year = useMemo(() => new Date().getFullYear(), []);
 
-  const internalLinks: { label: string; href: string }[] = [
-    { label: "Home", href: "/" },
-    { label: "Experience", href: "/experience" },
-    { label: "About", href: "/about" },
+  const externalLinks: { label: string; href: string }[] = [
     {
       label: "Source code",
       href: "https://github.com/ky1044/personal-react-website",
     },
   ];
-  const location = useLocation();
+
+  const scrollToSection = (id: string) => {
+    const element = document.getElementById(id);
+    if (element) {
+      const navHeight = 61;
+      const elementPosition =
+        element.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: elementPosition - navHeight,
+        behavior: "smooth",
+      });
+    }
+  };
 
   return (
     <footer className="border-t border-layout-divider">
@@ -30,17 +38,19 @@ export function Footer() {
             <PrintersColorBlocks />
           </div>
           <div className="flex flex-col gap-1 mt-1">
-            <h4 className="text-content-secondary text-sm">Sitemap</h4>
-            <ul className="flex flex-col">
-              {internalLinks.map((l) => (
+            <ul className="flex flex-col items-end">
+              <li className="text-sm whitespace-pre-line text-right">
+                Crafted with care,
+                <br /> by hand and <br />
+                with the help of AI
+              </li>
+              {externalLinks.map((l) => (
                 <li key={l.href}>
                   <a
                     href={l.href}
-                    className={`text-xs no-underline hover:text-primary-blue transition-colors ${
-                      location.pathname === l.href
-                        ? "text-primary-blue"
-                        : "text-content-primary"
-                    }`}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-sm text-content-secondary no-underline hover:text-primary-blue transition-colors"
                   >
                     {l.label}
                   </a>

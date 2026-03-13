@@ -83,11 +83,13 @@ const SPRING_CONFIG = { stiffness: 300, damping: 20 };
 function getMaxSpan(style: Record<string, string>): number {
   const span = (v: string) => {
     const parts = v.split("/");
-    return parts.length === 2 ? Math.abs(parseInt(parts[1]) - parseInt(parts[0])) : 1;
+    return parts.length === 2
+      ? Math.abs(parseInt(parts[1]) - parseInt(parts[0]))
+      : 1;
   };
   return Math.max(
     style.gridColumn ? span(style.gridColumn) : 1,
-    style.gridRow ? span(style.gridRow) : 1
+    style.gridRow ? span(style.gridRow) : 1,
   );
 }
 
@@ -100,7 +102,10 @@ const SkillTile = ({
 }) => {
   const ref = useRef<HTMLDivElement>(null);
   const reduceMotion = useReducedMotion();
-  const activeStyle = (isMobile ? skill.mobileStyle : skill.style) as Record<string, string>;
+  const activeStyle = (isMobile ? skill.mobileStyle : skill.style) as Record<
+    string,
+    string
+  >;
   const maxSpan = getMaxSpan(activeStyle);
   const tiltMax = TILT_BASE * (3 / maxSpan);
 
@@ -163,15 +168,7 @@ const ContextSection = () => {
     <div className="max-w-[1200px] mx-auto border-l border-r border-layout-divider">
       <div>
         <div className="flex flex-row justify-between text-primary-blue px-4 pt-24">
-          <motion.h1
-            className="text-primary-blue"
-            variants={animationVariants.introduceDown}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-          >
-            TECH STACK
-          </motion.h1>
+          <h1 className="text-primary-blue">TECH STACK</h1>
           <h1 className="text-background-site leading-none md:block hidden">
             技術
           </h1>
@@ -179,18 +176,14 @@ const ContextSection = () => {
         <div className="w-screen border-t border-layout-divider relative left-1/2 -translate-x-1/2" />
         <div className=" relative p-4">
           <h3 className="max-w-[700px]">
-            I have experience in the full stack, but lately I&apos;m focused more on
-            front-end development. Here are some of the languages and libraries
-            I have experience with:
+            I have experience in the full stack, but lately I&apos;m focused
+            more on front-end development. Here are some of the languages and
+            libraries I have experience with:
           </h3>
           <div className="mt-8 mx-auto w-full max-w-[900px] flex justify-center aspect-[5/7] sm:aspect-[5/3]">
             <div className="grid w-full sm:gap-[6px] sm:grid-cols-8 sm:grid-rows-5 grid-cols-5 grid-rows-7 gap-[2px]">
               {skills.map((skill) => (
-                <SkillTile
-                  key={skill.name}
-                  skill={skill}
-                  isMobile={isMobile}
-                />
+                <SkillTile key={skill.name} skill={skill} isMobile={isMobile} />
               ))}
             </div>
           </div>

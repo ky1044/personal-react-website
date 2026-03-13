@@ -12,7 +12,8 @@ export default function ResumeSection() {
       className="grid w-full grid-cols-[40px_1fr] sm:grid-cols-[40px_1fr_6fr]"
       variants={animationVariants.containerQuick}
       initial="hidden"
-      animate="show"
+      whileInView="show"
+      viewport={{ once: true }}
       style={{ listStyleType: "none" }}
     >
       {RESUME.map((role, index) => (

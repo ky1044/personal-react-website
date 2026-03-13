@@ -1,10 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 function Logo({ expanded }: { expanded: boolean }) {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <header>
-      <Link to="/">
+      <a onClick={scrollToTop} className="cursor-pointer">
         <h1
           className={`px-1 border-2 border-primary-blue text-primary-blue text-[22px] font-medium font-[Jost,Futura,Helvetica] no-underline tracking-[1.6px] transition-all overflow-hidden ${
             expanded ? "w-[65px] h-[103px]" : "w-[80px] h-[34px]"
@@ -21,7 +24,7 @@ function Logo({ expanded }: { expanded: boolean }) {
           <div>Yoko</div>
           <div>kawa</div>
         </h1>
-      </Link>
+      </a>
     </header>
   );
 }

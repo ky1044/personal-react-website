@@ -30,7 +30,8 @@ const AboutAnimationSection = () => {
     <motion.ul
       variants={animationVariants.container}
       initial="hidden"
-      animate="show"
+      whileInView="show"
+      viewport={{ once: true }}
       style={{ listStyleType: "none" }}
     >
       <div className="p-4">

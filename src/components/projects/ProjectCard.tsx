@@ -15,7 +15,7 @@ const ProjectCard = ({ project }: { project: ProjectDetail }) => {
           />
         </div>
       </div>
-      <div className="relative flex-1 flex flex-col before:absolute before:top-[-1px] before:left-0 before:right-0 before:h-[2px] before:bg-[var(--content-tertiary)] group-hover:before:h-[3px] group-hover:before:bg-content-tertiary-light before:transition-all before:duration-100 before:ease-in-out before:z-10">
+      <div className="relative flex-1 flex flex-col before:absolute before:top-[-1px] before:left-0 before:right-0 before:h-[2px] before:bg-[var(--content-tertiary)] group-hover:before:h-[3px] group-hover:before:bg-content-tertiary-light before:transition-all before:duration-100 before:ease-in-out before:z-2">
         <div className="grid grid-cols-10 ">
           <div className="col-span-6 md:col-span-7 p-3 border-r border-content-tertiary border-dashed group-hover:border-r-content-tertiary-light transition-all duration-100 ease-in-out">
             <p className="text-xs text-content-secondary">name</p>

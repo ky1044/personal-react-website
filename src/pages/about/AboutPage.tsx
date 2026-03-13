@@ -6,12 +6,12 @@ import useEmoji from "./useEmoji";
 import LinksSection from "./LinksSection";
 import Hr from "src/components/shared/Hr";
 
-const AboutPage = () => {
+export const AboutPageTop = () => {
   const emojiHook = useEmoji();
 
   return (
     <>
-      <div className="max-w-[1200px] mx-auto mt-12 px-4">
+      <div className="max-w-[1200px] mx-auto pt-36 px-4">
         <div
           className="flex flex-col justify-between gap-2.5 max-w-[912px] mx-auto"
           style={{ textAlign: "center" }}
@@ -34,11 +34,25 @@ const AboutPage = () => {
         </div>
       </div>
       <Hr />
-      <div className="max-w-[1200px] mx-auto">
-        <div className="flex flex-col justify-between gap-2.5 max-w-[1200px] mx-auto">
-          <LinksSection />
-        </div>
+    </>
+  );
+};
+
+export const AboutPageBottom = () => {
+  return (
+    <div className="max-w-[1200px] mx-auto">
+      <div className="flex flex-col justify-between gap-2.5 max-w-[1200px] mx-auto">
+        <LinksSection />
       </div>
+    </div>
+  );
+};
+
+const AboutPage = () => {
+  return (
+    <>
+      <AboutPageTop />
+      <AboutPageBottom />
     </>
   );
 };
