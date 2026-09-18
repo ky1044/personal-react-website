@@ -84,10 +84,13 @@ const AboutIconLabel = ({ emojiKey }: { emojiKey: Emojis }) => {
     >
       {EMOJI_MAPPING[emojiKey].label}
       <sup
-        className={`text-[13px] inline-block w-[6px] align-super text-content-primary transition-all duration-300 inline-block ${
+        /* Scaled, not resized: growing the font-size grew the inline box
+           with it, which pushed the marker up into the line above. A
+           transform costs no layout. */
+        className={`text-[0.55em] inline-block w-[6px] align-super transition-all duration-300 ${
           isHovered
-            ? "text-primary-blue text-[17px] font-bold"
-            : "text-content-primary "
+            ? "text-primary-blue font-bold scale-[1.35]"
+            : "text-content-primary"
         }`}
       >
         {number}
@@ -167,13 +170,14 @@ const AboutIconsSection = () => {
         ))}
       </div>
       <motion.div
-        className="flex flex-col justify-center grow text-[24px] max-w-[1200px] border-r border-l border-layout-divider p-2 sm:p-8"
+        className="flex flex-col justify-center grow text-[clamp(1.125rem,0.955rem+0.727vw,1.5rem)] max-w-[1200px] border-r border-l border-layout-divider p-2 sm:p-8"
         variants={animationVariants.containerQuick}
         initial="hidden"
         whileInView="show"
         viewport={{ once: true }}
       >
         <motion.p
+          className="leading-relaxed"
           style={{ marginBottom: 40 }}
           variants={animationVariants.individual}
         >
@@ -181,6 +185,7 @@ const AboutIconsSection = () => {
           <AboutIconLabel emojiKey={Emojis.NYC} />.
         </motion.p>
         <motion.p
+          className="leading-relaxed"
           style={{ marginBottom: 40 }}
           variants={animationVariants.individual}
         >
@@ -194,7 +199,10 @@ const AboutIconsSection = () => {
           development work, and am most familiar with React.js, React Native,
           and Node.js.
         </motion.p>
-        <motion.p variants={animationVariants.individual}>
+        <motion.p
+          className="leading-relaxed"
+          variants={animationVariants.individual}
+        >
           For fun, I like <AboutIconLabel emojiKey={Emojis.RUNNING} /> and{" "}
           <AboutIconLabel emojiKey={Emojis.CYCLING} />, collecting{" "}
           <AboutIconLabel emojiKey={Emojis.BOOKS} />, and taking{" "}

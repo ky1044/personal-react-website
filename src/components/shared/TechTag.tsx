@@ -1,5 +1,8 @@
 import React from "react";
 
+/* Border color is keyed to each technology's own brand mark. Brands whose
+   mark is near-black resolve to --content-primary so they invert with the
+   theme instead of disappearing on a dark page. */
 const TECH_MAP: Record<string, { borderColor: string }> = {
   "React.js": {
     borderColor: "#61dbfb",
@@ -8,7 +11,7 @@ const TECH_MAP: Record<string, { borderColor: string }> = {
     borderColor: "#61dbfb",
   },
   "Next.js": {
-    borderColor: "#111",
+    borderColor: "var(--content-primary)",
   },
   "Node.js": {
     borderColor: "#83cd29",
@@ -44,13 +47,13 @@ const TECH_MAP: Record<string, { borderColor: string }> = {
     borderColor: "#4d97d1",
   },
   Flask: {
-    borderColor: "#111",
+    borderColor: "var(--content-primary)",
   },
   "Next.js App Router": {
-    borderColor: "#111",
+    borderColor: "var(--content-primary)",
   },
   Clerk: {
-    borderColor: "#111",
+    borderColor: "var(--content-primary)",
   },
   Postgres: {
     borderColor: "#699eca",
@@ -75,7 +78,9 @@ function TechTag({ name, size = "md", hasGlow = false }: TechTagProps) {
   const tagStyle: React.CSSProperties | undefined = borderColor
     ? {
         borderColor,
-        boxShadow: hasGlow ? `0 0 15px ${borderColor}44` : undefined,
+        boxShadow: hasGlow
+          ? `0 0 15px color-mix(in srgb, ${borderColor} 27%, transparent)`
+          : undefined,
       }
     : undefined;
   return (

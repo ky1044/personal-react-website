@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import SpheresBlock from "./SpheresBlock";
 import CalendarBlock from "./CalendarBlock";
 import AboutAnimationBlock from "./AboutAnimationBlock";

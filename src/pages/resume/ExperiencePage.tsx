@@ -1,5 +1,6 @@
 import { TextLink } from "src/components/shared/TextLink";
 import ResumeSection from "./ResumeSection";
+import Hr from "src/components/shared/Hr";
 
 const ExperiencePage = () => {
   const onButtonClick = () => {
@@ -33,7 +34,7 @@ const ExperiencePage = () => {
         </div>
       </div>
       <div className="max-w-[910px] mx-auto border-l border-r border-layout-divider">
-        <div className="w-screen border-t border-layout-divider relative left-1/2 -translate-x-1/2" />
+        <Hr />
         <div className="px-4 py-8 max-w-[820px] mx-auto">
           <ResumeSection />
         </div>

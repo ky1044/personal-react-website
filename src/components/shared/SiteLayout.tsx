@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from "react";
+import { PropsWithChildren } from "react";
 import { NavBar } from "src/components/skeleton/NavBar/NavBar";
 import { Footer } from "src/components/skeleton/Footer";
 import GridReveal from "src/components/shared/GridReveal";

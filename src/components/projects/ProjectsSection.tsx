@@ -2,6 +2,7 @@ import { animationVariants } from "src/consts/animation";
 import ProjectCard from "./ProjectCard";
 import { projects } from "./projects";
 import { motion } from "framer-motion";
+import Hr from "src/components/shared/Hr";
 
 const ProjectsSection = () => {
   return (
@@ -13,7 +14,7 @@ const ProjectsSection = () => {
             プロジェクト
           </h1>
         </div>
-        <div className="w-screen border-t border-layout-divider relative left-1/2 -translate-x-1/2" />
+        <Hr />
         <div className="border-layout-divider  relative">
           {Array.from({ length: Math.ceil(projects.length / 2) }).map(
             (_, rowIdx) => {
@@ -23,11 +24,11 @@ const ProjectsSection = () => {
                 <div
                   key={rowIdx}
                   className={`relative p-4 ${
-                    rowIdx > 0 ? "md:border-t border-layout-divider" : ""
+                    rowIdx > 0 ? "lg:border-t border-layout-divider" : ""
                   }`}
                 >
-                  <div className="hidden md:block absolute top-0 bottom-0 left-1/2 border-l border-layout-divider pointer-events-none" />
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="hidden lg:block absolute top-0 bottom-0 left-1/2 border-l border-layout-divider pointer-events-none" />
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     {rowItems.map((project, index) => (
                       <motion.div
                         key={start + index}
@@ -48,7 +49,7 @@ const ProjectsSection = () => {
         </div>
       </div>
 
-      <div className="w-screen border-t border-layout-divider relative left-1/2 -translate-x-1/2" />
+      <Hr />
     </>
   );
 };

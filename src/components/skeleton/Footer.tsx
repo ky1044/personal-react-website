@@ -11,23 +11,10 @@ export function Footer() {
     },
   ];
 
-  const scrollToSection = (id: string) => {
-    const element = document.getElementById(id);
-    if (element) {
-      const navHeight = 61;
-      const elementPosition =
-        element.getBoundingClientRect().top + window.scrollY;
-      window.scrollTo({
-        top: elementPosition - navHeight,
-        behavior: "smooth",
-      });
-    }
-  };
-
   return (
     <footer className="border-t border-layout-divider">
       <div className="max-w-[1200px] mx-auto p-4 pb-12 border-l border-r border-layout-divider backdrop-blur-[50px]">
-        <div className="flex justify-between gap-10 items-baselie">
+        <div className="flex justify-between gap-10 items-baseline">
           <div className="flex flex-col">
             <div className="flex flex-row gap-4 items-baseline">
               <p className="text-content-secondary text-lg font-bold">

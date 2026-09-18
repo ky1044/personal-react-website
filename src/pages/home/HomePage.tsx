@@ -3,10 +3,7 @@ import Splash from "./Splash";
 import ContextSection from "./ContextSection";
 import ExperienceSection from "src/pages/resume/ExperiencePage";
 import { AboutPageTop, AboutPageBottom } from "src/pages/about/AboutPage";
-
-const FullWidthDivider = () => (
-  <div className="w-screen border-t border-layout-divider relative left-1/2 -translate-x-1/2" />
-);
+import Hr from "src/components/shared/Hr";
 
 const HomePage = () => {
   return (
@@ -26,7 +23,7 @@ const HomePage = () => {
       <section id="experience">
         <ExperienceSection />
       </section>
-      <FullWidthDivider />
+      <Hr />
       <section>
         <AboutPageBottom />
       </section>

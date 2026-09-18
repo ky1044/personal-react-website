@@ -40,7 +40,6 @@ const PEEK_AMOUNT = 60;
 function SectionCarousel({ expanded }: { expanded: boolean }) {
   const activeSection = useActiveSection();
   const activeIndex = SECTIONS.findIndex((s) => s.id === activeSection);
-  const [hoveredSection, setHoveredSection] = useState<SectionId | null>(null);
   const [isHoveringCarousel, setIsHoveringCarousel] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
   const { isMobile } = useWindow();
@@ -52,7 +51,13 @@ function SectionCarousel({ expanded }: { expanded: boolean }) {
     }
     const element = document.getElementById(id);
     if (element) {
-      const navHeight = expanded ? 130 : 61;
+      const rootStyle = getComputedStyle(document.documentElement);
+      const navHeight = parseInt(
+        rootStyle.getPropertyValue(
+          expanded ? "--nav-height-expanded" : "--nav-height"
+        ),
+        10
+      );
       const elementPosition =
         element.getBoundingClientRect().top + window.scrollY;
       window.scrollTo({
@@ -118,8 +123,6 @@ function SectionCarousel({ expanded }: { expanded: boolean }) {
         }}
         className="relative inline-block px-2 py-1 cursor-pointer bg-transparent border-none"
         onClick={() => scrollToSection(section.id)}
-        onMouseEnter={() => setHoveredSection(section.id)}
-        onMouseLeave={() => setHoveredSection(null)}
       >
         <Corners isActive={isActiveSection} />
         <p className="text-[20px] font-medium text-content-primary">
@@ -136,7 +139,6 @@ function SectionCarousel({ expanded }: { expanded: boolean }) {
       onMouseEnter={() => !isMobile && setIsHoveringCarousel(true)}
       onMouseLeave={() => {
         setIsHoveringCarousel(false);
-        setHoveredSection(null);
       }}
     >
       {/* Layer 1: tight mask — always visible, shows active + peek */}
@@ -179,8 +181,6 @@ function SectionCarousel({ expanded }: { expanded: boolean }) {
                 key={section.id}
                 className="relative inline-block px-2 py-1 cursor-pointer bg-transparent border-none"
                 onClick={() => scrollToSection(section.id)}
-                onMouseEnter={() => setHoveredSection(section.id)}
-                onMouseLeave={() => setHoveredSection(null)}
               >
                 <Corners isActive={isActiveSection} />
                 <p className="text-[20px] font-medium text-content-primary">

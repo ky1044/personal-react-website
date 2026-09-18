@@ -4,6 +4,7 @@ import useScroll from "src/hooks/useScroll";
 import GraphSvg from "./GraphSvg";
 import HeroImage from "./HeroImage";
 import HeroText from "./HeroText";
+import Hr from "src/components/shared/Hr";
 
 const Splash = () => {
   const [hightlightActive, setHighlightActive] = useState(false);
@@ -54,7 +55,7 @@ const Splash = () => {
           </div>
         </div>
       </div>
-      <div className="w-screen border-t border-layout-divider relative left-1/2 -translate-x-1/2" />
+      <Hr />
     </>
   );
 };

@@ -1,111 +1,60 @@
+/* Base typography. Every value here comes from src/style/tokens.css. */
+
+p,
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  color: var(--content-primary);
+}
+
 ul,
 li {
   color: var(--content-primary);
 }
 
-p,
 h1,
 h2,
 h3,
 h4 {
-  margin: 0;
-  color: var(--content-primary);
-}
-
-h1,
-h2,
-h3,
-h4 {
-  line-height: 1;
-  font-family: Roboto Flex, Arial;
+  font-family: var(--font-display);
   font-style: normal;
-  font-weight: 600;
-  line-height: normal;
+  font-weight: var(--weight-semibold);
+  line-height: var(--leading-tight);
   color: var(--content-primary);
-}
-
-.p1 {
-  font-size: 1.2em;
-}
-
-p,
-li,
-.p2 {
-  font-size: 1em;
-  line-height: 1.5;
-}
-
-.p3 {
-  font-size: 0.7em;
 }
 
 h1 {
-  color: --var(--primary-blue);
-  font-size: 4em;
+  font-size: var(--text-h1);
   font-stretch: 125%;
+  line-height: var(--leading-none);
 }
 
 h2 {
-  font-size: 2em;
+  font-size: var(--text-h2);
 }
 
 h3 {
-  font-size: 1.5em;
-  margin: 0;
+  font-size: var(--text-h3);
 }
 
 h4 {
-  font-size: 1em;
+  font-size: var(--text-h4);
 }
 
+/* `em`, not `rem`: paragraphs inherit their container's size so a feature
+   block can scale its prose by setting one font-size on the wrapper (see the
+   About section). --text-base is the same 1rem wherever nothing overrides it. */
+p,
 li {
-  font-size: 16px;
+  font-size: 1em;
+  line-height: var(--leading-normal);
 }
 
-.stretched {
-  font-stretch: 150%;
-}
-
-.logo {
-  padding: 0 4px;
-  border: 2px solid var(--primary-blue);
-  color: var(--primary-blue);
-  font-size: 24px;
-  font-family: "Jost";
-  font-variant: normal;
-  text-decoration: none;
-  letter-spacing: 1.6px;
-}
-
-@media screen and (width< 640px) {
-  .p1 {
-    font-size: 0.9em;
-  }
-  p,
-  li,
-  .p2 {
-    font-size: 0.8em;
-  }
-
-  .p3 {
-    font-size: 0.6em;
-  }
-
-  h1 {
-    font-size: 3em;
-  }
-
-  h2 {
-    font-size: 1.5em;
-  }
-
-  h3 {
-    font-size: 1em;
-  }
-}
-
-@media screen and (width < 480px) {
-  h1 {
-    font-size: 2em;
-  }
+/* A visible focus ring everywhere, for keyboard users only. */
+:where(a, button, [tabindex]):focus-visible {
+  outline: 2px solid var(--focus-ring);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
 }

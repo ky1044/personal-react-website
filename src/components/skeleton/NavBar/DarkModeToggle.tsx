@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { MoonIcon, SunIcon } from "src/icons/Icons";
 import { useDarkMode } from "src/providers/DarkModeProvider";
 

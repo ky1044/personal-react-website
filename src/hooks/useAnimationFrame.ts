@@ -10,7 +10,7 @@ const useAnimationFrame = ({ animationSpeed }: { animationSpeed: number }) => {
       const deltaTime = time - lastTime;
       lastTime = time;
 
-      setAnimationFrame((prevFrame) => prevFrame + deltaTime * 0.03);
+      setAnimationFrame((prevFrame) => prevFrame + deltaTime * animationSpeed);
 
       animationFrameId = requestAnimationFrame(animate);
     };
@@ -18,7 +18,7 @@ const useAnimationFrame = ({ animationSpeed }: { animationSpeed: number }) => {
     animationFrameId = requestAnimationFrame(animate);
 
     return () => cancelAnimationFrame(animationFrameId);
-  }, []);
+  }, [animationSpeed]);
   return { animationFrame };
 };
 

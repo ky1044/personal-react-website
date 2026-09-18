@@ -1,0 +1,247 @@
+/* ============================================================================
+   Design tokens
+   ----------------------------------------------------------------------------
+   Three layers, in order:
+     1. Primitives  — raw scale values. Never reference these in components.
+     2. Semantic    — what a value means. This is what components use.
+     3. Component   — a handful of shared, multi-file magic numbers.
+
+   The live reference for all of this renders at /styleguide (dev only).
+   ========================================================================== */
+
+:root {
+  /* ---- 1. PRIMITIVES ---------------------------------------------------- */
+
+  /* Brand blue — the site's single accent. 500 is the identity color. */
+  --blue-50: #eaf5ff;
+  --blue-100: #d0eaff;
+  --blue-200: #a8d8ff;
+  --blue-300: #6dbcff;
+  --blue-400: #36a3ff;
+  --blue-500: #1d90ff;
+  --blue-600: #0079eb;
+  --blue-700: #0062c2;
+  --blue-800: #004e9b;
+  --blue-900: #003f7d;
+
+  /* Cyan — used only in gradients alongside blue, never on its own. */
+  --cyan-300: #66ebff;
+  --cyan-400: #22e2ff;
+  --cyan-500: #00deff;
+  --cyan-600: #00b4cf;
+
+  /* Neutrals — a single ramp for both themes. */
+  --neutral-0: #ffffff;
+  --neutral-25: #fafafa;
+  --neutral-50: #f5f5f5;
+  --neutral-100: #e8e8e8;
+  --neutral-200: #dedede;
+  --neutral-300: #bfbfbf;
+  --neutral-400: #a5a4a4;
+  --neutral-500: #858585;
+  --neutral-600: #696969;
+  --neutral-700: #505050;
+  --neutral-750: #4a4a4a;
+  --neutral-800: #404040;
+  --neutral-850: #2f2f2f;
+  --neutral-900: #232323;
+  --neutral-925: #1c1c1c;
+  --neutral-950: #141414;
+  --neutral-1000: #0e0f0c;
+
+  /* Type scale — 1rem base, ~1.25 ratio. Display steps are fluid. */
+  --text-2xs: 0.625rem; /* 10px */
+  --text-xs: 0.75rem; /*  12px */
+  --text-sm: 0.875rem; /* 14px */
+  --text-base: 1rem; /*   16px */
+  --text-lg: 1.125rem; /* 18px */
+  --text-xl: 1.25rem; /*  20px */
+  --text-2xl: 1.5rem; /*  24px */
+  --text-3xl: 1.875rem; /* 30px */
+  --text-4xl: 2.25rem; /*  36px */
+  --text-5xl: clamp(2rem, 1.2rem + 3.2vw, 3rem);
+  --text-6xl: clamp(2.5rem, 1rem + 6vw, 4rem);
+  --text-display: clamp(2rem, -0.5rem + 10vw, 6rem);
+
+  /* Heading steps — fluid, so headings need no breakpoint overrides. */
+  --text-h1: clamp(2.5rem, 1rem + 6vw, 4rem);
+  --text-h2: clamp(1.5rem, 1.1rem + 1.4vw, 2rem);
+  --text-h3: clamp(1.125rem, 1rem + 0.6vw, 1.5rem);
+  --text-h4: var(--text-base);
+
+  --leading-none: 1;
+  --leading-tight: 1.15;
+  --leading-snug: 1.35;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.7;
+
+  --tracking-tight: -0.01em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.04em;
+  --tracking-display: 0.05em;
+
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-display: 650;
+
+  --font-display: "Roboto Flex", Arial, sans-serif;
+  --font-body: "Libre Franklin", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    Roboto, sans-serif;
+  --font-mark: "Jost", Futura, Helvetica, sans-serif;
+
+  /* Space — mirrors Tailwind's 4px scale, so `p-4` and var(--space-4) are
+     the same 1rem. Use the Tailwind utility in components; these exist for
+     raw CSS and for the styleguide. */
+  --space-0: 0;
+  --space-1: 0.25rem; /*  4px */
+  --space-2: 0.5rem; /*   8px */
+  --space-3: 0.75rem; /*  12px */
+  --space-4: 1rem; /*     16px */
+  --space-5: 1.25rem; /*  20px */
+  --space-6: 1.5rem; /*   24px */
+  --space-8: 2rem; /*     32px */
+  --space-10: 2.5rem; /*  40px */
+  --space-12: 3rem; /*    48px */
+  --space-16: 4rem; /*    64px */
+  --space-24: 6rem; /*    96px */
+
+  /* Named layout steps — the page's vertical rhythm. */
+  --space-gutter: 1rem;
+  --space-section: 6rem;
+  --space-section-lg: 9rem;
+
+  /* Radius */
+  --radius-none: 0;
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --radius-2xl: 24px;
+  --radius-pill: 999px;
+
+  /* Motion — the site's interaction vocabulary. */
+  --duration-instant: 100ms;
+  --duration-fast: 200ms;
+  --duration-base: 300ms;
+  --duration-slow: 500ms;
+  --duration-slower: 700ms;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* ---- 2. SEMANTIC (light) ---------------------------------------------- */
+
+  --content-primary: var(--neutral-1000);
+  --content-secondary: var(--neutral-600);
+  --content-tertiary: var(--neutral-300);
+  --content-tertiary-light: var(--neutral-400);
+  --content-inverse: var(--neutral-0);
+  --content-accent: var(--blue-600);
+
+  --background-site: var(--neutral-50);
+  --background-primary: var(--neutral-0);
+  --background-secondary: var(--neutral-200);
+  --background-tertiary: var(--neutral-100);
+  --background-inverse: var(--neutral-1000);
+
+  /* Translucent surface behind the fixed nav + footer. */
+  --background-veil: rgb(255 255 255 / 0.78);
+
+  --background-gradient-top: #e3e3e3;
+  --background-gradient-bottom: #e5e5e5;
+
+  --primary-blue: var(--blue-500);
+  --secondary-blue: var(--cyan-500);
+  --highlight-primary: var(--blue-100);
+
+  --layout-divider: var(--neutral-200);
+  --border-subtle: var(--neutral-200);
+  --border-default: var(--neutral-300);
+  --border-strong: var(--neutral-400);
+  --border-light: 1px solid var(--neutral-300);
+
+  --focus-ring: var(--blue-500);
+
+  --elevation-1: 0 1px 2px rgb(14 15 12 / 0.06),
+    0 1px 3px rgb(14 15 12 / 0.05);
+  --elevation-2: 0 2px 4px rgb(14 15 12 / 0.06),
+    0 6px 16px rgb(14 15 12 / 0.08);
+  --elevation-3: 0 8px 24px rgb(14 15 12 / 0.1),
+    0 16px 48px rgb(14 15 12 / 0.08);
+  --elevation-accent: 0 16px 48px rgb(29 144 255 / 0.22);
+
+  /* ---- 3. COMPONENT ------------------------------------------------------ */
+
+  /* Shared across NavBar, SectionCarousel and Footer scroll offsets. */
+  --nav-height: 61px;
+  --nav-height-expanded: 130px;
+  /* The wordmark's leading is derived, not chosen. The bar loses
+     (--nav-height-expanded - --nav-height) when it collapses, and the mark
+     loses exactly two of its three lines. Make one line half that difference
+     and the mark shrinks in lockstep with the bar: optically centred in BOTH
+     states, with a top edge that never moves. 34.5px today. */
+  --nav-logo-line: calc(
+    (var(--nav-height-expanded) - var(--nav-height)) / 2
+  );
+  /* Centres the collapsed mark (one line + its 2px borders) in the collapsed
+     bar — which, by the relationship above, also centres the expanded one. */
+  --nav-logo-top: calc((var(--nav-height) - var(--nav-logo-line) - 4px) / 2);
+  --layout-max: 1200px;
+  --layout-max-narrow: 912px;
+}
+
+:root.dark {
+  --content-primary: #f6f6f6;
+  --content-secondary: #b2b2b2;
+  --content-tertiary: var(--neutral-700);
+  --content-tertiary-light: var(--neutral-600);
+  --content-inverse: var(--neutral-1000);
+  --content-accent: var(--blue-400);
+
+  --background-site: var(--neutral-850);
+  --background-primary: var(--neutral-900);
+  --background-secondary: var(--neutral-700);
+  --background-tertiary: var(--neutral-800);
+  --background-inverse: var(--neutral-0);
+
+  --background-veil: rgb(35 35 35 / 0.78);
+
+  /* Both stops sit on the ramp, above --background-site (--neutral-850), so
+     the tech-stack tiles read as raised surfaces. The earlier #303030 bottom
+     stop was within one step of the page color and disappeared into it. */
+  --background-gradient-top: var(--neutral-750);
+  --background-gradient-bottom: var(--neutral-800);
+
+  --highlight-primary: #3f5866;
+
+  --layout-divider: #333333;
+  --border-subtle: #333333;
+  --border-default: var(--neutral-700);
+  --border-strong: var(--neutral-600);
+  --border-light: 1px solid var(--neutral-700);
+
+  --focus-ring: var(--blue-400);
+
+  --elevation-1: 0 1px 2px rgb(0 0 0 / 0.4);
+  --elevation-2: 0 2px 4px rgb(0 0 0 / 0.35), 0 6px 16px rgb(0 0 0 / 0.4);
+  --elevation-3: 0 8px 24px rgb(0 0 0 / 0.45), 0 16px 48px rgb(0 0 0 / 0.4);
+  --elevation-accent: 0 16px 48px rgb(29 144 255 / 0.28);
+}
+
+html,
+body {
+  background-color: var(--background-site);
+}
+
+/* Honour the OS setting for anyone who has never touched the toggle. */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-instant: 1ms;
+    --duration-fast: 1ms;
+    --duration-base: 1ms;
+    --duration-slow: 1ms;
+    --duration-slower: 1ms;
+  }
+}

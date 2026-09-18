@@ -1,10 +1,3 @@
-const prefersReducedMotion = () => {
-  if (typeof window !== "undefined") {
-    return window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  }
-  return false;
-};
-
 export const animationVariants = {
   container: {
     hidden: { opacity: 0 },

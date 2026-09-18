@@ -7,6 +7,7 @@ import {
 import React, { useRef } from "react";
 import { animationVariants } from "src/consts/animation";
 import useWindow from "src/hooks/useWindow";
+import Hr from "src/components/shared/Hr";
 
 const skills: {
   style: object;
@@ -151,10 +152,11 @@ const SkillTile = ({
       {skill.img && (
         <img
           src={`${process.env.PUBLIC_URL}/tech/${skill.img}`}
+          alt={skill.name}
           className="w-1/2 h-1/2 object-scale-down transition-[width,height] duration-200"
         />
       )}
-      <div className="absolute bottom-[-20px] group-hover:bottom-[2px] transition-all duration-200 font-medium text-sm text-black">
+      <div className="absolute bottom-[-20px] group-hover:bottom-[2px] transition-all duration-200 font-medium text-sm text-content-primary">
         {skill.name}
       </div>
     </motion.div>
@@ -173,7 +175,7 @@ const ContextSection = () => {
             技術
           </h1>
         </div>
-        <div className="w-screen border-t border-layout-divider relative left-1/2 -translate-x-1/2" />
+        <Hr />
         <div className=" relative p-4">
           <h3 className="max-w-[700px]">
             I have experience in the full stack, but lately I&apos;m focused
@@ -188,7 +190,7 @@ const ContextSection = () => {
             </div>
           </div>
         </div>
-        <div className="w-screen border-t border-layout-divider relative left-1/2 -translate-x-1/2" />
+        <Hr />
       </div>
     </div>
   );

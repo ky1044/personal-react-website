@@ -9,17 +9,26 @@ export function NavBar() {
 
   return (
     <>
-      <div className="fixed top-0 left-0 right-0 mx-auto z-10 bg-white/80 dark:bg-neutral-900/80 backdrop-blur-[30px] border-b-[1px] border-content-tertiary shadow-sm">
+      <div className="fixed top-0 left-0 right-0 mx-auto z-10 bg-background-veil backdrop-blur-[30px] border-b border-layout-divider shadow-1">
         <div
           className={`flex flex-row justify-between items-center transition-all w-[min(100%-2rem,1200px)] overflow-hidden m-auto ${
-            isNavBarExpanded ? "h-[130px]" : "h-[61px]"
+            isNavBarExpanded
+              ? "h-[var(--nav-height-expanded)]"
+              : "h-[var(--nav-height)]"
           }`}
         >
-          <Logo expanded={isNavBarExpanded} />
+          {/* Pinned to the top of the bar rather than centred, so the
+              wordmark grows and shrinks downward from a fixed edge. */}
+          <div
+            className="self-start"
+            style={{ paddingTop: "var(--nav-logo-top)" }}
+          >
+            <Logo expanded={isNavBarExpanded} />
+          </div>
           <NavLinks expanded={isNavBarExpanded} />
         </div>
       </div>
-      <div style={{ height: 130 }}></div>
+      <div style={{ height: "var(--nav-height-expanded)" }} />
     </>
   );
 }

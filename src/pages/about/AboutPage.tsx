@@ -1,4 +1,3 @@
-import React from "react";
 import AboutBlocks from "./animation/AboutAnimationSection";
 import { EmojiProvider } from "./emojiContext";
 import AboutIconsSection from "./AboutIconsSection";

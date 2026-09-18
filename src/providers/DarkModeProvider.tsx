@@ -6,7 +6,7 @@ import React, {
   Dispatch,
   SetStateAction,
 } from "react";
-import useMediaQuery from "@mui/material/useMediaQuery";
+import useMediaQuery from "src/hooks/useMediaQuery";
 
 interface DarkModeContextType {
   isDarkMode: boolean;
