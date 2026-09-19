@@ -17,13 +17,13 @@ const ExperiencePage = () => {
   return (
     <>
       <div className="max-w-[1200px] mx-auto border-l border-r border-layout-divider">
-        <div className="flex flex-row justify-between items-end px-4 pt-24">
+        <div className="flex flex-col md:flex-row md:justify-between md:items-end gap-4 md:gap-0 px-4 pt-24">
           <h1 className="text-primary-blue">EXPERIENCE</h1>
-          <div className="relative pb-4">
+          <div className="relative self-start md:self-auto pb-4">
             <h1 className="text-background-site leading-none md:block hidden">
               経験
             </h1>
-            <div className="md:absolute md:inset-0 md:flex md:items-end md:justify-end pb-4">
+            <div className="md:absolute md:inset-0 md:flex md:items-end md:justify-end md:pb-4">
               <TextLink
                 text="Download Resume"
                 linkType="download"

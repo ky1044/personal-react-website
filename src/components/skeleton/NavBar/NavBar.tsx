@@ -20,7 +20,7 @@ export function NavBar() {
           {/* Pinned to the top of the bar rather than centred, so the
               wordmark grows and shrinks downward from a fixed edge. */}
           <div
-            className="self-start"
+            className="self-start shrink-0"
             style={{ paddingTop: "var(--nav-logo-top)" }}
           >
             <Logo expanded={isNavBarExpanded} />

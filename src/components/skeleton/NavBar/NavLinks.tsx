@@ -28,7 +28,7 @@ function NavBarLinks({ expanded }: { expanded: boolean }) {
   }, [latestDeploy, loading]);
 
   return (
-    <div className="flex flex-col justify-center items-end gap-3">
+    <div className="flex flex-col justify-center items-end gap-3 min-w-0 flex-1 pl-6">
       <div
         className={`flex flex-row items-center gap-2 overflow-hidden transition-all ${
           expanded ? "h-[22px]" : "h-0"

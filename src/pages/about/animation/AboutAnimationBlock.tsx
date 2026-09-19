@@ -48,10 +48,10 @@ const AboutAnimationBlock = ({
       </div>
 
       <div
-        className={`flex-[0_1_330px] relative flex flex-col justify-center pt-6 sm:pt-0`}
+        className={`flex-[0_1_330px] relative flex flex-col justify-center pt-8 sm:pt-0`}
       >
         <div
-          className={`flex items-center gap-2 text-[14px] text-content-secondary absolute top-0 left-0`}
+          className={`flex items-center gap-2 text-[14px] text-content-secondary mb-2 sm:mb-0 sm:absolute sm:top-0 sm:left-0`}
         >
           <span
             className={`inline-block h-2.5 w-2.5 rounded-full transition-all duration-300 ${

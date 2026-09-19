@@ -10,7 +10,7 @@ export const AboutPageTop = () => {
 
   return (
     <>
-      <div className="max-w-[1200px] mx-auto pt-36 px-4">
+      <div className="max-w-[1200px] mx-auto pt-16 sm:pt-36 px-4">
         <div
           className="flex flex-col justify-between gap-2.5 max-w-[912px] mx-auto"
           style={{ textAlign: "center" }}

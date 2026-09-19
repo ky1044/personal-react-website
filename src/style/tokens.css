@@ -152,6 +152,14 @@
   --background-gradient-top: #e3e3e3;
   --background-gradient-bottom: #e5e5e5;
 
+  /* Tech-stack logos are third-party artwork we don't control: each one is
+     tuned for a white page, so on our tile some read flat and some vanish.
+     A drop-shadow traces the PNG's alpha rather than its box, so it hugs the
+     glyph itself. Here it's an ordinary shadow; in dark it inverts to a halo
+     (see below), which is the only thing that rescues the dark-on-dark marks
+     like Java, Node and MySQL. */
+  --tech-logo-glow: drop-shadow(0 1px 2px rgb(14 15 12 / 0.18));
+
   --primary-blue: var(--blue-500);
   --secondary-blue: var(--cyan-500);
   --highlight-primary: var(--blue-100);
@@ -213,6 +221,14 @@
      stop was within one step of the page color and disappeared into it. */
   --background-gradient-top: var(--neutral-750);
   --background-gradient-bottom: var(--neutral-800);
+
+  /* Light, not dark: a shadow is invisible against these tiles. The tight 1px
+     pass separates the mark from the tile, the wide one is the bloom. These
+     alphas are the ceiling — past roughly 0.3 on the bloom, the logos that
+     were never the problem (React, TypeScript) pick up a visible haze and
+     read as lit from behind rather than simply legible. */
+  --tech-logo-glow: drop-shadow(0 0 1px rgb(255 255 255 / 0.45))
+    drop-shadow(0 0 12px rgb(255 255 255 / 0.24));
 
   --highlight-primary: #3f5866;
 
