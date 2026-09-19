@@ -194,8 +194,8 @@ const AboutIconsSection = () => {
           most of my life in Japan. I moved back to New York for{" "}
           <AboutIconLabel emojiKey={Emojis.COLLEGE} />. After graduating, I
           became a <AboutIconLabel emojiKey={Emojis.SOFTWARE_ENGINEER} />,
-          working at Morgan Stanley, a startup called CertiK, and currently
-          working for Book of the Month. I specialize in full-stack web
+          working at Morgan Stanley, a startup called CertiK, Book of the
+          Month, and currently Betterment. I specialize in full-stack web
           development work, and am most familiar with React.js, React Native,
           and Node.js.
         </motion.p>

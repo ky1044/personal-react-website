@@ -64,6 +64,15 @@ const TECH_MAP: Record<string, { borderColor: string }> = {
   "Tailwind CSS": {
     borderColor: "#00BCFF",
   },
+  TypeScript: {
+    borderColor: "#3178c6",
+  },
+  Playwright: {
+    borderColor: "#2ead33",
+  },
+  Chromatic: {
+    borderColor: "#fc521f",
+  },
 };
 
 type TechTagProps = { name: string; size?: "sm" | "md"; hasGlow?: boolean };
