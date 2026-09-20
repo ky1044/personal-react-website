@@ -153,7 +153,11 @@ const SkillTile = ({
         <img
           src={`${process.env.PUBLIC_URL}/tech/${skill.img}`}
           alt={skill.name}
-          className="w-1/2 h-1/2 object-scale-down transition-[width,height] duration-200 [filter:var(--tech-logo-glow)]"
+          className={`w-1/2 h-1/2 object-scale-down transition-[width,height] duration-200 ${
+            skill.name === "Node.js"
+              ? "[filter:var(--tech-logo-glow-node)]"
+              : "[filter:var(--tech-logo-glow)]"
+          }`}
         />
       )}
       <div className="absolute bottom-[-20px] group-hover:bottom-[2px] transition-all duration-200 font-medium text-sm text-content-primary">

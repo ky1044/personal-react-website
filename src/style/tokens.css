@@ -159,6 +159,7 @@
      (see below), which is the only thing that rescues the dark-on-dark marks
      like Java, Node and MySQL. */
   --tech-logo-glow: drop-shadow(0 1px 2px rgb(14 15 12 / 0.18));
+  --tech-logo-glow-node: var(--tech-logo-glow);
 
   --primary-blue: var(--blue-500);
   --secondary-blue: var(--cyan-500);
@@ -226,14 +227,19 @@
      pass separates the mark from the tile, the wide one is the bloom. These
      alphas are the ceiling — past roughly 0.3 on the bloom, the logos that
      were never the problem (React, TypeScript) pick up a visible haze and
-     read as lit from behind rather than simply legible. */
-  --tech-logo-glow: drop-shadow(0 0 1px rgb(255 255 255 / 0.45))
+     read as lit from behind rather than simply legible. Only Node's mark is
+     dark-on-dark enough to need this; the rest keep the ordinary shadow. */
+  --tech-logo-glow-node: drop-shadow(0 0 1px rgb(255 255 255 / 0.45))
     drop-shadow(0 0 12px rgb(255 255 255 / 0.24));
 
   --highlight-primary: #3f5866;
 
-  --layout-divider: #333333;
-  --border-subtle: #333333;
+  /* --neutral-800 sits halfway between the old #333333 — four hex points off
+     --background-site (--neutral-850), so the grid lines read as nothing —
+     and --neutral-700, which separated but drew more attention than the rules
+     deserve. Enough contrast to follow, quiet enough to stay structure. */
+  --layout-divider: var(--neutral-800);
+  --border-subtle: var(--neutral-800);
   --border-default: var(--neutral-700);
   --border-strong: var(--neutral-600);
   --border-light: 1px solid var(--neutral-700);
