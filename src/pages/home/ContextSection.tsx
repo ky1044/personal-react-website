@@ -8,6 +8,7 @@ import React, { useRef } from "react";
 import { animationVariants } from "src/consts/animation";
 import useWindow from "src/hooks/useWindow";
 import Hr from "src/components/shared/Hr";
+import { TopographyBackground } from "src/components/backgrounds/Backgrounds";
 
 const skills: {
   style: object;
@@ -135,6 +136,7 @@ const SkillTile = ({
   return (
     <motion.div
       ref={ref}
+      data-topo-mask
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       className={`relative group bg-[linear-gradient(180deg,var(--background-gradient-top),var(--background-gradient-bottom))] rounded-[12px] flex justify-center items-center text-center transition-[margin] duration-200 overflow-hidden m-1 hover:m-0`}
@@ -180,13 +182,18 @@ const ContextSection = () => {
           </h1>
         </div>
         <Hr />
-        <div className=" relative p-4">
-          <h3 className="max-w-[700px]">
+        <div className="relative p-4">
+          {/* Opaque so GridReveal's dots stay out; the topography redraws
+              the flashlight itself. */}
+          <div className="absolute inset-0 z-0 overflow-hidden bg-background-site">
+            <TopographyBackground maskSelector="[data-topo-mask]" />
+          </div>
+          <h3 className="relative max-w-[700px]">
             I have experience in the full stack, but lately I&apos;m focused
             more on front-end development. Here are some of the languages and
             libraries I have experience with:
           </h3>
-          <div className="mt-8 mx-auto w-full max-w-[900px] flex justify-center aspect-[5/7] sm:aspect-[5/3]">
+          <div className="relative mt-8 mx-auto w-full max-w-[900px] flex justify-center aspect-[5/7] sm:aspect-[5/3]">
             <div className="grid w-full sm:gap-[6px] sm:grid-cols-8 sm:grid-rows-5 grid-cols-5 grid-rows-7 gap-[2px]">
               {skills.map((skill) => (
                 <SkillTile key={skill.name} skill={skill} isMobile={isMobile} />

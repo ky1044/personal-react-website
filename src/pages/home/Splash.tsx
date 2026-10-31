@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import useScroll from "src/hooks/useScroll";
-import GraphSvg from "./GraphSvg";
+import { GraphBackground } from "src/components/backgrounds/Backgrounds";
 import HeroImage from "./HeroImage";
 import HeroText from "./HeroText";
 import Hr from "src/components/shared/Hr";
@@ -25,8 +25,8 @@ const Splash = () => {
       <HeroText scrollHeight={scrollHeight} />
       <HeroImage scrollHeight={scrollHeight} />
       <div className="max-w-[1200px] mx-auto border-l border-r border-layout-divider relative">
-        <div className="absolute top-0 left-0 w-full h-full z-0 overflow-hidden">
-          <GraphSvg />
+        <div className="absolute top-0 left-0 w-full h-full z-0 overflow-hidden bg-background-site">
+          <GraphBackground />
           {/* <SplashSvg /> */}
           {/* <PeopleSvg /> */}
         </div>
