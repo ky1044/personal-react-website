@@ -23,7 +23,7 @@ const Splash = () => {
   return (
     <>
       <HeroText scrollHeight={scrollHeight} />
-      <HeroImage scrollHeight={scrollHeight} />
+      <HeroImage />
       <div className="max-w-[1200px] mx-auto border-l border-r border-layout-divider relative">
         <div className="absolute top-0 left-0 w-full h-full z-0 overflow-hidden bg-background-site">
           <GraphBackground />
