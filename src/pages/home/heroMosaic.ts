@@ -1,32 +1,33 @@
 /**
- * Canvas "mosaic blob" effect for the home hero (design exploration v8).
+ * Canvas "mosaic blob" effect for the home hero (design exploration v9).
  *
- * - The photo renders untouched; a few floating shapes and three slowly
- *   drifting blobs are pixelated into a grey / blue / white / yellow palette.
+ * - The photo renders untouched apart from a few floating shapes in a
+ *   grey / blue / white palette that bob gently in place.
  * - On hover a blob-shaped lens follows the cursor: big 4-colour pixels in the
- *   middle, shrinking to 3px pixels with up to 24 colours that scatter out at
+ *   middle, shrinking to 3px pixels with up to 18 colours that scatter out at
  *   the rim. Floating shapes ignore the cursor.
  * - Nothing pixelates the face unless the cursor lens is over it.
  */
 
 const PAL_HEX = [
-  // core four first: a cell allowed k colours uses PAL[0..k)
-  "#7c8088", "#1d90ff", "#ffffff", "#ffe14d",
-  "#2b2e33", "#0062c2", "#c4c7cc", "#a8d8ff", "#fff4a8", "#e6b800", "#4d5157", "#36a3ff",
-  "#f2f4f7", "#003f7d", "#a3a7ad", "#d0eaff", "#ffd000", "#1a1c1f", "#6dbcff", "#fffbe0",
-  "#5f6369", "#0079eb", "#e8e9eb", "#b38f00",
+  // core four first: a cell allowed k colours uses PAL[0..k). Greys, blues and whites only.
+  "#7c8088", "#1d90ff", "#ffffff", "#2b2e33",
+  "#0062c2", "#c4c7cc", "#a8d8ff", "#4d5157", "#36a3ff",
+  "#f2f4f7", "#003f7d", "#a3a7ad", "#d0eaff", "#1a1c1f", "#6dbcff",
+  "#5f6369", "#0079eb", "#e8e9eb",
 ];
 const PAL = PAL_HEX.map((h) => [
   parseInt(h.slice(1, 3), 16),
   parseInt(h.slice(3, 5), 16),
   parseInt(h.slice(5, 7), 16),
 ]);
-const YELLOWS = new Set([3, 8, 9, 16, 19, 23]);
 
 /** Face position as fractions of the photo (hero.jpg and hero-mobile.jpg share framing). r is relative to width. */
 const FACE = { x: 0.5075, y: 0.4727, r: 0.05625 };
-/** How strong the no-cursor drift is (0–0.6). */
+/** How strongly the floating shapes bob (0–0.6). */
 const IDLE = 0.25;
+/** Minimum gap in px between floating shapes. */
+const MIN_GAP = 4;
 const SIZES = [48, 24, 12, 6, 3];
 const MIN_SIZE = 3;
 
@@ -35,7 +36,6 @@ type Block = {
   hx: number; hy: number; x: number; y: number; vx: number; vy: number;
   sz: number; ph: number; col: string; kind: number; o: number;
 };
-type Ghost = { ax: number; ay: number; fx: number; fy: number; ph: number; r: number };
 
 function nearest(r: number, g: number, b: number, k: number, skip = -1) {
   let best = 0, bd = Infinity;
@@ -43,7 +43,6 @@ function nearest(r: number, g: number, b: number, k: number, skip = -1) {
     if (i === skip) continue;
     const c = PAL[i], dr = r - c[0], dg = g - c[1], db = b - c[2];
     let d = 2 * dr * dr + 4 * dg * dg + 3 * db * db;
-    if (YELLOWS.has(i)) d *= 0.6; // the photo has little yellow; bias toward it
     if (d < bd) { bd = d; best = i; }
   }
   return best;
@@ -105,7 +104,6 @@ export class HeroMosaic {
   private B!: HTMLCanvasElement;
   private levels: Level[] = [];
   private blocks: Block[] = [];
-  private ghosts: Ghost[] = [];
   private face = { x: 0, y: 0, r: 0 };
   private p = { x: 0, y: 0, tx: 0, ty: 0, h: 0, active: false, last: 0, idle: true };
   private raf = 0;
@@ -188,9 +186,22 @@ export class HeroMosaic {
     const L12 = this.levels[2];
     this.blocks = [];
     const N = Math.round((W * H) / 15000);
+    // Keep at least MIN_GAP px between shapes even while they bob: add each shape's
+    // bob range (2 × amp, both shapes) and the 3px snap (1.5px each) to the spacing.
+    const amp = 3 * (0.4 + IDLE * 2);
+    const spacing = MIN_GAP + 2 * amp + 3;
+    const clear = (hx: number, hy: number, sz: number) =>
+      !this.inFace(hx, hy, sz) &&
+      this.blocks.every((c) =>
+        Math.abs(hx - c.hx) - (sz + c.sz) / 2 >= spacing || Math.abs(hy - c.hy) - (sz + c.sz) / 2 >= spacing);
     for (let n = 0; n < N; n++) {
       const sz = [9, 12, 18, 24, 30][Math.floor(rnd() * 5)];
-      const hx = Math.round((rnd() * W) / 3) * 3, hy = Math.round((rnd() * H) / 3) * 3;
+      let hx = 0, hy = 0, placed = false;
+      for (let tries = 0; tries < 40 && !placed; tries++) {
+        hx = Math.round((rnd() * W) / 3) * 3; hy = Math.round((rnd() * H) / 3) * 3;
+        placed = clear(hx, hy, sz);
+      }
+      if (!placed) continue;
       const i = (Math.min(L12.rows - 1, (hy / 12) | 0) * L12.cols + Math.min(L12.cols - 1, (hx / 12) | 0)) * 3;
       const bc = boost(L12.rgb[i], L12.rgb[i + 1], L12.rgb[i + 2]);
       const ci = nearest(bc[0], bc[1], bc[2], 4);
@@ -199,11 +210,6 @@ export class HeroMosaic {
         col: PAL_HEX[ci], kind: pickKind(rnd() * 0.999), o: Math.floor(rnd() * 4),
       });
     }
-    this.ghosts = [0, 1, 2].map((i) => ({
-      ax: 0.18 + i * 0.32, ay: 0.35 + (i % 2) * 0.3,
-      fx: 0.00011 + i * 0.000037, fy: 0.00017 - i * 0.00003,
-      ph: i * 2.1, r: [0.9, 1.15, 0.75][i],
-    }));
   }
 
   private inFace(x: number, y: number, pad: number) {
@@ -237,7 +243,7 @@ export class HeroMosaic {
       const L = levels[li], idx = (Math.round(y / s) * L.cols + Math.round(x / s)) * 3;
       const [br, bg, bb] = boost(L.rgb[idx], L.rgb[idx + 1], L.rgb[idx + 2]);
       const j = 70 * r * r * (1 - r);
-      const k = Math.round(4 + 20 * Math.pow(r, 1.8)); // 4 colours at the centre → 24 at the rim
+      const k = Math.round(4 + (PAL.length - 4) * Math.pow(r, 1.8)); // 4 colours at the centre → all 18 at the rim
       const pi = nearest(
         br + j * (hash(x * 2, y * 2, 7) - 0.5),
         bg + j * (hash(y * 2, x * 2, 9) - 0.5),
@@ -274,17 +280,6 @@ export class HeroMosaic {
 
     ctx.imageSmoothingEnabled = true;
     ctx.drawImage(this.B, 0, 0);
-
-    // Three idle blobs, steered around the face; they shrink away while hovering.
-    const ghostScale = (1 - p.h) * Math.min(W, H) * 0.6 * IDLE;
-    this.ghosts.forEach((gh, i) => {
-      let x = W * (gh.ax + 0.14 * Math.sin(t * gh.fx + gh.ph));
-      let y = H * (gh.ay + 0.22 * Math.sin(t * gh.fy + gh.ph * 1.7));
-      const gR = ghostScale * gh.r;
-      const dx = x - face.x, dy = y - face.y, d = Math.hypot(dx, dy) || 1, need = gR * 1.25 + face.r + 8;
-      if (d < need) { x = face.x + (dx / d) * need; y = face.y + (dy / d) * need; }
-      this.lens(x, y, gR, 24, t, i + 1, false, true);
-    });
 
     // Cursor lens.
     this.lens(p.x, p.y, Math.max(W, H) * 0.17 * p.h, 48, t, 0, true, false);
