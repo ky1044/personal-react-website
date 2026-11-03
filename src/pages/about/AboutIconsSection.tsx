@@ -26,7 +26,9 @@ const ORDERED_EMOJIS: Emojis[] = [
 const getNumberByEmoji = (emojiKey: Emojis): number =>
   ORDERED_EMOJIS.indexOf(emojiKey) + 1;
 
-const EmojiToSvg: Record<Emojis, React.ComponentType> = {
+/* Each icon animates while `active` (its tile or its word is hovered) and
+   settles back to its resting drawing afterwards. */
+const EmojiToSvg: Record<Emojis, React.ComponentType<{ active?: boolean }>> = {
   [Emojis.NYC]: NycSvg,
   [Emojis.TOKYO]: TokyoSvg,
   [Emojis.COLLEGE]: CollegeSvg,
@@ -63,7 +65,7 @@ const AboutIcon = ({ emojiKey }: { emojiKey: Emojis }) => {
       </span>
       {(() => {
         const SvgComponent = EmojiToSvg[emojiKey];
-        return <SvgComponent />;
+        return <SvgComponent active={isHovered} />;
       })()}
     </div>
   );

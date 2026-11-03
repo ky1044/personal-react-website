@@ -1,5 +1,27 @@
+import { useRef } from "react";
+import { deckLights } from "./animation/geometry";
+import { useIconLoop } from "./animation/useIconLoop";
 
-const TokyoSvg = () => {
+/** Tokyo Skytree. While active, a light circles each deck, both in step;
+    they fade out when released. */
+const TokyoSvg = ({ active = false }: { active?: boolean }) => {
+  const tau = useRef(0);
+  const alpha = useRef(0);
+  useIconLoop(active, (dt, on) => {
+    if (on) {
+      tau.current += dt;
+      alpha.current = Math.min(1, alpha.current + dt * 3);
+      return true;
+    }
+    if (alpha.current > 0) {
+      tau.current += dt;
+      alpha.current = Math.max(0, alpha.current - dt * 2.5);
+      return true;
+    }
+    tau.current = 0;
+    return false;
+  });
+
   return (
     <svg
       width="100%"
@@ -29,6 +51,13 @@ const TokyoSvg = () => {
         stroke="#0085FF"
       />
       <path d="M64 24V0" stroke="#0085FF" />
+      {alpha.current > 0 && (
+        <g fill="#0085FF">
+          {deckLights(tau.current, alpha.current).map((p, i) => (
+            <circle key={i} cx={p.x} cy={p.y} r={p.r} opacity={p.o} />
+          ))}
+        </g>
+      )}
     </svg>
   );
 };
