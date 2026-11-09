@@ -98,6 +98,12 @@ const blob = (th: number, t: number, id: number) =>
   0.06 * Math.sin(3 * th - t * 0.0011 + id * 2.3) +
   0.035 * Math.sin(5 * th + t * 0.0016 + id * 3.7);
 
+const ctx2d = (c: HTMLCanvasElement) => {
+  const g = c.getContext("2d");
+  if (!g) throw new Error("2D canvas unavailable");
+  return g;
+};
+
 export class HeroMosaic {
   private ctx: CanvasRenderingContext2D;
   private W = 0; private H = 0; private BW = 0; private BH = 0;
@@ -109,9 +115,7 @@ export class HeroMosaic {
   private raf = 0;
 
   constructor(private canvas: HTMLCanvasElement, private img: HTMLImageElement, private animate = true) {
-    const ctx = canvas.getContext("2d");
-    if (!ctx) throw new Error("2D canvas unavailable");
-    this.ctx = ctx;
+    this.ctx = ctx2d(canvas);
     this.resize();
   }
 
@@ -152,7 +156,7 @@ export class HeroMosaic {
     // Photo, cover-fit to the visible W×H exactly like object-cover; edges padded for whole 48px tiles.
     const B = (this.B = document.createElement("canvas"));
     B.width = BW; B.height = BH;
-    const g = B.getContext("2d")!;
+    const g = ctx2d(B);
     const sc = Math.max(W / img.naturalWidth, H / img.naturalHeight);
     const ox = (W - img.naturalWidth * sc) / 2, oy = (H - img.naturalHeight * sc) / 2;
     g.imageSmoothingQuality = "high";
@@ -170,7 +174,7 @@ export class HeroMosaic {
       const cols = BW / s, rows = BH / s;
       const c = document.createElement("canvas");
       c.width = cols; c.height = rows;
-      const cg = c.getContext("2d")!;
+      const cg = ctx2d(c);
       cg.imageSmoothingQuality = "high";
       cg.drawImage(src, 0, 0, cols, rows);
       const d = cg.getImageData(0, 0, cols, rows).data;
